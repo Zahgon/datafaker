@@ -19,6 +19,6 @@ public class LanguageCode extends AbstractProvider<BaseProviders> {
      * @return a random 2-letter language code
      */
     public String iso639() {
-        return faker.options().option(languages);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

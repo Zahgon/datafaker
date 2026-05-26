@@ -14,11 +14,10 @@ public class Suits extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("suits.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("suits.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

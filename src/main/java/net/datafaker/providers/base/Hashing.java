@@ -15,27 +15,27 @@ public class Hashing extends AbstractProvider<BaseProviders> {
     }
 
     public String md2() {
-        return generateString("MD2", "%032x");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String md5() {
-        return generateString("MD5", "%032x");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sha1() {
-        return generateString("SHA-1", "%040x");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sha384() {
-        return generateString("SHA-384", "%096x");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sha256() {
-        return generateString("SHA-256", "%064x");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sha512() {
-        return generateString("SHA-512", "%0128x");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String generateString(String algorithm, String format) {
@@ -45,8 +45,7 @@ public class Hashing extends AbstractProvider<BaseProviders> {
             messageDigest.update(characters.getBytes(StandardCharsets.UTF_8), 0, characters.length());
             return format.formatted(new BigInteger(1, messageDigest.digest()));
         } catch (NoSuchAlgorithmException noSuchAlgorithmException) {
-            throw new RuntimeException("Failed to generate string using algorithm \"%s\" and format \"%s\""
-                .formatted(algorithm, format), noSuchAlgorithmException);
+            throw new RuntimeException("Failed to generate string using algorithm \"%s\" and format \"%s\"".formatted(algorithm, format), noSuchAlgorithmException);
         }
     }
 }

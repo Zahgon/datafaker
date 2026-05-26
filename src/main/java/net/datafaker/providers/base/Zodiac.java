@@ -5,7 +5,6 @@ package net.datafaker.providers.base;
  *
  * @since 1.8.0
  */
-
 public class Zodiac extends AbstractProvider<BaseProviders> {
 
     protected Zodiac(BaseProviders faker) {
@@ -18,6 +17,6 @@ public class Zodiac extends AbstractProvider<BaseProviders> {
      * @return a string of Zodiac sign
      */
     public String sign() {
-        return resolve("zodiac.signs");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

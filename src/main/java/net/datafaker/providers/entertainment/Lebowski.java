@@ -12,14 +12,14 @@ public class Lebowski extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String actor() {
-        return resolve("lebowski.actors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String character() {
-        return resolve("lebowski.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("lebowski.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

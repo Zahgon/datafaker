@@ -6,32 +6,29 @@ import net.datafaker.annotations.Deterministic;
  * @since 0.8.0
  */
 public class Address extends AbstractProvider<BaseProviders> {
+
     protected Address(BaseProviders faker) {
         super(faker);
     }
 
     public String streetName() {
-        return resolve("address.street_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String streetAddressNumber() {
-        return String.valueOf(faker.random().nextInt(1, 1000));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String streetAddress() {
-        return resolve("address.street_address");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String streetAddress(boolean includeSecondary) {
-        String streetAddress = streetAddress();
-        if (includeSecondary) {
-            streetAddress = streetAddress + " " + secondaryAddress();
-        }
-        return streetAddress;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String secondaryAddress() {
-        return faker.numerify(resolve("address.secondary_address"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -40,15 +37,15 @@ public class Address extends AbstractProvider<BaseProviders> {
      * @return a String representing a standard zip code
      */
     public String zipCode() {
-        return faker.bothify(resolve("address.postcode"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String postcode() {
-        return faker.bothify(resolve("address.postcode"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String eircode() {
-        return faker.bothify(resolve("address.postcode"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -58,113 +55,113 @@ public class Address extends AbstractProvider<BaseProviders> {
      * @return a String representing a ZIP+4 code
      */
     public String zipCodePlus4() {
-        return faker.bothify(resolve("address.postcode_plus_four"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String zipCodeByState(String stateAbbr) {
-        return resolve("address.postcode_by_state." + stateAbbr);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String countyByZipCode(String postCode) {
-        return resolve("address.county_by_postcode." + postCode, () -> "County is not configured for postcode " + postCode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String streetSuffix() {
-        return resolve("address.street_suffix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Deterministic
     public String streetPrefix() {
-        return resolve("address.street_prefix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String citySuffix() {
-        return resolve("address.city_suffix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cityPrefix() {
-        return resolve("address.city_prefix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String city() {
-        return resolve("address.city");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cityName() {
-        return resolve("address.city_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String state() {
-        return resolve("address.state");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String stateAbbr() {
-        return resolve("address.state_abbr");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return Returns the latitude, a number between -90 to 90.
      */
     public String latitude() {
-        return String.format(faker.getContext().getLocale(), "%.8f", (faker.random().nextDouble() * 180) - 90);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return Returns the longitude, a number between -180 and 180
      */
     public String longitude() {
-        return String.format(faker.getContext().getLocale(), "%.8f", (faker.random().nextDouble() * 360) - 180);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return Returns the lat/lon coordinates formatted as lat,lon.
      */
     public String latLon() {
-        return latLon(",");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return Returns the lat/lon coordinates formatted as lat delimiter lon.
      */
     public String latLon(String delimiter) {
-        return latitude() + delimiter + longitude();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return Returns the lat/lon coordinates formatted as lon,lat.
      */
     public String lonLat() {
-        return lonLat(",");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return Returns the lat/lon coordinates formatted as lon delimiter lat.
      */
     public String lonLat(String delimiter) {
-        return longitude() + delimiter + latitude();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String timeZone() {
-        return resolve("address.time_zone");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String country() {
-        return resolve("address.country");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String countryCode() {
-        return resolve("address.country_code");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String buildingNumber() {
-        return faker.numerify(resolve("address.building_number"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String fullAddress() {
-        return resolve("address.full_address");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mailBox() {
-        return faker.numerify(resolve("address.mail_box"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -15,7 +15,7 @@ public class Camera extends AbstractProvider<BaseProviders> {
      * @return a string of camera brand.
      */
     public String brand() {
-        return resolve("camera.brand");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -24,7 +24,7 @@ public class Camera extends AbstractProvider<BaseProviders> {
      * @return a string of camera model.
      */
     public String model() {
-        return resolve("camera.model");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -33,6 +33,6 @@ public class Camera extends AbstractProvider<BaseProviders> {
      * @return a string of camera brand with a model.
      */
     public String brandWithModel() {
-        return resolve("camera.brand_with_model");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

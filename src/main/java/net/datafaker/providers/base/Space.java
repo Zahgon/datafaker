@@ -10,54 +10,54 @@ public class Space extends AbstractProvider<BaseProviders> {
     }
 
     public String planet() {
-        return resolve("space.planet");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String moon() {
-        return resolve("space.moon");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String galaxy() {
-        return resolve("space.galaxy");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String nebula() {
-        return resolve("space.nebula");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String starCluster() {
-        return resolve("space.star_cluster");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String constellation() {
-        return resolve("space.constellation");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String star() {
-        return resolve("space.star");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String agency() {
-        return resolve("space.agency");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String agencyAbbreviation() {
-        return resolve("space.agency_abv");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String nasaSpaceCraft() {
-        return resolve("space.nasa_space_craft");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String company() {
-        return resolve("space.company");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String distanceMeasurement() {
-        return faker.number().numberBetween(10, 100) + ' ' + resolve("space.distance_measurement");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meteorite() {
-        return resolve("space.meteorite");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

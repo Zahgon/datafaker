@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
-
 import static java.util.Objects.requireNonNull;
 import static java.util.Objects.requireNonNullElse;
 
@@ -22,7 +21,9 @@ import static java.util.Objects.requireNonNullElse;
  * {@code mvn clean package exec:exec -Dbenchmarks="DatafakerSimpleMethods" -Ddatafaker.version=2.2.3-SNAPSHOT}
  */
 public class CopyOnWriteMap<K, V> implements Map<K, V> {
+
     private volatile Map<K, V> map;
+
     private final Supplier<Map<K, V>> mapSupplier;
 
     public CopyOnWriteMap(Supplier<Map<K, V>> mapSupplier) {
@@ -32,89 +33,76 @@ public class CopyOnWriteMap<K, V> implements Map<K, V> {
 
     @Override
     public int size() {
-        return map.size();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean isEmpty() {
-        return map.isEmpty();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean containsKey(Object key) {
-        return map.containsKey(key);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean containsValue(Object value) {
-        return map.containsValue(value);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public V get(Object key) {
-        return map.get(key);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public V putIfAbsent(K key, V value) {
-        throw new UnsupportedOperationException("Avoid pattern 'get+put'. Use computeIfAbsent instead.");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public V put(K key, V value) {
-        requireNonNull(value, () -> "value is null for key " + key);
-        Map<K, V> newMap = mapSupplier.get();
-        newMap.putAll(map);
-        final V result = newMap.put(key, value);
-        map = newMap;
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public V remove(Object key) {
-        Map<K, V> newMap = mapSupplier.get();
-        newMap.putAll(map);
-        final V result = newMap.remove(key);
-        map = newMap;
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void putAll(Map<? extends K, ? extends V> m) {
-        Map<K, V> newMap = mapSupplier.get();
-        newMap.putAll(map);
-        newMap.putAll(m);
-        map = newMap;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void clear() {
-        map = mapSupplier.get();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Set<K> keySet() {
-        return map.keySet();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Collection<V> values() {
-        return map.values();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Set<Entry<K, V>> entrySet() {
-        return map.entrySet();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return map.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public V getOrDefault(Object key, V defaultValue) {
-        V v = get(key);
-        return requireNonNullElse(v, defaultValue);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

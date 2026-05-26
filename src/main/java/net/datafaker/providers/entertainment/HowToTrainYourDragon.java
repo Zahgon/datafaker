@@ -14,15 +14,14 @@ public class HowToTrainYourDragon extends AbstractProvider<EntertainmentProvider
     }
 
     public String characters() {
-        return resolve("how_to_train_your_dragon.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String dragons() {
-        return resolve("how_to_train_your_dragon.dragons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String locations() {
-        return resolve("how_to_train_your_dragon.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

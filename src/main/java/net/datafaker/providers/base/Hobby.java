@@ -10,7 +10,6 @@ public class Hobby extends AbstractProvider<BaseProviders> {
     }
 
     public String activity() {
-        return resolve("hobby.activity");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

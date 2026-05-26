@@ -8,28 +8,28 @@ import net.datafaker.providers.base.AbstractProvider;
  * @since 1.6.0
  */
 public class MassEffect extends AbstractProvider<VideoGameProviders> {
+
     protected MassEffect(final VideoGameProviders faker) {
         super(faker);
     }
 
     public String character() {
-        return resolve("mass_effect.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String specie() {
-        return resolve("mass_effect.species");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cluster() {
-        return resolve("mass_effect.cluster");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String planet() {
-        return resolve("mass_effect.planets");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("mass_effect.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

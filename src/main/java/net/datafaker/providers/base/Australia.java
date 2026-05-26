@@ -10,15 +10,14 @@ public class Australia extends AbstractProvider<BaseProviders> {
     }
 
     public String locations() {
-        return resolve("australia.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String animals() {
-        return resolve("australia.animals");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String states() {
-        return resolve("australia.states");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

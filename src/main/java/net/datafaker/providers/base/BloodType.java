@@ -15,7 +15,7 @@ public class BloodType extends AbstractProvider<BaseProviders> {
      * @return a string of ABO blood type
      */
     public String aboTypes() {
-        return resolve("blood_type.abo_types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -24,7 +24,7 @@ public class BloodType extends AbstractProvider<BaseProviders> {
      * @return a string of Rh blood type
      */
     public String rhTypes() {
-        return resolve("blood_type.rh_types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -33,9 +33,8 @@ public class BloodType extends AbstractProvider<BaseProviders> {
      * @return a string of P blood type
      */
     public String pTypes() {
-        return resolve("blood_type.p_types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 
     /**
      * Returns a blood group such as O−, O+, A-, A+, B-, B+, AB-, AB+
@@ -43,6 +42,6 @@ public class BloodType extends AbstractProvider<BaseProviders> {
      * @return a blood group such as O−, O+, A-, A+, B-, B+, AB-, AB+
      */
     public String bloodGroup() {
-        return resolve("blood_type.blood_group");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

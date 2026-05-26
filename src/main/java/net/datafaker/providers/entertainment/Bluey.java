@@ -12,14 +12,14 @@ public class Bluey extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("bluey.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("bluey.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("bluey.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -4,6 +4,7 @@ package net.datafaker.providers.base;
  * @since 0.8.0
  */
 public class Country extends AbstractProvider<BaseProviders> {
+
     private final String flagUrl;
 
     protected Country(BaseProviders faker) {
@@ -12,19 +13,19 @@ public class Country extends AbstractProvider<BaseProviders> {
     }
 
     public String flag() {
-        return flagUrl + resolve("country.code2") + ".png";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String countryCode2() {
-        return resolve("country.code2");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String countryCode3() {
-        return resolve("country.code3");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String capital() {
-        return resolve("country.capital");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -32,7 +33,7 @@ public class Country extends AbstractProvider<BaseProviders> {
      * @return a random detailed ISO 4217 currency display name
      */
     public String currency() {
-        return faker.money().currency();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -40,11 +41,10 @@ public class Country extends AbstractProvider<BaseProviders> {
      * @return an ISO 4217 currency code
      */
     public String currencyCode() {
-        return faker.money().currencyCode();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String name() {
-        return resolve("country.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

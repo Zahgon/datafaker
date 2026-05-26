@@ -14,15 +14,14 @@ public class DetectiveConan extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("detective_conan.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gadgets() {
-        return resolve("detective_conan.gadgets");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String vehicles() {
-        return resolve("detective_conan.vehicles");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

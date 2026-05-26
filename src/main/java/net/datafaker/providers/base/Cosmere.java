@@ -12,43 +12,42 @@ public class Cosmere extends AbstractProvider<BaseProviders> {
     }
 
     public String aons() {
-        return resolve("cosmere.aons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String shardWorlds() {
-        return resolve("cosmere.shard_worlds");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String shards() {
-        return resolve("cosmere.shards");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String surges() {
-        return resolve("cosmere.surges");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String knightsRadiant() {
-        return resolve("cosmere.knights_radiant");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String metals() {
-        return resolve("cosmere.metals");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String allomancers() {
-        return resolve("cosmere.allomancers");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String feruchemists() {
-        return resolve("cosmere.feruchemists");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String heralds() {
-        return resolve("cosmere.heralds");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sprens() {
-        return resolve("cosmere.sprens");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

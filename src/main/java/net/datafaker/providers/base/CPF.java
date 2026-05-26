@@ -24,7 +24,7 @@ public class CPF extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cpf(BaseProviders, boolean, boolean)
      */
     public String valid() {
-        return IdNumberGeneratorPtBrUtil.cpf(faker, true, true);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -35,7 +35,7 @@ public class CPF extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cpf(BaseProviders, boolean, boolean)
      */
     public String valid(boolean formatted) {
-        return IdNumberGeneratorPtBrUtil.cpf(faker, formatted, true);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -45,7 +45,7 @@ public class CPF extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cpf(BaseProviders, boolean, boolean)
      */
     public String invalid() {
-        return IdNumberGeneratorPtBrUtil.cpf(faker, true, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -56,7 +56,6 @@ public class CPF extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cpf(BaseProviders, boolean, boolean)
      */
     public String invalid(boolean formatted) {
-        return IdNumberGeneratorPtBrUtil.cpf(faker, formatted, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

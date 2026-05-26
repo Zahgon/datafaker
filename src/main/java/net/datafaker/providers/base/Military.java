@@ -12,23 +12,22 @@ public class Military extends AbstractProvider<BaseProviders> {
     }
 
     public String armyRank() {
-        return resolve("military.army_rank");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String marinesRank() {
-        return resolve("military.marines_rank");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String navyRank() {
-        return resolve("military.navy_rank");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String airForceRank() {
-        return resolve("military.air_force_rank");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String dodPaygrade() {
-        return resolve("military.dod_paygrade");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -12,26 +12,26 @@ public class Beer extends AbstractProvider<FoodProviders> {
     }
 
     public String brand() {
-        return resolve("beer.brand");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String name() {
-        return resolve("beer.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String style() {
-        return resolve("beer.style");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hop() {
-        return resolve("beer.hop");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String yeast() {
-        return resolve("beer.yeast");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String malt() {
-        return resolve("beer.malt");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

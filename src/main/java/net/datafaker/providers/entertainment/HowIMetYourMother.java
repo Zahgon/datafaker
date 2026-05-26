@@ -12,18 +12,18 @@ public class HowIMetYourMother extends AbstractProvider<EntertainmentProviders> 
     }
 
     public String character() {
-        return resolve("how_i_met_your_mother.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String catchPhrase() {
-        return resolve("how_i_met_your_mother.catch_phrase");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String highFive() {
-        return resolve("how_i_met_your_mother.high_five");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("how_i_met_your_mother.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -3,39 +3,40 @@ package net.datafaker.providers.sport;
 import net.datafaker.providers.base.ProviderRegistration;
 
 public interface SportProviders extends ProviderRegistration {
+
     default Baseball baseball() {
-        return getProvider(Baseball.class, Baseball::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Basketball basketball() {
-        return getProvider(Basketball.class, Basketball::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Chess chess() {
-        return getProvider(Chess.class, Chess::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Cricket cricket() {
-        return getProvider(Cricket.class, Cricket::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default EnglandFootBall englandfootball() {
-        return getProvider(EnglandFootBall.class, EnglandFootBall::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Football football() {
-        return getProvider(Football.class, Football::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Formula1 formula1() {
-        return getProvider(Formula1.class, Formula1::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default MartialArt martialArt() {
-        return getProvider(MartialArt.class, MartialArt::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Volleyball volleyball() {
-        return getProvider(Volleyball.class, Volleyball::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

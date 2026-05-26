@@ -11,67 +11,47 @@ public class Aws extends AbstractProvider<BaseProviders> {
 
     protected Aws(BaseProviders faker) {
         super(faker);
-        configForRoute53ZoneId = Text.TextSymbolsBuilder.builder()
-                                 .with(EN_UPPERCASE).len(21).build();
+        configForRoute53ZoneId = Text.TextSymbolsBuilder.builder().with(EN_UPPERCASE).len(21).build();
     }
 
     public String region() {
-        return resolve("aws.regions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String service() {
-        return resolve("aws.services");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String accountId() {
-        return faker.numerify("0#########");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String acmARN() {
-        return "arn:aws:acm:" +
-            region() +
-            ":" +
-            accountId() +
-            ":certificate/" +
-            faker.internet().uuid();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String albARN() {
-        return "arn:aws:elasticloadbalancing:" +
-            region() +
-            ":" +
-            accountId() +
-            ":loadbalancer/app/" +
-            appName() +
-            "/" +
-            randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String albTargetGroupARN() {
-        return "arn:aws:elasticloadbalancing:" +
-            region() +
-            ":" +
-            accountId() +
-            ":targetgroup/" +
-            appName() +
-            "/" +
-            randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String route53ZoneId() {
-        return faker.text().text(configForRoute53ZoneId);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String securityGroupId() {
-        return "sg-" + randHex(17);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String subnetId() {
-        return "subnet-" + randHex(17);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String vpcId() {
-        return "vpc-" + randHex(17);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String appName() {

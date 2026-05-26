@@ -13,11 +13,10 @@ public class Apple extends AbstractProvider<BaseProviders> {
     }
 
     public String type() {
-        return resolve("apple.type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String color() {
-        return resolve("apple.color");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

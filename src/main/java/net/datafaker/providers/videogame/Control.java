@@ -14,35 +14,34 @@ public class Control extends AbstractProvider<VideoGameProviders> {
     }
 
     public String character() {
-        return resolve("control.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("control.location");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String objectOfPower() {
-        return resolve("control.object_of_power");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String alteredItem() {
-        return resolve("control.altered_item");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String alteredWorldEvent() {
-        return resolve("control.altered_world_event");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hiss() {
-        return resolve("control.hiss");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String theBoard() {
-        return resolve("control.the_board");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("control.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

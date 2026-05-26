@@ -6,10 +6,8 @@ package net.datafaker.providers.base;
 public class Compass extends AbstractProvider<BaseProviders> {
 
     public enum CompassPoint {
-        CARDINAL("cardinal"),
-        ORDINAL("ordinal"),
-        HALF_WIND("half-wind"),
-        QUARTER_WIND("quarter-wind");
+
+        CARDINAL("cardinal"), ORDINAL("ordinal"), HALF_WIND("half-wind"), QUARTER_WIND("quarter-wind");
 
         private final String yamlKey;
 
@@ -32,8 +30,7 @@ public class Compass extends AbstractProvider<BaseProviders> {
      * @see CompassPoint
      */
     public Compass compassPoint(CompassPoint compassPoint) {
-        this.compassPoint = compassPoint;
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -46,11 +43,7 @@ public class Compass extends AbstractProvider<BaseProviders> {
      * @return the full-size direction word according to the specified {@link CompassPoint}. Otherwise, the point of direction will be selected randomly.
      */
     public String word() {
-        if (compassPoint == null) {
-            return resolve("compass.direction");
-        }
-
-        return resolve("compass." + compassPoint.yamlKey + ".word");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -63,11 +56,7 @@ public class Compass extends AbstractProvider<BaseProviders> {
      * @return the abbreviation of direction according to the specified {@link CompassPoint}. Otherwise, the point of direction will be selected randomly.
      */
     public String abbreviation() {
-        if (compassPoint == null) {
-            return resolve("compass.abbreviation");
-        }
-
-        return resolve("compass." + compassPoint.yamlKey + ".abbreviation");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -80,10 +69,6 @@ public class Compass extends AbstractProvider<BaseProviders> {
      * @return the appropriate azimuth of the direction according to the specified {@link CompassPoint}. Otherwise, the point of direction will be selected randomly.
      */
     public String azimuth() {
-        if (compassPoint == null) {
-            return resolve("compass.azimuth");
-        }
-
-        return resolve("compass." + compassPoint.yamlKey + ".azimuth");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

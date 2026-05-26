@@ -7,14 +7,12 @@ import net.datafaker.transformations.Field;
 import net.datafaker.transformations.Schema;
 import net.datafaker.transformations.SimpleField;
 import net.datafaker.transformations.Transformer;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
-
 import static java.util.Objects.requireNonNull;
 import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.ARRAY;
 import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.INSERT_INTO;
@@ -24,31 +22,42 @@ import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.NULL;
 import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.VALUES;
 
 public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
+
     private static final char DEFAULT_QUOTE = '\'';
+
     private static final char DEFAULT_CATALOG_SEPARATOR = '.';
+
     private static final String DEFAULT_SQL_IDENTIFIER = "\"\"";
+
     private static final String EMPTY_RESULT = "";
 
     private final Casing casing;
+
     private final char quote;
+
     private final char openSqlIdentifier;
+
     private final char closeSqlIdentifier;
+
     private final String tableName;
+
     private final String schemaName;
 
     private final boolean withBatchMode;
+
     private final int batchSize;
+
     private final Case keywordCase;
+
     private final boolean forceSqlQuoteIdentifierUsage;
 
     private final SqlDialect dialect;
 
     public static <IN> SqlTransformer.SqlTransformerBuilder<IN> builder() {
-        return new SqlTransformer.SqlTransformerBuilder<>();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    private SqlTransformer(String schemaName, String tableName, char quote, SqlDialect dialect, String sqlIdentifier,
-                           Casing casing, boolean withBatchMode, int batchSize, Case keywordCase, boolean forceSqlQuoteIdentifierUsage) {
+    private SqlTransformer(String schemaName, String tableName, char quote, SqlDialect dialect, String sqlIdentifier, Casing casing, boolean withBatchMode, int batchSize, Case keywordCase, boolean forceSqlQuoteIdentifierUsage) {
         this.schemaName = schemaName;
         this.quote = quote;
         this.dialect = dialect;
@@ -63,13 +72,10 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
     }
 
     private boolean isSqlQuoteIdentifierRequiredFor(String name) {
-        if (forceSqlQuoteIdentifierUsage) return true;
+        if (forceSqlQuoteIdentifierUsage)
+            return true;
         for (int i = 0; i < name.length(); i++) {
-            if (casing == Casing.TO_UPPER && Character.isLowerCase(name.charAt(i))
-                || casing == Casing.TO_LOWER && Character.isUpperCase(name.charAt(i))
-                || name.charAt(i) == openSqlIdentifier
-                || name.charAt(i) == closeSqlIdentifier
-                || name.charAt(i) == DEFAULT_CATALOG_SEPARATOR) {
+            if (casing == Casing.TO_UPPER && Character.isLowerCase(name.charAt(i)) || casing == Casing.TO_LOWER && Character.isUpperCase(name.charAt(i)) || name.charAt(i) == openSqlIdentifier || name.charAt(i) == closeSqlIdentifier || name.charAt(i) == DEFAULT_CATALOG_SEPARATOR) {
                 return true;
             }
         }
@@ -78,67 +84,37 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
 
     @Override
     public CharSequence apply(IN input, Schema<IN, ?> schema) {
-        return apply(input, schema, 0);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public CharSequence apply(IN input, Schema<IN, ?> schema, long rowId) {
-        //noinspection unchecked
-        Field<?, ? extends CharSequence>[] fields = (Field<?, ? extends CharSequence>[]) schema.getFields();
-        if (fields.length == 0) {
-            return EMPTY_RESULT;
-        }
-        if (withBatchMode) {
-            if (rowId == 0 || batchSize > 0 && rowId % batchSize == 0) {
-                return SqlDialect.getFirstRow(
-                    dialect, () -> appendTableInfo(fields), () -> addValues(input, fields, true), keywordCase);
-            } else {
-                return String.join(LINE_SEPARATOR, ",",
-                    SqlDialect.getOtherRow(
-                        dialect, () -> appendTableInfo(fields), () -> addValues(input, fields, true), keywordCase));
-            }
-        } else {
-            return String.join(" ", INSERT_INTO.getValue(keywordCase),
-                appendTableInfo(fields),
-                VALUES.getValue(keywordCase),
-                addValues(input, fields, true));
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String addValues(IN input, Field<?, ?>[] fields, Boolean isRoot) {
         StringJoiner result = new StringJoiner(", ");
         for (int i = 0; i < fields.length; i++) {
-
-            if(dialect != null) {
-                String fieldPrefix =
-                    dialect.getFieldPrefix(fields[i].getName());
-
+            if (dialect != null) {
+                String fieldPrefix = dialect.getFieldPrefix(fields[i].getName());
                 if (!fieldPrefix.isEmpty() && !isRoot) {
                     result.add(quote + dialect.getFieldPrefix(fields[i].getName()) + quote);
                 }
             }
-
             if (fields[i] instanceof SimpleField) {
                 //noinspection unchecked
                 Object value = ((SimpleField<Object, ?>) fields[i]).transform(input);
                 Class<?> clazz = value == null ? null : value.getClass();
-                if (value == null
-                    || value instanceof Number
-                    || value instanceof Boolean
-                    || clazz.isPrimitive()) {
+                if (value == null || value instanceof Number || value instanceof Boolean || clazz.isPrimitive()) {
                     result.add(String.valueOf(value));
                 } else if (clazz.isArray()) {
                     final Class<?> componentType = clazz.getComponentType();
                     SqlDialect sqlDialect = requireNonNull(dialect, "SQL dialect is unknown, cannot use ARRAY values in SQL");
-                    result.add(ARRAY.getValue(keywordCase) + sqlDialect.getArrayStart() +
-                        (componentType.isPrimitive()
-                            ? handlePrimitivesInArray(componentType, value)
-                            : handleObjectInArray(value)) + sqlDialect.getArrayEnd());
+                    result.add(ARRAY.getValue(keywordCase) + sqlDialect.getArrayStart() + (componentType.isPrimitive() ? handlePrimitivesInArray(componentType, value) : handleObjectInArray(value)) + sqlDialect.getArrayEnd());
                 } else if (value instanceof Map<?, ?> map) {
                     result.add(MAP.getValue(keywordCase) + "(" + handleObjectInMap(map) + ")");
                 } else if (value instanceof Collection<?> collection) {
-                    result.add(MULTISET.getValue(keywordCase) + "[" +
-                        handleObjectInCollection(collection) + "]");
+                    result.add(MULTISET.getValue(keywordCase) + "[" + handleObjectInCollection(collection) + "]");
                 } else {
                     result.add(handleObject(value));
                 }
@@ -185,7 +161,6 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
             result.append(handleObject(entry.getKey()));
             result.append(", ");
             result.append(handleObject(entry.getValue()));
-
             if (i < map.size() - 1) {
                 result.append(", ");
             }
@@ -200,15 +175,12 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
         } else {
             if (value.getClass().isArray()) {
                 final Class<?> componentType = value.getClass().getComponentType();
-                String array = componentType.isPrimitive()
-                    ? handlePrimitivesInArray(componentType, value)
-                    : handleObjectInArray(value);
+                String array = componentType.isPrimitive() ? handlePrimitivesInArray(componentType, value) : handleObjectInArray(value);
                 return ARRAY.getValue(keywordCase) + "[" + array + "]";
             } else if (value instanceof Map<?, ?> map) {
                 return MAP.getValue(keywordCase) + "(" + handleObjectInMap(map) + ")";
             } else if (value instanceof Collection<?> collection) {
-                return MULTISET.getValue(keywordCase)
-                    + "[" + handleObjectInCollection(collection) + "]";
+                return MULTISET.getValue(keywordCase) + "[" + handleObjectInCollection(collection) + "]";
             } else {
                 String strValue = value.toString();
                 final int length = strValue.length();
@@ -221,11 +193,10 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
 
     private String handledObjectToString(int length, String strValue) {
         StringBuilder builder = new StringBuilder(length);
-
         for (int k = 0; k < length; k++) {
             if (strValue.charAt(k) == quote) {
                 builder.append('\\').append(quote);
-            }else {
+            } else {
                 builder.append(strValue.charAt(k));
             }
         }
@@ -290,8 +261,7 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
                 result.append(openSqlIdentifier);
             }
             for (int j = 0; j < fieldName.length(); j++) {
-                if (openSqlIdentifier == fieldName.charAt(j)
-                        || closeSqlIdentifier == fieldName.charAt(j)) {
+                if (openSqlIdentifier == fieldName.charAt(j) || closeSqlIdentifier == fieldName.charAt(j)) {
                     result.append(openSqlIdentifier);
                 }
                 result.append(fieldName.charAt(j));
@@ -308,9 +278,9 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
     }
 
     private void appendNameToQuery(StringBuilder sb, String name) {
-        if (name == null || name.isEmpty()) return;
+        if (name == null || name.isEmpty())
+            return;
         boolean sqlIdentifierRequired = isSqlQuoteIdentifierRequiredFor(name);
-
         if (sqlIdentifierRequired) {
             sb.append(openSqlIdentifier);
         }
@@ -322,57 +292,22 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
 
     @Override
     public String generate(Iterable<IN> input, Schema<IN, ?> schema) {
-        if (schema.getFields().length == 0) {
-            return EMPTY_RESULT;
-        }
-        if (input instanceof FakeSequence<?> fakeSequence && fakeSequence.isInfinite()) {
-            throw new IllegalArgumentException("The sequence should be finite of size: " + input);
-        }
-
-        final List<IN> inputs;
-        if (input instanceof FakeStream<IN> fakeStream) {
-            Stream<IN> stream = fakeStream.get();
-            inputs = stream.toList();
-        } else if (input instanceof FakeSequence<?> fakeSequence) {
-            inputs = fakeSequence.get();
-        } else if (input instanceof List<IN> list) {
-            inputs = list;
-        } else {
-            inputs = new ArrayList<>();
-            for (IN o : input) {
-                inputs.add(o);
-            }
-        }
-
-        int limit = inputs.size();
-        if (withBatchMode) {
-            return generateBatchModeStatements(schema, inputs, limit);
-        } else {
-            return generateSeparatedStatements(schema, inputs, limit);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generate(Schema<IN, ?> schema, int limit) {
-        if (schema.getFields().length == 0) {
-            return EMPTY_RESULT;
-        }
-
-        if (withBatchMode) {
-            return generateBatchModeStatements(schema, null, limit);
-        } else {
-            return generateSeparatedStatements(schema, null, limit);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String getStartStream(Schema<IN, ?> schema) {
-        throw new UnsupportedOperationException("Not supported for SQL transformer. Use generate or generateStream instead to create SQL statements.");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String getEndStream() {
-        throw new UnsupportedOperationException("Not supported for SQL transformer. Use generate or generateStream instead to create SQL statements.");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String generateBatchModeStatements(Schema<IN, ?> schema, List<IN> inputs, int limit) {
@@ -399,6 +334,7 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
      * @see SqlTransformer#generateStream(Schema, long)
      */
     private record Interval(int start, int end) {
+
         private Interval add(int offset) {
             return new Interval(start + offset, end + offset);
         }
@@ -406,30 +342,7 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
 
     @Override
     public Stream<CharSequence> generateStream(final Schema<IN, ?> schema, long limit) {
-        if (schema.getFields().length == 0) {
-            return Stream.empty();
-        }
-
-        if (withBatchMode) {
-            return
-                Stream
-                    .iterate(new Interval(0, batchSize), interval -> interval.start() <= limit, i -> i.add(batchSize))
-                    .map(interval -> {
-                        StringBuilder sb = new StringBuilder();
-
-                        for (int i = interval.start(); i < interval.end() && i < limit; i++) {
-                            sb.append(apply(null, schema, i));
-                        }
-                        sb.append(SqlDialect.getLastRowSuffix(dialect, keywordCase));
-                        sb.append(";");
-                        return sb.toString();
-                    });
-        } else {
-            return
-                Stream
-                    .generate(() -> (CharSequence) (apply(null, schema) + ";"))
-                    .limit(limit);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String generateSeparatedStatements(Schema<IN, ?> schema, List<IN> inputs, int limit) {
@@ -443,91 +356,80 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
     }
 
     public static class SqlTransformerBuilder<IN> {
-        private char quote = DEFAULT_QUOTE;
-        private String sqlQuoteIdentifier = DEFAULT_SQL_IDENTIFIER;
-        private String tableName = "MyTable";
-        private String schemaName = "";
-        private Casing casing = Casing.TO_UPPER;
-        private boolean withBatchMode = false;
-        private int batchSize = -1; // no limit
-        private Case keywordCase = Case.UPPERCASE;
-        private boolean forceSqlQuoteIdentifierUsage = false;
 
+        private char quote = DEFAULT_QUOTE;
+
+        private String sqlQuoteIdentifier = DEFAULT_SQL_IDENTIFIER;
+
+        private String tableName = "MyTable";
+
+        private String schemaName = "";
+
+        private Casing casing = Casing.TO_UPPER;
+
+        private boolean withBatchMode = false;
+
+        // no limit
+        private int batchSize = -1;
+
+        private Case keywordCase = Case.UPPERCASE;
+
+        private boolean forceSqlQuoteIdentifierUsage = false;
 
         private SqlDialect dialect;
 
         public SqlTransformerBuilder<IN> dialect(SqlDialect dialect) {
-            this.dialect = dialect;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformerBuilder<IN> casing(Casing casing) {
-            this.casing = casing;
-            this.dialect = null;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformerBuilder<IN> quote(char quote) {
-            this.quote = quote;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformerBuilder<IN> sqlQuoteIdentifier(String sqlQuoteIdentifier) {
-            this.sqlQuoteIdentifier = sqlQuoteIdentifier;
-            this.dialect = null;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformerBuilder<IN> tableName(String tableName) {
-            this.tableName = tableName;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformerBuilder<IN> schemaName(String schemaName) {
-            this.schemaName = schemaName;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformerBuilder<IN> batch() {
-            this.withBatchMode = true;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformerBuilder<IN> batch(int batchSize) {
-            this.batchSize = batchSize;
-            this.withBatchMode = true;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformerBuilder<IN> keywordCase(Case caze) {
-            this.keywordCase = caze;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformerBuilder<IN> forceUseSqlQuoteIdentifier() {
-            this.forceSqlQuoteIdentifierUsage = true;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public SqlTransformer<IN> build() {
-            if (dialect == null) {
-                return new SqlTransformer<>(
-                    schemaName, tableName, quote, null, sqlQuoteIdentifier, casing, withBatchMode, batchSize, keywordCase, forceSqlQuoteIdentifierUsage);
-            } else {
-                return new SqlTransformer<>(
-                    schemaName, tableName, quote, dialect, dialect.getSqlQuoteIdentifier(), dialect.getUnquotedCasing(),
-                    withBatchMode, batchSize, keywordCase, forceSqlQuoteIdentifierUsage);
-            }
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
     public enum Case {
-        CAPITAL,
-        LOWERCASE,
-        UPPERCASE
+
+        CAPITAL, LOWERCASE, UPPERCASE
     }
 
     enum SQLKeyWords {
+
         ARRAY("ARRAY", "array", "Array"),
         MAP("MAP", "map", "Map"),
         NAMED_STRUCT("NAMED_STRUCT", "named_struct", "Named_Struct"),
@@ -539,8 +441,11 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
         ROW("ROW", "row", "Row"),
         SELECT_1_FROM_DUAL("SELECT 1 FROM dual", "select 1 from dual", "Select 1 From dual"),
         VALUES("VALUES", "values", "Values");
+
         private final String upperCaseValue;
+
         private final String lowerCaseValue;
+
         private final String capitalValue;
 
         SQLKeyWords(String upperCaseValue, String lowerCaseValue, String capitalValue) {
@@ -550,11 +455,7 @@ public class SqlTransformer<IN> implements Transformer<IN, CharSequence> {
         }
 
         public String getValue(Case caze) {
-            return switch (caze) {
-                case UPPERCASE -> upperCaseValue;
-                case LOWERCASE -> lowerCaseValue;
-                case CAPITAL -> capitalValue;
-            };
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 }

@@ -14,46 +14,47 @@ public class Tron extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return character(faker.options().option(Character.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String character(Character character) {
-        return resolve("tron.characters." + character.yamlKey);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String game() {
-        return resolve("tron.games");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("tron.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return quote(faker.options().option(Tron.Quote.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote(Tron.Quote quote) {
-        return resolve("tron.quotes." + quote.yamlKey);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tagline() {
-        return resolve("tron.taglines");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String vehicle() {
-        return resolve("tron.vehicles");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String alternateCharacterSpelling() {
-        return alternateCharacterSpelling(faker.options().option(Tron.AlternateCharacterSpelling.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String alternateCharacterSpelling(AlternateCharacterSpelling alternateCharacterSpelling) {
-        return resolve("tron.alternate_character_spellings." + alternateCharacterSpelling.yamlKey);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public enum AlternateCharacterSpelling {
+
         ALAN_BRADLEY("alan_bradley"),
         CLU("clu"),
         DR_LORA_BAINES("dr_lora_baines"),
@@ -68,10 +69,10 @@ public class Tron extends AbstractProvider<EntertainmentProviders> {
         AlternateCharacterSpelling(String yamlKey) {
             this.yamlKey = yamlKey;
         }
-
     }
 
     public enum Quote {
+
         ALAN_BRADLEY("alan_bradley"),
         BIT("bit"),
         CLU("clu"),
@@ -96,9 +97,8 @@ public class Tron extends AbstractProvider<EntertainmentProviders> {
     }
 
     public enum Character {
-        OTHER("other"),
-        PROGRAM("programs"),
-        USER("users");
+
+        OTHER("other"), PROGRAM("programs"), USER("users");
 
         private final String yamlKey;
 
@@ -107,5 +107,3 @@ public class Tron extends AbstractProvider<EntertainmentProviders> {
         }
     }
 }
-
-

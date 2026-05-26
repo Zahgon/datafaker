@@ -17,28 +17,26 @@ public class Mbti extends AbstractProvider<BaseProviders> {
     }
 
     public String type() {
-        return resolve("mbti." + choice.get() + ".type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String name() {
-        return resolve("mbti." + choice.get() + ".name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characteristic() {
-        return resolve("mbti." + choice.get() + ".characteristic");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String personage() {
-        return resolve("mbti." + choice.get() + ".personage");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String merit() {
-        return resolve("mbti." + choice.get() + ".merit");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String weakness() {
-        return resolve("mbti." + choice.get() + ".weakness");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
-
 }

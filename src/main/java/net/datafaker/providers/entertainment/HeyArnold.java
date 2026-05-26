@@ -14,15 +14,14 @@ public class HeyArnold extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("hey_arnold.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String locations() {
-        return resolve("hey_arnold.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("hey_arnold.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

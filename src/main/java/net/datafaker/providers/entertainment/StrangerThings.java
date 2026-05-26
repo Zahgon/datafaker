@@ -14,11 +14,10 @@ public class StrangerThings extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("stranger_things.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("stranger_things.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

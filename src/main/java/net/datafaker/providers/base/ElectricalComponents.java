@@ -10,14 +10,14 @@ public class ElectricalComponents extends AbstractProvider<BaseProviders> {
     }
 
     public String active() {
-        return resolve("electrical_components.active");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String passive() {
-        return resolve("electrical_components.passive");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String electromechanical() {
-        return resolve("electrical_components.electromechanical");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

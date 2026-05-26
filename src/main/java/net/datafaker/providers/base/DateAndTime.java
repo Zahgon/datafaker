@@ -1,6 +1,5 @@
 package net.datafaker.providers.base;
 
-
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -22,8 +21,11 @@ import java.util.concurrent.TimeUnit;
  */
 @Deprecated(since = "2.3.0", forRemoval = true)
 public class DateAndTime extends AbstractProvider<BaseProviders> {
+
     private static final int DEFAULT_MIN_AGE = 18;
+
     private static final int DEFAULT_MAX_AGE = 65;
+
     public static final long DAYS_NANOS = TimeUnit.DAYS.toNanos(1L);
 
     protected DateAndTime(BaseProviders faker) {
@@ -38,8 +40,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a future date from now.
      */
     public Timestamp future(int atMost, TimeUnit unit) {
-        Timestamp aBitLaterThanNow = new Timestamp(System.currentTimeMillis() + 1);
-        return future(atMost, unit, aBitLaterThanNow);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -51,7 +52,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a string representation of a future date from now.
      */
     public String future(int atMost, TimeUnit unit, String pattern) {
-        return toString(future(atMost, unit), pattern);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -63,8 +64,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a future date from now, with a minimum time.
      */
     public Timestamp future(int atMost, int minimum, TimeUnit unit) {
-        Timestamp minimumDate = new Timestamp(System.currentTimeMillis() + unit.toMillis(minimum));
-        return future(atMost - minimum, unit, minimumDate);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -78,7 +78,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a string representation of a future date from now, with a minimum time.
      */
     public String future(int atMost, int minimum, TimeUnit unit, String pattern) {
-        return toString(future(atMost, minimum, unit), pattern);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -90,12 +90,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a future date relative to {@code referenceDate}.
      */
     public <T extends Date> T future(int atMost, TimeUnit unit, T referenceDate) {
-        long upperBound = unit.toMillis(atMost);
-
-        long futureMillis = referenceDate.getTime();
-        futureMillis += 1 + faker.random().nextLong(upperBound - 1);
-
-        return (T) new Timestamp(futureMillis);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -109,7 +104,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a string representation of a future date relative to {@code referenceDate}.
      */
     public <T extends Date> String future(int atMost, TimeUnit unit, T referenceDate, String pattern) {
-        return toString(future(atMost, unit, referenceDate), pattern);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -120,8 +115,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a past date from now.
      */
     public Timestamp past(int atMost, TimeUnit unit) {
-        Timestamp aBitEarlierThanNow = new Timestamp(System.currentTimeMillis() - 1);
-        return past(atMost, unit, aBitEarlierThanNow);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -133,7 +127,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a string representation of a past date from now.
      */
     public String past(int atMost, TimeUnit unit, String pattern) {
-        return toString(past(atMost, unit), pattern);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -145,8 +139,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a past date from now.
      */
     public Timestamp past(int atMost, int minimum, TimeUnit unit) {
-        Timestamp minimumDate = new Timestamp(System.currentTimeMillis() - unit.toMillis(minimum));
-        return past(atMost - minimum, unit, minimumDate);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -159,7 +152,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a string representation of a past date from now, with a minimum time.
      */
     public String past(int atMost, int minimum, TimeUnit unit, String pattern) {
-        return toString(past(atMost, minimum, unit), pattern);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -171,12 +164,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a past date relative to {@code referenceDate}.
      */
     public <T extends Date> T past(int atMost, TimeUnit unit, T referenceDate) {
-        long upperBound = unit.toMillis(atMost);
-
-        long futureMillis = referenceDate.getTime();
-        futureMillis -= 1 + faker.random().nextLong(upperBound - 1);
-
-        return (T) new Timestamp(futureMillis);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -189,7 +177,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a string representation of a past date relative to {@code referenceDate}.
      */
     public String past(int atMost, TimeUnit unit, Date referenceDate, String pattern) {
-        return toString(past(atMost, unit, referenceDate), pattern);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -201,17 +189,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code to} date represents an earlier date than {@code from} date.
      */
     public <T extends Date> T between(T from, T to) throws IllegalArgumentException {
-        if (to.before(from)) {
-            throw new IllegalArgumentException("Invalid date range: the upper bound date (%s) is before the lower bound (%s)"
-                .formatted(to, from));
-        }
-
-        if (from.equals(to)) {
-            return from;
-        }
-
-        long offsetMillis = faker.random().nextLong(to.getTime() - from.getTime());
-        return (T) new Timestamp(from.getTime() + offsetMillis);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -224,7 +202,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code to} date represents an earlier date than {@code from} date.
      */
     public <T extends Date> String between(T from, T to, String pattern) throws IllegalArgumentException {
-        return toString(between(from, to), pattern);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -233,7 +211,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a random birthday between 65 and 18 years ago from now.
      */
     public Timestamp birthday() {
-        return birthday(DEFAULT_MIN_AGE, DEFAULT_MAX_AGE);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -242,7 +220,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a random birthday between 65 and 18 years ago from now.
      */
     public LocalDate birthdayLocalDate() {
-        return birthdayLocalDate(DEFAULT_MIN_AGE, DEFAULT_MAX_AGE);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -252,7 +230,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @return a string representation of a random birthday between 65 and 18 years ago from now.
      */
     public String birthday(String pattern) {
-        return toString(birthday(DEFAULT_MIN_AGE, DEFAULT_MAX_AGE), pattern);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -264,16 +242,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * Negative {@code minAge} and {@code maxAge} are supported.
      */
     public Timestamp birthday(int minAge, int maxAge) {
-        final LocalDate localDate = LocalDate.now();
-        final LocalDate from = localDate.minusYears(maxAge);
-        if (minAge == maxAge) {
-            return Timestamp.valueOf(LocalDateTime.of(from, LocalTime.MIDNIGHT));
-        }
-        final long start = from.toEpochDay();
-        final long stop = localDate.minusYears(minAge).toEpochDay();
-        final LocalDate date = LocalDate.ofEpochDay(faker.random().nextLong(start, stop));
-        return Timestamp.valueOf(
-            LocalDateTime.of(date, LocalTime.ofNanoOfDay(faker.number().numberBetween(0, DAYS_NANOS))));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -285,14 +254,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * Negative {@code minAge} and {@code maxAge} are supported.
      */
     public LocalDate birthdayLocalDate(int minAge, int maxAge) {
-        final LocalDate localDate = LocalDate.now();
-        final LocalDate from = localDate.minusYears(maxAge);
-        if (minAge == maxAge) {
-            return from;
-        }
-        final long start = from.toEpochDay();
-        final long stop = localDate.minusYears(minAge).toEpochDay();
-        return LocalDate.ofEpochDay(faker.random().nextLong(start, stop));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -305,7 +267,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code maxAge} is lower than {@code minAge}.
      */
     public String birthday(int minAge, int maxAge, String pattern) {
-        return toString(birthday(minAge, maxAge), pattern);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -317,7 +279,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code unit} is invalid.
      */
     public Duration duration(long max, ChronoUnit unit) {
-        return duration(0, max, unit);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -330,7 +292,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code unit} is invalid.
      */
     public Duration duration(long min, long max, ChronoUnit unit) {
-        return generateDuration(faker.random().nextLong(min, max), unit);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -342,7 +304,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code unit} is invalid.
      */
     public Duration duration(long max, String unit) {
-        return duration(0, max, str2durationUnit(unit));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -355,7 +317,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code unit} is invalid.
      */
     public Duration duration(long min, long max, String unit) {
-        return generateDuration(faker.random().nextLong(min, max), str2durationUnit(unit));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -367,13 +329,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code min} is greater than {@code max}.
      */
     public Period period(Period min, Period max) {
-        if (max.minus(min).isNegative()) {
-            throw new IllegalArgumentException("Max period(" + max + ") should be not less than min (" + min + ")");
-        }
-        return Period.of(
-            faker.random().nextInt(min.getYears(), max.getYears()),
-            faker.random().nextInt(min.getMonths(), max.getMonths()),
-            faker.random().nextInt(min.getDays(), max.getDays()));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -384,19 +340,7 @@ public class DateAndTime extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code unit} is invalid.
      */
     static ChronoUnit str2durationUnit(String unit) {
-        if (unit == null || unit.trim().isEmpty()) {
-            throw new IllegalArgumentException("Illegal duration unit '" + unit + "'");
-        }
-        return switch (unit.toUpperCase(Locale.ROOT)) {
-            case "NANO", "NANOS" -> ChronoUnit.NANOS;
-            case "MICRO", "MICROS" -> ChronoUnit.MICROS;
-            case "MILLI", "MILLIS" -> ChronoUnit.MILLIS;
-            case "SECOND", "SECONDS" -> ChronoUnit.SECONDS;
-            case "MINUTE", "MINUTES" -> ChronoUnit.MINUTES;
-            case "HOUR", "HOURS" -> ChronoUnit.HOURS;
-            case "DAY", "DAYS" -> ChronoUnit.DAYS;
-            default -> throw new IllegalArgumentException("Illegal duration unit '" + unit + "'");
-        };
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private Duration generateDuration(long value, ChronoUnit unit) {

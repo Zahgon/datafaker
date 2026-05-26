@@ -15,6 +15,6 @@ public class Transport extends AbstractProvider<BaseProviders> {
      * @return transport type in the descriptive manner just like "Car", "Aircraft", etc.
      */
     public String type() {
-        return resolve("transport.type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

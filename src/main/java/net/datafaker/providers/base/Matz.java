@@ -10,6 +10,6 @@ public class Matz extends AbstractProvider<BaseProviders> {
     }
 
     public String quote() {
-        return resolve("matz.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -4,9 +4,7 @@ import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber.IdNumberRequest;
 import net.datafaker.providers.base.PersonIdNumber;
 import net.datafaker.providers.base.PersonIdNumber.Gender;
-
 import java.time.LocalDate;
-
 import static net.datafaker.idnumbers.Utils.birthday;
 import static net.datafaker.idnumbers.Utils.gender;
 import static net.datafaker.providers.base.PersonIdNumber.Gender.MALE;
@@ -18,9 +16,10 @@ import static net.datafaker.providers.base.PersonIdNumber.Gender.MALE;
  * <a href="https://en.wikipedia.org/wiki/Resident_registration_number">Wikipedia - Resident registration number</a>
  */
 public class SouthKoreanIdNumber implements IdNumberGenerator {
+
     @Override
     public String countryCode() {
-        return "KR";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Deprecated
@@ -30,27 +29,7 @@ public class SouthKoreanIdNumber implements IdNumberGenerator {
 
     @Override
     public PersonIdNumber generateValid(BaseProviders f, IdNumberRequest request) {
-        StringBuilder patternBuilder = new StringBuilder();
-        LocalDate birthday = birthday(f, request);
-        String iso = f.nation().isoCountry();
-        Gender gender = gender(f, request);
-
-        // 1st to 6th digits indicate date of birth
-
-        patternBuilder.append(generateDay(birthday));
-
-        // Matches RRN Pattern ( ######-####### )
-        patternBuilder.append('-');
-
-        // 7th digit indicates birth century, gender, nationality
-        patternBuilder.append(get7thDigit(birthday.getYear(), gender, iso));
-
-        // From Oct 2020, 8 to 13 digits are randomized
-        // 8th to 13th digits are random digits
-        patternBuilder.append("######");
-
-        String idNumber = f.numerify(patternBuilder.toString());
-        return new PersonIdNumber(idNumber, birthday, gender);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private int get7thDigit(int year, Gender gender, String isoCountry) {
@@ -84,6 +63,6 @@ public class SouthKoreanIdNumber implements IdNumberGenerator {
 
     @Override
     public String generateInvalid(BaseProviders faker) {
-        return generateValid(faker) + "42";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

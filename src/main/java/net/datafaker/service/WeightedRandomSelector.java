@@ -9,9 +9,11 @@ import java.util.Set;
 
 /**
  * A utility class for selecting a random element from a list based on assigned weights.
- **/
+ */
 public record WeightedRandomSelector(Random random) {
+
     private static final String WEIGHT_KEY = "weight";
+
     private static final String VALUE_KEY = "value";
 
     public WeightedRandomSelector(Random random) {
@@ -37,13 +39,7 @@ public record WeightedRandomSelector(Random random) {
      *                                  - the sum of weights exceeds Double.MAX_VALUE.
      */
     public <T> T select(List<Map<String, Object>> items) {
-        validateItemsList(items);
-
-        Object[] values = new Object[items.size()];
-        double[] cumulativeWeights = preprocessItems(items, values);
-
-        double randomValue = random.nextDouble() * cumulativeWeights[cumulativeWeights.length - 1];
-        return selectWeightedElement(randomValue, cumulativeWeights, values);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static void validateItemsList(List<Map<String, Object>> items) {
@@ -53,9 +49,7 @@ public record WeightedRandomSelector(Random random) {
         if (items.isEmpty()) {
             throw new IllegalArgumentException("Input list cannot be empty");
         }
-
         Set<Object> uniqueValues = new HashSet<>();
-
         for (var item : items) {
             validateItem(item);
             assertUniqueValues(item, uniqueValues);
@@ -105,32 +99,10 @@ public record WeightedRandomSelector(Random random) {
     }
 
     static double[] preprocessItems(List<Map<String, Object>> items, Object[] values) {
-        double[] cumulativeWeights = new double[items.size()];
-
-        double totalWeight = 0.0;
-        for (int i = 0; i < items.size(); i++) {
-            double weight = (Double) items.get(i).get(WEIGHT_KEY);
-            if (Double.MAX_VALUE - totalWeight < weight) {
-                throw new IllegalArgumentException("Sum of the weights exceeds Double.MAX_VALUE");
-            }
-            totalWeight += weight;
-            cumulativeWeights[i] = totalWeight;
-            values[i] = items.get(i).get(VALUE_KEY);
-        }
-
-        validateTotalWeight(totalWeight);
-
-        return cumulativeWeights;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     static <T> T selectWeightedElement(double randomValue, double[] cumulativeWeights, Object[] values) {
-        int index = Arrays.binarySearch(cumulativeWeights, randomValue);
-        index = (index < 0) ? -index - 1 : index;
-
-        if (index >= cumulativeWeights.length) {
-            index = cumulativeWeights.length - 1;
-        }
-
-        return (T) values[index];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

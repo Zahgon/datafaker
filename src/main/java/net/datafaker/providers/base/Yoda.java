@@ -10,6 +10,6 @@ public class Yoda extends AbstractProvider<BaseProviders> {
     }
 
     public String quote() {
-        return resolve("yoda.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

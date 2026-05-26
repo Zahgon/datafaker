@@ -10,11 +10,10 @@ public class ProgrammingLanguage extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("programming_language.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creator() {
-        return resolve("programming_language.creator");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -10,6 +10,6 @@ public class RockBand extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("rock_band.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

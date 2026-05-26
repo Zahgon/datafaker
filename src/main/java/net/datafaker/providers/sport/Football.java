@@ -12,23 +12,22 @@ public class Football extends AbstractProvider<SportProviders> {
     }
 
     public String teams() {
-        return resolve("football.teams");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String players() {
-        return resolve("football.players");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String coaches() {
-        return resolve("football.coaches");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String competitions() {
-        return resolve("football.competitions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String positions() {
-        return resolve("football.positions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

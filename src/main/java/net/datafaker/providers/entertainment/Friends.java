@@ -12,14 +12,14 @@ public class Friends extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("friends.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("friends.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("friends.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

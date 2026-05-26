@@ -14,22 +14,22 @@ public class Touhou extends AbstractProvider<VideoGameProviders> {
     }
 
     public String characterName() {
-        return resolve("touhou.full_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characterFirstName() {
-        return resolve("touhou.first_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characterLastName() {
-        return resolve("touhou.last_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String trackName() {
-        return resolve("touhou.track_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gameName() {
-        return resolve("touhou.game_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

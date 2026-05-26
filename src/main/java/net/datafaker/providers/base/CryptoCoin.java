@@ -10,7 +10,6 @@ public class CryptoCoin extends AbstractProvider<BaseProviders> {
     }
 
     public String coin() {
-        return resolve("crypto_coin.coin");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

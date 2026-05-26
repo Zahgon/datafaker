@@ -12,7 +12,6 @@ import net.datafaker.idnumbers.PortugueseIdNumber;
 import net.datafaker.idnumbers.SouthAfricanIdNumber;
 import net.datafaker.idnumbers.SwedenIdNumber;
 import net.datafaker.idnumbers.ChineseIdNumber;
-
 import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDate;
 import java.util.List;
@@ -26,6 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class IdNumber extends AbstractProvider<BaseProviders> {
 
     private final Map<Class<? extends IdNumberGenerator>, IdNumberGenerator> providers = new ConcurrentHashMap<>();
+
     private final Map<String, IdNumberGenerator> countryProviders = new ConcurrentHashMap<>();
 
     protected IdNumber(BaseProviders faker) {
@@ -37,30 +37,22 @@ public class IdNumber extends AbstractProvider<BaseProviders> {
     }
 
     public String valid() {
-        return countryProvider()
-            .map(p -> p.generateValid(faker))
-            .orElseGet(() -> faker.numerify(faker.resolve("id_number.valid")));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String invalid() {
-        return countryProvider()
-            .map(p -> p.generateInvalid(faker))
-            .orElseGet(() -> faker.numerify(faker.resolve("id_number.invalid")));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public PersonIdNumber valid(IdNumberRequest request) {
-        return countryProvider()
-            .map(p -> p.generateValid(faker, request))
-            .orElseThrow(() -> new IllegalArgumentException("ID Number generation not supported for country '%s'".formatted(country())));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public record IdNumberRequest(
-        int minAge,
-        int maxAge,
-        GenderRequest gender
-    ) {}
+    public record IdNumberRequest(int minAge, int maxAge, GenderRequest gender) {
+    }
 
     public enum GenderRequest {
+
         FEMALE, MALE, ANY
     }
 
@@ -73,7 +65,7 @@ public class IdNumber extends AbstractProvider<BaseProviders> {
     }
 
     public String ssnValid() {
-        return provider(AmericanIdNumber.class).generateValid(faker);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -115,19 +107,19 @@ public class IdNumber extends AbstractProvider<BaseProviders> {
     }
 
     public String singaporeanFin() {
-        return SingaporeIdNumber.getValidFIN(faker, Type.FOREIGNER_TWENTY_FIRST_CENTURY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String singaporeanFinBefore2000() {
-        return SingaporeIdNumber.getValidFIN(faker, Type.FOREIGNER_TWENTIETH_CENTURY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String singaporeanUin() {
-        return SingaporeIdNumber.getValidFIN(faker, Type.SINGAPOREAN_TWENTY_FIRST_CENTURY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String singaporeanUinBefore2000() {
-        return SingaporeIdNumber.getValidFIN(faker, Type.SINGAPOREAN_TWENTIETH_CENTURY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -270,7 +262,7 @@ public class IdNumber extends AbstractProvider<BaseProviders> {
      */
     @Deprecated
     public String validGeIDNumber() {
-    	return faker.numerify("###########");
+        return faker.numerify("###########");
     }
 
     @SuppressWarnings("unchecked")

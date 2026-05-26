@@ -14,18 +14,18 @@ public class MarvelSnap extends AbstractProvider<VideoGameProviders> {
     }
 
     public String character() {
-        return resolve("games.marvel_snap.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String zone() {
-        return resolve("games.marvel_snap.zones");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String event() {
-        return resolve("games.marvel_snap.events");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rank() {
-        return resolve("games.marvel_snap.rank");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

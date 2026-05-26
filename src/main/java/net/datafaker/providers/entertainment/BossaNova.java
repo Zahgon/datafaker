@@ -16,10 +16,10 @@ public class BossaNova extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String artist() {
-        return resolve("bossa_nova.artists");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String song() {
-        return resolve("bossa_nova.songs");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

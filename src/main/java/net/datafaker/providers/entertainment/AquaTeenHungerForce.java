@@ -12,7 +12,6 @@ public class AquaTeenHungerForce extends AbstractProvider<EntertainmentProviders
     }
 
     public String character() {
-        return resolve("aqua_teen_hunger_force.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

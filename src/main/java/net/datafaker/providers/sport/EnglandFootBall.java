@@ -12,10 +12,10 @@ public class EnglandFootBall extends AbstractProvider<SportProviders> {
     }
 
     public String league() {
-        return resolve("englandfootball.leagues");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String team() {
-        return resolve("englandfootball.teams");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

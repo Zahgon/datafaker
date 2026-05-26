@@ -9,32 +9,24 @@ public class Educator extends AbstractProvider<BaseProviders> {
         super(faker);
     }
 
-    // TODO - move these all out to en.yml by default. 
+    // TODO - move these all out to en.yml by default.
     public String university() {
-        return resolve("educator.name")
-            + " "
-            + resolve("educator.tertiary.type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String course() {
-        return resolve("educator.tertiary.degree.type")
-            + " "
-            + resolve("educator.tertiary.degree.subject");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String subjectWithNumber() {
-        return resolve("educator.tertiary.degree.subject")
-            + " "
-            + faker.numerify(resolve("educator.tertiary.degree.course_number"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String secondarySchool() {
-        return resolve("educator.name")
-            + " "
-            + resolve("educator.secondary");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String campus() {
-        return resolve("educator.name") + " Campus";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

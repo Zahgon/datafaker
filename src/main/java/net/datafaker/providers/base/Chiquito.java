@@ -10,19 +10,18 @@ public class Chiquito extends AbstractProvider<BaseProviders> {
     }
 
     public String expressions() {
-        return resolve("chiquito.expressions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String terms() {
-        return resolve("chiquito.terms");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sentences() {
-        return resolve("chiquito.sentences");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String jokes() {
-        return resolve("chiquito.jokes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -12,18 +12,18 @@ public class Formula1 extends AbstractProvider<SportProviders> {
     }
 
     public String driver() {
-        return resolve("formula1.driver");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String team() {
-        return resolve("formula1.team");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String circuit() {
-        return resolve("formula1.circuit");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String grandPrix() {
-        return resolve("formula1.grand_prix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

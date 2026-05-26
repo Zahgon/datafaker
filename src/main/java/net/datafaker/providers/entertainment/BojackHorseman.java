@@ -25,7 +25,7 @@ public class BojackHorseman extends AbstractProvider<EntertainmentProviders> {
      * @return Characters in BojackHorseman
      */
     public String characters() {
-        return resolve("bojack_horseman.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -34,7 +34,7 @@ public class BojackHorseman extends AbstractProvider<EntertainmentProviders> {
      * @return Quotes in BojackHorseman
      */
     public String quotes() {
-        return resolve("bojack_horseman.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -43,7 +43,6 @@ public class BojackHorseman extends AbstractProvider<EntertainmentProviders> {
      * @return Tongue twisters in BojackHorseman
      */
     public String tongueTwisters() {
-        return resolve("bojack_horseman.tongue_twisters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

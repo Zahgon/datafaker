@@ -10,18 +10,18 @@ public class Team extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("team.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creature() {
-        return resolve("team.creature");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String state() {
-        return resolve("address.state");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sport() {
-        return resolve("team.sport");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

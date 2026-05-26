@@ -1,7 +1,6 @@
 package net.datafaker.providers.base;
 
 import net.datafaker.service.Range;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -20,39 +19,35 @@ public class Number extends AbstractProvider<BaseProviders> {
      * Returns a random number from 0-9 (both inclusive)
      */
     public int randomDigit() {
-        return faker.random().nextInt(0, 9);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Returns an array of random numbers from 0 to 9 (both inclusive) of given length
      */
     public int[] randomDigits(int length) {
-        int[] result = new int[length];
-        for (int i = 0; i < length; i++) {
-            result[i] = randomDigit();
-        }
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Returns a random number from 1-9 (both inclusive)
      */
     public int randomDigitNotZero() {
-        return faker.random().nextInt(1, 9);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Returns a positive number
      */
     public int positive() {
-        return numberBetween(1, Integer.MAX_VALUE);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Returns a negative number
      */
     public int negative() {
-        return numberBetween(0, Integer.MIN_VALUE);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -62,14 +57,7 @@ public class Number extends AbstractProvider<BaseProviders> {
      * if min = max, return min
      */
     public int numberBetween(int min, int max) {
-        if (min == max) return min;
-        final int realMin = Math.min(min, max);
-        final int realMax = Math.max(min, max);
-        final int amplitude = realMax - realMin;
-        if (amplitude >= 0) {
-            return faker.random().nextInt(amplitude) + realMin;
-        }
-        return (int) numberBetween(realMin, (long) realMax);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -79,7 +67,7 @@ public class Number extends AbstractProvider<BaseProviders> {
      * if min = max, return min
      */
     public double numberBetween(double min, double max) {
-        return faker.random().nextDouble(min, max);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -89,14 +77,7 @@ public class Number extends AbstractProvider<BaseProviders> {
      * if min = max, return min
      */
     public long numberBetween(long min, long max) {
-        if (min == max) return min;
-        final long realMin = Math.min(min, max);
-        final long realMax = Math.max(min, max);
-        final long amplitude = realMax - realMin;
-        if (amplitude >= 0) {
-            return faker.random().nextLong(Range.inclusiveExclusive(realMin, realMax));
-        }
-        return decimalBetween(realMin, realMax).longValue();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -113,17 +94,14 @@ public class Number extends AbstractProvider<BaseProviders> {
      * @param numberOfDigits the number of digits the generated value should have
      */
     public long randomNumber(int numberOfDigits) {
-        if (numberOfDigits <= 0) {
-            throw new IllegalArgumentException("Number of digits must be positive");
-        }
-        long min = pow(10, numberOfDigits - 1);
-        long max = min * 10;
-        return faker.random().nextLong(min, max);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private long pow(long value, int d) {
-        if (d == 0) return 1;
-        if (d == 1) return value;
+        if (d == 0)
+            return 1;
+        if (d == 1)
+            return value;
         if ((d & 1) == 0) {
             long pow = pow(value, d >> 1);
             return pow * pow;
@@ -136,11 +114,11 @@ public class Number extends AbstractProvider<BaseProviders> {
      * Returns a random number
      */
     public long randomNumber() {
-        return faker.random().nextLong();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public double randomDouble(int maxNumberOfDecimals, int min, int max) {
-        return randomDouble(maxNumberOfDecimals, min, (long) max);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -151,9 +129,7 @@ public class Number extends AbstractProvider<BaseProviders> {
      * @param max                 maximum value
      */
     public double randomDouble(int maxNumberOfDecimals, long min, long max) {
-        return decimalBetween(min, max)
-            .setScale(maxNumberOfDecimals, RoundingMode.HALF_DOWN)
-            .doubleValue();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -166,24 +142,17 @@ public class Number extends AbstractProvider<BaseProviders> {
         if (min == max) {
             return BigDecimal.valueOf(min);
         }
-
         final BigDecimal trueMin = BigDecimal.valueOf(min);
         final BigDecimal trueMax = BigDecimal.valueOf(max);
         final BigDecimal random = BigDecimal.valueOf(faker.random().nextDouble());
-
         return trueMin.add(trueMax.subtract(trueMin).multiply(random));
     }
 
     public String digits(int count) {
-        final char[] tmp = new char[count];
-        byte[] input = faker.random().nextRandomBytes(count);
-        for (int i = 0; i < input.length; i++) {
-            tmp[i] = DIGITS[Math.abs(input[i]) % 10];
-        }
-        return new String(tmp);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String digit() {
-        return digits(1);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -12,34 +12,35 @@ public class Dune extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("dune.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String title() {
-        return resolve("dune.titles");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String planet() {
-        return resolve("dune.planets");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return quote(faker.options().option(Dune.Quote.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote(Quote quote) {
-        return resolve("dune.quotes." + quote.yamlKey);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String saying() {
-        return saying(faker.options().option(Dune.Saying.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String saying(Saying saying) {
-        return resolve("dune.sayings." + saying.yamlKey);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public enum Quote {
+
         GUILD_NAVIGATOR("guild_navigator"),
         EMPEROR("emperor"),
         PAUL("paul"),
@@ -67,11 +68,8 @@ public class Dune extends AbstractProvider<EntertainmentProviders> {
     }
 
     public enum Saying {
-        BENE_GESSERIT("bene_gesserit"),
-        FREMEN("fremen"),
-        MENTAT("mentat"),
-        MUADDIB("muaddib"),
-        ORANGE_CATHOLIC_BIBLE("orange_catholic_bible");
+
+        BENE_GESSERIT("bene_gesserit"), FREMEN("fremen"), MENTAT("mentat"), MUADDIB("muaddib"), ORANGE_CATHOLIC_BIBLE("orange_catholic_bible");
 
         private final String yamlKey;
 
@@ -79,5 +77,4 @@ public class Dune extends AbstractProvider<EntertainmentProviders> {
             this.yamlKey = yamlKey;
         }
     }
-
 }

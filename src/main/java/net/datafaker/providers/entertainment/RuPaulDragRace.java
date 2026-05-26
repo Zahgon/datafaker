@@ -14,10 +14,10 @@ public class RuPaulDragRace extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String queen() {
-        return resolve("rupaul.queens");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("rupaul.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

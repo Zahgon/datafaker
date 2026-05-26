@@ -10,17 +10,14 @@ public class Color extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("color.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hex() {
-        return hex(true);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hex(boolean includeHashSign) {
-        String hexString = faker.random().hex(6);
-        if (includeHashSign)
-            return "#" + hexString;
-        return hexString;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

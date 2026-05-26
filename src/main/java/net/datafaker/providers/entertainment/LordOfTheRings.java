@@ -12,10 +12,10 @@ public class LordOfTheRings extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("lord_of_the_rings.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("lord_of_the_rings.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

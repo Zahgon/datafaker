@@ -14,19 +14,18 @@ public class StarCraft extends AbstractProvider<VideoGameProviders> {
     }
 
     public String unit() {
-        return resolve("starcraft.units");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String building() {
-        return resolve("starcraft.buildings");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String character() {
-        return resolve("starcraft.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String planet() {
-        return resolve("starcraft.planets");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

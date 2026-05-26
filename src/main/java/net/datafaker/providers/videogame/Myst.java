@@ -14,23 +14,22 @@ public class Myst extends AbstractProvider<VideoGameProviders> {
     }
 
     public String games() {
-        return resolve("games.myst.games");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creatures() {
-        return resolve("games.myst.creatures");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters() {
-        return resolve("games.myst.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String ages() {
-        return resolve("games.myst.ages");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("games.myst.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

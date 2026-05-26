@@ -10,27 +10,26 @@ public class Construction extends AbstractProvider<BaseProviders> {
     }
 
     public String heavyEquipment() {
-        return resolve("construction.heavy_equipment");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String materials() {
-        return resolve("construction.materials");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String subcontractCategories() {
-        return resolve("construction.subcontract_categories");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String roles() {
-        return resolve("construction.roles");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String trades() {
-        return resolve("construction.trades");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String standardCostCodes() {
-        return resolve("construction.standard_cost_codes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

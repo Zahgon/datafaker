@@ -15,6 +15,6 @@ public class FamousLastWords extends AbstractProvider<BaseProviders> {
      * @return a string of last words.
      */
     public String lastWords() {
-        return resolve("famous_last_words.last_words");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

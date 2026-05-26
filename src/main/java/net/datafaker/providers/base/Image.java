@@ -1,6 +1,5 @@
 package net.datafaker.providers.base;
 
-
 import javax.imageio.ImageIO;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -8,7 +7,6 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Base64;
-
 import static java.awt.Color.WHITE;
 import static java.util.Objects.requireNonNull;
 import static net.datafaker.providers.base.Image.ImageType.BMP;
@@ -26,9 +24,11 @@ import static net.datafaker.providers.base.Image.ImageType.TIFF;
 public class Image extends AbstractProvider<BaseProviders> {
 
     private static final int DEFAULT_WIDTH = 256;
+
     private static final int DEFAULT_HEIGHT = 256;
 
     public enum ImageType {
+
         // See https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
         BMP("image/bmp"),
         GIF("image/gif"),
@@ -44,7 +44,7 @@ public class Image extends AbstractProvider<BaseProviders> {
         }
 
         public String getMimeType() {
-            return mimeType;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
@@ -53,93 +53,79 @@ public class Image extends AbstractProvider<BaseProviders> {
     }
 
     public String base64BMP() {
-        return base64(ImageBuilder.builder().type(BMP).build());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String base64GIF() {
-        return base64(ImageBuilder.builder().type(GIF).build());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String base64JPG() {
-        return base64JPEG();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String base64JPEG() {
-        return base64(ImageBuilder.builder().type(JPEG).build());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String base64PNG() {
-        return base64(ImageBuilder.builder().type(PNG).build());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String base64SVG() {
-        return base64(ImageBuilder.builder().type(SVG).build());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String base64TIFF() {
-        return generateBase64RasterImage(TIFF, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String base64(Base64ImageRuleConfig config) {
-        if (config.imageType == SVG) {
-            return generateBase64VectorImage(config.imageType(), config.width(), config.height());
-        } else {
-            return generateBase64RasterImage(config.imageType(), config.width(), config.height());
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public record Base64ImageRuleConfig(ImageType imageType, int width, int height) { }
+    public record Base64ImageRuleConfig(ImageType imageType, int width, int height) {
+    }
 
     public static class ImageBuilder {
+
         private ImageType imageType = PNG;
+
         private int width = DEFAULT_WIDTH;
+
         private int height = DEFAULT_HEIGHT;
 
         private ImageBuilder() {
         }
 
         public static ImageBuilder builder() {
-            return new ImageBuilder();
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public Base64ImageRuleConfig build() {
-            return new Base64ImageRuleConfig(imageType, width, height);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public ImageBuilder type(ImageType imageType) {
-            this.imageType = requireNonNull(imageType, "Image type cannot be null");
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public ImageBuilder width(int width) {
-            if (width <= 0) {
-                throw new IllegalArgumentException("Width must be greater than 0");
-            }
-
-            this.width = width;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public ImageBuilder height(int height) {
-            if (height <= 0) {
-                throw new IllegalArgumentException("Height must be greater than 0");
-            }
-
-            this.height = height;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
     private String generateBase64RasterImage(ImageType imageType, int width, int height) {
         BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics = bufferedImage.createGraphics();
-
         int boxSize = Math.max(1, width / 8);
-
         // Fill the image with white background
         graphics.setColor(WHITE);
         graphics.fillRect(0, 0, width, height);
-
         // Draw random colored boxes
         for (int y = 0; y < height; y += boxSize) {
             for (int x = 0; x < width; x += boxSize) {
@@ -149,7 +135,6 @@ public class Image extends AbstractProvider<BaseProviders> {
             }
         }
         graphics.dispose();
-
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             ImageIO.write(bufferedImage, imageType.name(), baos);
             byte[] imageBytes = baos.toByteArray();
@@ -162,9 +147,7 @@ public class Image extends AbstractProvider<BaseProviders> {
     private String generateBase64VectorImage(ImageType imageType, int width, int height) {
         StringBuilder svg = new StringBuilder();
         svg.append("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"").append(DEFAULT_WIDTH).append("\" height=\"").append(DEFAULT_HEIGHT).append("\">");
-
         int boxSize = Math.max(1, width / 8);
-
         for (int y = 0; y < height; y += boxSize) {
             for (int x = 0; x < width; x += boxSize) {
                 Color randomColor = randomColor();
@@ -172,9 +155,7 @@ public class Image extends AbstractProvider<BaseProviders> {
                 svg.append("<rect x=\"").append(x).append("\" y=\"").append(y).append("\" width=\"").append(boxSize).append("\" height=\"").append(boxSize).append("\" fill=\"").append(color).append("\"/>");
             }
         }
-
         svg.append("</svg>");
-
         String svgString = svg.toString();
         String base64Svg = Base64.getEncoder().encodeToString(svgString.getBytes());
         return "data:" + imageType.mimeType + ";base64," + base64Svg;

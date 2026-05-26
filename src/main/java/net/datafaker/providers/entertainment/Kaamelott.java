@@ -12,10 +12,10 @@ public class Kaamelott extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("kaamelott.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("kaamelott.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -14,19 +14,18 @@ public class SwordArtOnline extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String realName() {
-        return resolve("sword_art_online.real_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gameName() {
-        return resolve("sword_art_online.game_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("sword_art_online.location");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String item() {
-        return resolve("sword_art_online.item");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

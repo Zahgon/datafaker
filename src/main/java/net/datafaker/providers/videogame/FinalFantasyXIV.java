@@ -15,23 +15,22 @@ public class FinalFantasyXIV extends AbstractProvider<VideoGameProviders> {
     }
 
     public String character() {
-        return resolve("final_fantasy_xiv.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String job() {
-        return resolve("final_fantasy_xiv.jobs");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String race() {
-        return resolve("final_fantasy_xiv.races");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String dataCenter() {
-        return resolve("final_fantasy_xiv.data_centers");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String zone() {
-        return resolve("final_fantasy_xiv.zones");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

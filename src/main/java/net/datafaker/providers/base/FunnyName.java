@@ -10,6 +10,6 @@ public class FunnyName extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("funny_name.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

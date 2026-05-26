@@ -5,7 +5,6 @@ package net.datafaker.providers.base;
  *
  * @since 1.6.0
  */
-
 public class GarmentSize extends AbstractProvider<BaseProviders> {
 
     protected GarmentSize(BaseProviders faker) {
@@ -18,6 +17,6 @@ public class GarmentSize extends AbstractProvider<BaseProviders> {
      * @return a string of garment size
      */
     public String size() {
-        return resolve("garments_sizes.sizes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

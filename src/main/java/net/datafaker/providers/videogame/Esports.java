@@ -14,22 +14,22 @@ public class Esports extends AbstractProvider<VideoGameProviders> {
     }
 
     public String player() {
-        return resolve("esport.players");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String team() {
-        return resolve("esport.teams");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String event() {
-        return resolve("esport.events");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String league() {
-        return resolve("esport.leagues");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String game() {
-        return resolve("esport.games");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

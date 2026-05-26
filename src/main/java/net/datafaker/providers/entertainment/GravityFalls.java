@@ -16,30 +16,30 @@ public class GravityFalls extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("gravity_falls.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("gravity_falls.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creature() {
-        return resolve("gravity_falls.creatures");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String artifact() {
-        return resolve("gravity_falls.artifacts");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("gravity_falls.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mabelSweater() {
-        return resolve("gravity_falls.mabel_sweaters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mysteryShackItem() {
-        return resolve("gravity_falls.mystery_shack_items");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

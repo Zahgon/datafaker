@@ -14,11 +14,10 @@ public class SuperSmashBros extends AbstractProvider<VideoGameProviders> {
     }
 
     public String fighter() {
-        return resolve("games.super_smash_bros.fighter");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String stage() {
-        return resolve("games.super_smash_bros.stage");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

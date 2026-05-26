@@ -1,7 +1,6 @@
 package net.datafaker.providers.healthcare;
 
 import net.datafaker.providers.base.AbstractProvider;
-
 import static net.datafaker.providers.healthcare.Disease.DiseaseType.DERMATOLOGY_DISEASE_KEY;
 import static net.datafaker.providers.healthcare.Disease.DiseaseType.GYNECOLOGY_AND_OBSTETRICS_DISEASE_KEY;
 import static net.datafaker.providers.healthcare.Disease.DiseaseType.INTERNAL_DISEASE_KEY;
@@ -18,9 +17,10 @@ import static net.datafaker.providers.healthcare.Disease.DiseaseType.SURGICAL_DI
 public class Disease extends AbstractProvider<HealthcareProviders> {
 
     public enum DiseaseType {
+
         INTERNAL_DISEASE_KEY("healthcare.disease.internal_disease"),
-        NEUROLOGICAL_DISEASE_KEY( "healthcare.disease.neurology"),
-        SURGICAL_DISEASE_KEY ("healthcare.disease.surgery"),
+        NEUROLOGICAL_DISEASE_KEY("healthcare.disease.neurology"),
+        SURGICAL_DISEASE_KEY("healthcare.disease.surgery"),
         PAEDIATRIC_DISEASE_KEY("healthcare.disease.paediatrics"),
         GYNECOLOGY_AND_OBSTETRICS_DISEASE_KEY("healthcare.disease.gynecology_and_obstetrics"),
         OPHTHALMOLOGY_AND_OTORHINOLARYNGOLOGY_DISEASE_KEY("healthcare.disease.ophthalmology_and_otorhinolaryngology"),
@@ -43,11 +43,11 @@ public class Disease extends AbstractProvider<HealthcareProviders> {
     }
 
     public String icd10() {
-        return faker.regexify(resolve("healthcare.disease.icd10"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String anyDisease() {
-        return resolve(faker.options().option(DiseaseType.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -56,7 +56,7 @@ public class Disease extends AbstractProvider<HealthcareProviders> {
      * @return An internal disease
      */
     public String internalDisease() {
-        return resolve(INTERNAL_DISEASE_KEY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -65,7 +65,7 @@ public class Disease extends AbstractProvider<HealthcareProviders> {
      * @return A neurology disease
      */
     public String neurology() {
-        return resolve(NEUROLOGICAL_DISEASE_KEY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -74,7 +74,7 @@ public class Disease extends AbstractProvider<HealthcareProviders> {
      * @return A surgery disease
      */
     public String surgery() {
-        return resolve(SURGICAL_DISEASE_KEY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -83,7 +83,7 @@ public class Disease extends AbstractProvider<HealthcareProviders> {
      * @return A paediatrics disease
      */
     public String paediatrics() {
-        return resolve(PAEDIATRIC_DISEASE_KEY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -92,7 +92,7 @@ public class Disease extends AbstractProvider<HealthcareProviders> {
      * @return A gynecology and obstetrics disease
      */
     public String gynecologyAndObstetrics() {
-        return resolve(GYNECOLOGY_AND_OBSTETRICS_DISEASE_KEY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -101,7 +101,7 @@ public class Disease extends AbstractProvider<HealthcareProviders> {
      * @return A ophthalmology and otorhinolaryngology disease
      */
     public String ophthalmologyAndOtorhinolaryngology() {
-        return resolve(OPHTHALMOLOGY_AND_OTORHINOLARYNGOLOGY_DISEASE_KEY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -111,7 +111,7 @@ public class Disease extends AbstractProvider<HealthcareProviders> {
      * @since 1.8.0
      */
     public String dermatology() {
-        return resolve(DERMATOLOGY_DISEASE_KEY);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String resolve(DiseaseType diseaseType) {

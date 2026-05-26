@@ -15,50 +15,50 @@ public class Dota2 extends AbstractProvider<VideoGameProviders> {
     }
 
     public String faction() {
-        return resolve("games.dota2.faction");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rank() {
-        return resolve("games.dota2.rank");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String attribute() {
-        return resolve("games.dota2.attribute");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String building() {
-        return resolve("games.dota2.building");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hero() {
-        return resolve("games.dota2.hero");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String heroQuote(String heroName) {
-        return resolve("games.dota2." + heroName + ".quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String item() {
-        return resolve("games.dota2.item");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String neutralItem() {
-        return resolve("games.dota2.neutral_item");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String neutralEnchantment() {
-        return resolve("games.dota2.neutral_enchantment");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String team() {
-        return resolve("games.dota2.team");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tier() {
-        return resolve("games.dota2.tier");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String player() {
-        return resolve("games.dota2.player");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

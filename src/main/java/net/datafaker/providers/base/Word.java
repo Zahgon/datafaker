@@ -1,6 +1,5 @@
 package net.datafaker.providers.base;
 
-
 /**
  * @since 2.4.0
  */
@@ -11,31 +10,30 @@ public class Word extends AbstractProvider<BaseProviders> {
     }
 
     public String adjective() {
-        return resolve("words.adjective");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String adverb() {
-        return resolve("words.adverb");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String conjunction() {
-        return resolve("words.conjunction");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String interjection() {
-        return resolve("words.interjection");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String noun() {
-        return resolve("words.noun");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String preposition() {
-        return resolve("words.preposition");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String verb() {
-        return resolve("words.verb");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

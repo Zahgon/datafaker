@@ -12,14 +12,14 @@ public class Ghostbusters extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String actor() {
-        return resolve("ghostbusters.actors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String character() {
-        return resolve("ghostbusters.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("ghostbusters.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -14,15 +14,14 @@ public class Spongebob extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("spongebob.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("spongebob.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String episodes() {
-        return resolve("spongebob.episodes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

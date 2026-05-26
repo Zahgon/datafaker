@@ -10,6 +10,6 @@ public class Passport extends AbstractProvider<BaseProviders> {
     }
 
     public String valid() {
-        return faker.regexify(faker.resolve("passport.valid"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

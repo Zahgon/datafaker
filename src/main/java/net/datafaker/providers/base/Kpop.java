@@ -12,27 +12,26 @@ public class Kpop extends AbstractProvider<BaseProviders> {
     }
 
     public String iGroups() {
-        return resolve("kpop.i_groups");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String iiGroups() {
-        return resolve("kpop.ii_groups");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String iiiGroups() {
-        return resolve("kpop.iii_groups");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String girlGroups() {
-        return resolve("kpop.girl_groups");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String boyBands() {
-        return resolve("kpop.boy_bands");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String solo() {
-        return resolve("kpop.solo");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

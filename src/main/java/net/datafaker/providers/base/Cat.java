@@ -10,14 +10,14 @@ public class Cat extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("creature.cat.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String breed() {
-        return resolve("creature.cat.breed");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String registry() {
-        return resolve("creature.cat.registry");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

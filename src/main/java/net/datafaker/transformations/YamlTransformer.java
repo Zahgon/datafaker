@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.StringJoiner;
-
 import net.datafaker.sequence.FakeSequence;
 
 public class YamlTransformer<IN> implements Transformer<IN, CharSequence> {
@@ -14,56 +13,35 @@ public class YamlTransformer<IN> implements Transformer<IN, CharSequence> {
 
     @Override
     public CharSequence apply(IN input, Schema<IN, ?> schema) {
-        Field<IN, ?>[] fields = schema.getFields();
-
-        if (fields.length == 0) {
-            return "";
-        }
-        StringBuilder sb = new StringBuilder();
-        return apply(sb, input, fields, "");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generate(Iterable<IN> input, Schema<IN, ?> schema) {
-        if (input instanceof FakeSequence<?> fakeSequence && fakeSequence.isInfinite()) {
-            throw new IllegalArgumentException("The sequence should be finite of size: " + fakeSequence);
-        }
-
-        StringJoiner data = new StringJoiner(LINE_SEPARATOR);
-        for (IN in : input) {
-            data.add(apply(in, schema));
-        }
-
-        return data.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generate(Schema<IN, ?> schema, int limit) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < limit; i++) {
-            sb.append(apply(null, schema));
-            if (i < limit - 1) {
-                sb.append(LINE_SEPARATOR);
-            }
-        }
-        return sb.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String getStartStream(Schema<IN, ?> schema) {
-        return "";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String getEndStream() {
-        return "";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String apply(final StringBuilder sb, final IN input, final Field<IN, ?>[] fields, final String offset) {
         Set<String> keys = new HashSet<>();
         for (Field<IN, ?> field : fields) {
             String key = field.getName().trim();
-            if (!keys.add(key)) continue;
+            if (!keys.add(key))
+                continue;
             Object value = field.transform(input);
             sb.append(offset).append(key).append(":");
             if (value instanceof Schema) {
@@ -72,12 +50,9 @@ public class YamlTransformer<IN> implements Transformer<IN, CharSequence> {
             } else {
                 value2String(value, sb, offset);
             }
-
-
             if (sb.lastIndexOf(System.lineSeparator()) != sb.length() - System.lineSeparator().length()) {
                 sb.append(System.lineSeparator());
             }
-
         }
         return sb.toString();
     }
@@ -88,6 +63,7 @@ public class YamlTransformer<IN> implements Transformer<IN, CharSequence> {
             sb.append(System.lineSeparator());
         }
     }
+
     private void value2String(Object value, StringBuilder sb, String offset) {
         if (value instanceof Schema) {
             Field<IN, ?>[] fields = ((Schema<IN, ?>) value).getFields();

@@ -3,131 +3,132 @@ package net.datafaker.providers.videogame;
 import net.datafaker.providers.base.ProviderRegistration;
 
 public interface VideoGameProviders extends ProviderRegistration {
+
     default Battlefield1 battlefield1() {
-        return getProvider(Battlefield1.class, Battlefield1::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default ClashOfClans clashOfClans() {
-        return getProvider(ClashOfClans.class, ClashOfClans::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Control control() {
-        return getProvider(Control.class, Control::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default DarkSouls darkSouls() {
-        return getProvider(DarkSouls.class, DarkSouls::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Dota2 dota2() {
-        return getProvider(Dota2.class, Dota2::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default EldenRing eldenRing() {
-        return getProvider(EldenRing.class, EldenRing::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default ElderScrolls elderScrolls() {
-        return getProvider(ElderScrolls.class, ElderScrolls::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Esports esports() {
-        return getProvider(Esports.class, Esports::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Fallout fallout() {
-        return getProvider(Fallout.class, Fallout::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default FinalFantasyXIV finalFantasyXIV() {
-        return getProvider(FinalFantasyXIV.class, FinalFantasyXIV::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default HalfLife halfLife() {
-        return getProvider(HalfLife.class, HalfLife::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Hearthstone hearthstone() {
-        return getProvider(Hearthstone.class, Hearthstone::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default HeroesOfTheStorm heroesOfTheStorm() {
-        return getProvider(HeroesOfTheStorm.class, HeroesOfTheStorm::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default LeagueOfLegends leagueOfLegends() {
-        return getProvider(LeagueOfLegends.class, LeagueOfLegends::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default MarvelSnap marvelSnap() {
-        return getProvider(MarvelSnap.class, MarvelSnap::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default MassEffect massEffect() {
-        return getProvider(MassEffect.class, MassEffect::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Minecraft minecraft() {
-        return getProvider(Minecraft.class, Minecraft::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Myst myst() {
-        return getProvider(Myst.class, Myst::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Overwatch overwatch() {
-        return getProvider(Overwatch.class, Overwatch::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default RedDeadRedemption2 redDeadRedemption2() {
-        return getProvider(RedDeadRedemption2.class, RedDeadRedemption2::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default SonicTheHedgehog sonicTheHedgehog() {
-        return getProvider(SonicTheHedgehog.class, SonicTheHedgehog::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default SoulKnight soulKnight() {
-        return getProvider(SoulKnight.class, SoulKnight::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default StarCraft starCraft() {
-        return getProvider(StarCraft.class, StarCraft::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default StreetFighter streetFighter() {
-        return getProvider(StreetFighter.class, StreetFighter::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default SuperMario superMario() {
-        return getProvider(SuperMario.class, SuperMario::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default SuperSmashBros superSmashBros() {
-        return getProvider(SuperSmashBros.class, SuperSmashBros::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Tormenta tormenta() {
-        return getProvider(Tormenta.class, Tormenta::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Touhou touhou() {
-        return getProvider(Touhou.class, Touhou::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default VideoGame videoGame() {
-        return getProvider(VideoGame.class, VideoGame::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default WarhammerFantasy warhammerFantasy() {
-        return getProvider(WarhammerFantasy.class, WarhammerFantasy::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default WorldOfWarcraft worldOfWarcraft() {
-        return getProvider(WorldOfWarcraft.class, WorldOfWarcraft::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Zelda zelda() {
-        return getProvider(Zelda.class, Zelda::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

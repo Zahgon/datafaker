@@ -15,15 +15,14 @@ public class Tormenta extends AbstractProvider<VideoGameProviders> {
     }
 
     public String bestiary() {
-        return resolve("games.tormenta.bestiary");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String names() {
-        return resolve("games.tormenta.names");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cities() {
-        return resolve("games.tormenta.cities");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

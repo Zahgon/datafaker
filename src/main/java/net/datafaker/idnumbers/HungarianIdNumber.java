@@ -3,10 +3,8 @@ package net.datafaker.idnumbers;
 import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber;
 import net.datafaker.providers.base.PersonIdNumber;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import static java.lang.Character.getNumericValue;
 import static net.datafaker.idnumbers.Utils.randomGender;
 
@@ -29,58 +27,32 @@ public class HungarianIdNumber implements IdNumberGenerator {
 
     @Override
     public String countryCode() {
-        return "HU";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateInvalid(BaseProviders faker) {
-        String validIdNumber = generateValid(faker);
-        String basePart = validIdNumber.substring(0, 9);
-        int validCheckDigit = getNumericValue(validIdNumber.charAt(9));
-        int invalidCheckDigit = (validCheckDigit + 1) % 10;
-        return basePart + invalidCheckDigit;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public PersonIdNumber generateValid(BaseProviders faker, IdNumber.IdNumberRequest request) {
-        LocalDate birthday = faker.timeAndDate().birthday();
-        PersonIdNumber.Gender gender = randomGender(faker);
-        int checkDigit;
-        String basePart;
-        do {
-            basePart = basePart(faker, birthday, gender);
-            checkDigit = getCheckDigit(basePart);
-        } while (checkDigit == 10);
-
-        String idNumber = basePart + checkDigit;
-        return new PersonIdNumber(idNumber, birthday, gender);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String basePart(BaseProviders faker, LocalDate birthday, PersonIdNumber.Gender gender) {
-        return firstDigit(birthday.getYear(), gender) +
-            BIRTHDAY_FORMAT.format(birthday) +
-            faker.number().digits(2);
+        return firstDigit(birthday.getYear(), gender) + BIRTHDAY_FORMAT.format(birthday) + faker.number().digits(2);
     }
 
     static int getCheckDigit(String basePart) {
-        char[] numbers = basePart.toCharArray();
-        int summ = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            summ += getNumericValue(numbers[i]) * (i + 1);
-        }
-
-        return summ % 11;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     static int firstDigit(int birthYear, PersonIdNumber.Gender gender) {
-        return switch (gender) {
-            case MALE -> isInRange(birthYear) ? 1 : 3;
-            case FEMALE -> isInRange(birthYear) ? 2 : 4;
-        };
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static boolean isInRange(int birthYear) {
         return birthYear >= 1900 && birthYear <= 1999;
     }
-
 }

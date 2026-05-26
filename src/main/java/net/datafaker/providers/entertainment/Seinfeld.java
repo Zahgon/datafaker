@@ -14,15 +14,14 @@ public class Seinfeld extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("seinfeld.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("seinfeld.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String business() {
-        return resolve("seinfeld.business");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -10,6 +10,6 @@ public class Robin extends AbstractProvider<BaseProviders> {
     }
 
     public String quote() {
-        return resolve("robin.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -1,6 +1,5 @@
 package net.datafaker.providers.base;
 
-
 /**
  * Dungeons and Dragons is a fantasy tabletop role-playing game originally designed by Gary Gygax and Dave Arneson.
  * <p>
@@ -15,39 +14,38 @@ public class DungeonsAndDragons extends AbstractProvider<BaseProviders> {
     }
 
     public String alignments() {
-        return resolve("dnd.alignments");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String backgrounds() {
-        return resolve("dnd.backgrounds");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cities() {
-        return resolve("dnd.cities");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String klasses() {
-        return resolve("dnd.klasses");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String languages() {
-        return resolve("dnd.languages");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meleeWeapons() {
-        return resolve("dnd.melee_weapons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String monsters() {
-        return resolve("dnd.monsters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String races() {
-        return resolve("dnd.races");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rangedWeapons() {
-        return resolve("dnd.ranged_weapons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

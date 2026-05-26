@@ -15,19 +15,18 @@ public class DarkSouls extends AbstractProvider<VideoGameProviders> {
     }
 
     public String stats() {
-        return resolve("dark_souls.stats");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String covenants() {
-        return resolve("dark_souls.covenants");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String classes() {
-        return resolve("dark_souls.classes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String shield() {
-        return resolve("dark_souls.shield");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -10,35 +10,34 @@ public class Science extends AbstractProvider<BaseProviders> {
     }
 
     public String element() {
-        return resolve("science.element");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String elementSymbol() {
-        return resolve("science.element_symbol");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String unit() {
-        return resolve("science.unit");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String scientist() {
-        return resolve("science.scientist");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tool() {
-        return resolve("science.tool");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quark() {
-        return resolve("science.particles.quarks");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String leptons() {
-        return resolve("science.particles.leptons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String bosons() {
-        return resolve("science.particles.bosons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

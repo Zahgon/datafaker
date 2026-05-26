@@ -1,11 +1,13 @@
 package net.datafaker.service;
 
 public class GenerationUtils {
+
     private static final char[] DIGITS = "0123456789".toCharArray();
 
     // Based on Integer.MAX_VALUE the max value is 1_000_000_000
     // assuming that every digit should have equal chance.
     private static final int INT_LIMIT_DIGITS = 9;
+
     private static final int[] TENS = initTens();
 
     private static int generateNumber(RandomService randomService, int amountOfDigits) {
@@ -18,31 +20,14 @@ public class GenerationUtils {
     }
 
     static int generateAndSetNumber(int position, char[] target, char symbol, RandomService randomService) {
-        int symbolCounter = 0;
-        int generated = 0;
-        do {
-            symbolCounter++;
-
-            if (symbolCounter - generated == INT_LIMIT_DIGITS) {
-                final int r = generateNumber(randomService, INT_LIMIT_DIGITS);
-                insertNumber(r, INT_LIMIT_DIGITS, target, position + generated);
-                generated += INT_LIMIT_DIGITS;
-            }
-        } while (position + symbolCounter < target.length && target[position + symbolCounter] == symbol);
-
-        final int diff = symbolCounter - generated;
-        if (diff > 0) {
-            final int r = generateNumber(randomService, diff);
-            insertNumber(r, diff, target, position + generated);
-        }
-        return symbolCounter;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static int[] initTens() {
-        int[] tens  = new int[INT_LIMIT_DIGITS + 2];
+        int[] tens = new int[INT_LIMIT_DIGITS + 2];
         tens[0] = 1;
         for (int i = 1; i < tens.length; i++) {
-            tens[i] = tens[i-1] * 10;
+            tens[i] = tens[i - 1] * 10;
         }
         return tens;
     }

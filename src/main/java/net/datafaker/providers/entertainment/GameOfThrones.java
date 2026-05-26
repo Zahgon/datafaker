@@ -12,22 +12,22 @@ public class GameOfThrones extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("game_of_thrones.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String house() {
-        return resolve("game_of_thrones.houses");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String city() {
-        return resolve("game_of_thrones.cities");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String dragon() {
-        return resolve("game_of_thrones.dragons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("game_of_thrones.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

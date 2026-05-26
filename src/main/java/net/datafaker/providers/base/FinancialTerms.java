@@ -12,30 +12,31 @@ public class FinancialTerms extends AbstractProvider<BaseProviders> {
     }
 
     public String noun() {
-        return noun(faker.options().option(FinancialTerms.Category.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String noun(Category category) {
-        return resolve("financial_terms." + category.getName() + ".nouns");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String verb() {
-        return verb(faker.options().option(FinancialTerms.Category.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String verb(Category category) {
-        return resolve("financial_terms." + category.getName() + ".verbs");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String adjective() {
-        return adjective(faker.options().option(FinancialTerms.Category.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String adjective(Category category) {
-        return resolve("financial_terms." + category.getName() + ".adjectives");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public enum Category {
+
         ACCOUNT_MANAGEMENT("account_management"),
         TRANSACTIONS("transactions"),
         PAYMENTS("payments"),
@@ -62,8 +63,7 @@ public class FinancialTerms extends AbstractProvider<BaseProviders> {
         }
 
         public String getName() {
-            return name;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
-
 }

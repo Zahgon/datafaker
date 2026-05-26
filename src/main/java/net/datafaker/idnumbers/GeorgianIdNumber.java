@@ -3,7 +3,6 @@ package net.datafaker.idnumbers;
 import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber;
 import net.datafaker.providers.base.PersonIdNumber;
-
 import static net.datafaker.idnumbers.Utils.birthday;
 import static net.datafaker.idnumbers.Utils.gender;
 
@@ -11,27 +10,24 @@ import static net.datafaker.idnumbers.Utils.gender;
  * Generates ID numbers for Georgian citizens and Residents
  */
 public class GeorgianIdNumber implements IdNumberGenerator {
+
     @Override
     public String countryCode() {
-        return "GE";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateValid(BaseProviders faker) {
-        return faker.numerify("###########");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public PersonIdNumber generateValid(BaseProviders faker, IdNumber.IdNumberRequest request) {
-        return new PersonIdNumber(
-            generateValid(faker),
-            birthday(faker, request),
-            gender(faker, request)
-        );
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateInvalid(BaseProviders faker) {
-        return faker.numerify("###########42");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

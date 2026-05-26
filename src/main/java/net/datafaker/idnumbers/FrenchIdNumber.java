@@ -3,10 +3,8 @@ package net.datafaker.idnumbers;
 import static java.lang.Long.parseLong;
 import static net.datafaker.idnumbers.Utils.birthday;
 import static net.datafaker.idnumbers.Utils.gender;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber;
 import net.datafaker.providers.base.PersonIdNumber;
@@ -17,17 +15,15 @@ import net.datafaker.providers.base.PersonIdNumber;
  * See <a href="https://en.wikipedia.org/wiki/INSEE_code">INSEE code</a>.
  */
 public class FrenchIdNumber implements IdNumberGenerator {
+
     @Override
     public String countryCode() {
-        return "FR";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public PersonIdNumber generateValid(BaseProviders faker, IdNumber.IdNumberRequest request) {
-        LocalDate birthday = birthday(faker, request);
-        PersonIdNumber.Gender gender = gender(faker, request);
-        String basePart = basePart(faker, birthday, gender);
-        return new PersonIdNumber(basePart + controlKey(basePart), birthday, gender);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -62,13 +58,11 @@ public class FrenchIdNumber implements IdNumberGenerator {
     }
 
     String controlKey(String basePart) {
-        long basePartLong = parseLong(basePart.replace("2A","19").replace("2B","18"));
-        long controlKey = 97 - (basePartLong % 97);
-        return "%02d".formatted(controlKey);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateInvalid(BaseProviders faker) {
-        return generateValid(faker).substring(0, 13) + "98";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

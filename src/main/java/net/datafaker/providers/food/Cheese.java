@@ -21,39 +21,39 @@ public class Cheese extends AbstractProvider<FoodProviders> {
     }
 
     public String type() {
-        return resolve("cheese.type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String texture() {
-        return resolve("cheese.texture");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String milk() {
-        return resolve("cheese.milk");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String color() {
-        return resolve("cheese.color");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String name() {
-        return resolve("cheese.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String producer() {
-        return resolve("cheese.producer");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rind() {
-        return resolve("cheese.rind");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public String rindEdibility () {
-        return resolve("cheese.rind_edibility");
+    public String rindEdibility() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public String packaging () {
-        return resolve("cheese.packaging");
+    public String packaging() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -62,9 +62,9 @@ public class Cheese extends AbstractProvider<FoodProviders> {
      * {@link #milk()}, {@link #rind()}, {@link #rindEdibility()}, and {@link #packaging()}.
      */
     public Wedge wedge() {
-        return new Wedge(name(), type(), producer(), texture(), color(), milk(), rind(), rindEdibility(), packaging());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public record Wedge(String name, String type, String producer, String texture, String color, String milk,
-                        String rind, String rindEdibility, String packaging) { }
+    public record Wedge(String name, String type, String producer, String texture, String color, String milk, String rind, String rindEdibility, String packaging) {
+    }
 }

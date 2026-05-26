@@ -3,10 +3,10 @@ package net.datafaker.idnumbers;
 import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber.IdNumberRequest;
 import net.datafaker.providers.base.PersonIdNumber;
-
 import static net.datafaker.providers.base.IdNumber.GenderRequest.ANY;
 
 public interface IdNumberGenerator {
+
     /**
      * ISO-2 code of the country this generator provides ID numbers for
      *
@@ -18,7 +18,7 @@ public interface IdNumberGenerator {
      * Generates a valid ID number for given country (a.k.a. "SSN", "Personal code" etc.)
      */
     default String generateValid(BaseProviders faker) {
-        return generateValid(faker, new IdNumberRequest(18, 65, ANY)).idNumber();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**

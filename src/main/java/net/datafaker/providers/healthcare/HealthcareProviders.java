@@ -8,22 +8,22 @@ import net.datafaker.providers.base.ProviderRegistration;
 public interface HealthcareProviders extends ProviderRegistration {
 
     default CareProvider careProvider() {
-        return getProvider(CareProvider.class, CareProvider::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Disease disease() {
-        return getProvider(Disease.class, Disease::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Medication medication() {
-        return getProvider(Medication.class, Medication::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default MedicalProcedure medicalProcedure() {
-        return getProvider(MedicalProcedure.class, MedicalProcedure::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Observation observation() {
-        return getProvider(Observation.class, Observation::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -14,19 +14,18 @@ public class TheVentureBros extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("the_venture_bros.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String organization() {
-        return resolve("the_venture_bros.organization");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String vehicle() {
-        return resolve("the_venture_bros.vehicle");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("the_venture_bros.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

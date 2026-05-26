@@ -20,7 +20,7 @@ public class Tire extends AbstractProvider<BaseProviders> {
      * @return a Tire Code String.
      */
     public String code() {
-        return resolve("tire.code");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -29,7 +29,7 @@ public class Tire extends AbstractProvider<BaseProviders> {
      * @return a Tire Code string prefixed with the provided String.
      */
     public String code(String prefix) {
-        return prefix + code();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -39,35 +39,34 @@ public class Tire extends AbstractProvider<BaseProviders> {
      * @return a Tire Code string, such as P205/60R16.
      */
     public String code(boolean defaultPrefix) {
-        return defaultPrefix ? code("P") : code();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String vehicleType() {
-        return resolve("tire.vehicle_type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String width() {
-        return resolve("tire.width");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String aspectRatio() {
-        return resolve("tire.aspect_ratio");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String construction() {
-        return resolve("tire.construction");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rimSize() {
-        return resolve("tire.rim_size");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String loadIndex() {
-        return resolve("tire.load_index");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String speedrating() {
-        return resolve("tire.speed_rating");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

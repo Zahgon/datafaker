@@ -25,39 +25,39 @@ public class Options extends AbstractProvider<BaseProviders> {
      */
     @SafeVarargs
     public final <E> E option(E... options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final char option(char[] options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final int option(int[] options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final long option(long[] options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final float option(float[] options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final double option(double[] options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final short option(short[] options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final boolean option(boolean[] options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final byte option(byte[] options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -72,26 +72,7 @@ public class Options extends AbstractProvider<BaseProviders> {
      * If size is larger than a unique set from options then all options will be returned.
      */
     public final <E> Set<E> subset(int size, E... options) {
-        if (size < 0) {
-            throw new IllegalArgumentException("size should be not negative: " + size);
-        }
-        if (size == 0) {
-            return Collections.emptySet();
-        }
-        List<E> opts = Stream.of(options).distinct().collect(Collectors.toList());
-        if (size >= opts.size()) {
-            return new HashSet<>(opts);
-        }
-        int i = 0;
-        Set<E> set = new HashSet<>();
-        while (i < size) {
-            int randomIndex = faker.random().nextInt(opts.size());
-            set.add(opts.get(randomIndex));
-            opts.remove(randomIndex);
-            i++;
-        }
-
-        return set;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -101,7 +82,7 @@ public class Options extends AbstractProvider<BaseProviders> {
      * @return A randomly selected element from the varargs.
      */
     public String option(String... options) {
-        return options[faker.random().nextInt(options.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -115,26 +96,7 @@ public class Options extends AbstractProvider<BaseProviders> {
      * If size is larger than a unique set from options then all options will be returned.
      */
     public final Set<String> subset(int size, String... options) {
-        if (size < 0) {
-            throw new IllegalArgumentException("size should be not negative: " + size);
-        }
-        if (size == 0) {
-            return Collections.emptySet();
-        }
-        List<String> opts = Stream.of(options).distinct().collect(Collectors.toList());
-        if (size >= opts.size()) {
-            return new HashSet<>(opts);
-        }
-        int i = 0;
-        Set<String> set = new HashSet<>();
-        while (i < size) {
-            int randomIndex = faker.random().nextInt(opts.size());
-            set.add(opts.get(randomIndex));
-            opts.remove(randomIndex);
-            i++;
-        }
-
-        return set;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -144,7 +106,7 @@ public class Options extends AbstractProvider<BaseProviders> {
      * @return A randomly selected element from the enum.
      */
     public <E extends Enum<E>> E option(Class<E> enumeration) {
-        return faker.random().nextEnum(enumeration);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -155,7 +117,7 @@ public class Options extends AbstractProvider<BaseProviders> {
      * @return A randomly selected element from the array.
      */
     public <E> E nextElement(E[] array) {
-        return array[faker.random().nextInt(array.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -166,6 +128,6 @@ public class Options extends AbstractProvider<BaseProviders> {
      * @return A randomly selected element from the list.
      */
     public <E> E nextElement(List<E> list) {
-        return list.get(faker.random().nextInt(list.size()));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

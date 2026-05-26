@@ -15,62 +15,62 @@ public class Photography extends AbstractProvider<BaseProviders> {
      * @return a photography term.
      */
     public String term() {
-        return resolve("photography.term");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a photography brand.
      */
     public String brand() {
-        return resolve("photography.brand");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a name of camera model/make.
      */
     public String camera() {
-        return resolve("photography.camera");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return some lens description like 500mm/8.
      */
     public String lens() {
-        return resolve("photography.lens");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a photography genre.
      */
     public String genre() {
-        return resolve("photography.genre");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return some string to tag an image.
      */
     public String imageTag() {
-        return resolve("photography.imagetag");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return some aperture description like f/1.4 .
      */
     public String aperture() {
-        return resolve("photography.aperture");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return some shutter description like 1/25 .
      */
     public String shutter() {
-        return resolve("photography.shutter");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return some ISO value like 3200.
      */
     public String iso() {
-        return resolve("photography.iso");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

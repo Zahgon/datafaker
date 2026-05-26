@@ -4,10 +4,8 @@ import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber.IdNumberRequest;
 import net.datafaker.providers.base.PersonIdNumber;
 import net.datafaker.providers.base.PersonIdNumber.Gender;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import static net.datafaker.idnumbers.Utils.birthday;
 import static net.datafaker.idnumbers.Utils.gender;
 
@@ -31,40 +29,30 @@ import static net.datafaker.idnumbers.Utils.gender;
  * @see <a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-issue-focus/aeoi/norway-tin.pdf">More on centuries</a>
  */
 public class NorwegianIdNumber implements IdNumberGenerator {
+
     private static final DateTimeFormatter BIRTHDAY_FORMAT = DateTimeFormatter.ofPattern("ddMMyy");
 
-    private static final int[] CHECKSUM_COEFFICIENTS_K1 = {3, 7, 6, 1, 8, 9, 4, 5, 2};
-    private static final int[] CHECKSUM_COEFFICIENTS_K2 = {5, 4, 3, 2, 7, 6, 5, 4, 3, 2};
+    private static final int[] CHECKSUM_COEFFICIENTS_K1 = { 3, 7, 6, 1, 8, 9, 4, 5, 2 };
+
+    private static final int[] CHECKSUM_COEFFICIENTS_K2 = { 5, 4, 3, 2, 7, 6, 5, 4, 3, 2 };
 
     @Override
     public String countryCode() {
-        return "NO";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public PersonIdNumber generateValid(BaseProviders faker, IdNumberRequest request) {
-        LocalDate birthday = birthday(faker, request);
-        Gender gender = gender(faker, request);
-
-        String basePart = basePart(faker, birthday, gender);
-        String idNumber = "%s%02d".formatted(basePart, checksum(basePart));
-        return new PersonIdNumber(idNumber, birthday, gender);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateInvalid(BaseProviders faker) {
-        String valid = generateValid(faker);
-        String basePart = valid.substring(0, valid.length() - 2);
-        int invalidChecksum = (checksum(basePart) + 1) % 100;
-        return "%s%02d".formatted(basePart, invalidChecksum);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     String basePart(BaseProviders faker, LocalDate birthday, Gender gender) {
-        String birthdayDigits = BIRTHDAY_FORMAT.format(birthday);
-        int sequenceNumber = generateSequenceNumber(faker, birthday.getYear());
-        int genderDigit = genderDigit(faker, gender);
-
-        return "%s%02d%s".formatted(birthdayDigits, sequenceNumber, genderDigit);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -92,9 +80,11 @@ public class NorwegianIdNumber implements IdNumberGenerator {
     }
 
     private int genderDigit(BaseProviders faker, Gender gender) {
-        return switch (gender) {
-            case FEMALE -> faker.options().option(0, 2, 4, 6, 8);
-            case MALE -> faker.options().option(1, 3, 5, 7, 9);
+        return switch(gender) {
+            case FEMALE ->
+                faker.options().option(0, 2, 4, 6, 8);
+            case MALE ->
+                faker.options().option(1, 3, 5, 7, 9);
         };
     }
 
@@ -103,9 +93,7 @@ public class NorwegianIdNumber implements IdNumberGenerator {
      * k2 = 11 - ((5 × d1 + 4 × d2 + 3 × m1 + 2 × m2 + 7 × å1 + 6 × å2 + 5 × i1 + 4 × i2 + 3 × i3 + 2 × k1) mod 11).
      */
     int checksum(String numbers) {
-        int k1 = modulo11(numbers, CHECKSUM_COEFFICIENTS_K1);
-        int k2 = modulo11(numbers + k1, CHECKSUM_COEFFICIENTS_K2);
-        return k1 * 10 + k2;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private int modulo11(String numbers, int[] checksumCoefficients) {
@@ -114,8 +102,6 @@ public class NorwegianIdNumber implements IdNumberGenerator {
             int digit = Character.getNumericValue(numbers.charAt(i));
             checkSum += checksumCoefficients[i] * digit;
         }
-
         return (11 - checkSum % 11) % 10;
     }
-
 }

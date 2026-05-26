@@ -3,7 +3,6 @@ package net.datafaker.idnumbers;
 import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber.IdNumberRequest;
 import net.datafaker.providers.base.PersonIdNumber;
-
 import static net.datafaker.idnumbers.Utils.gender;
 import static net.datafaker.idnumbers.Utils.birthday;
 
@@ -17,41 +16,29 @@ import static net.datafaker.idnumbers.Utils.birthday;
  * and <a href="https://en.wikipedia.org/wiki/VAT_identification_number">VAT identification number</a>
  */
 public class PortugueseIdNumber implements IdNumberGenerator {
+
     @Override
     public String countryCode() {
-        return "PT";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    private static final Character[] VALID_FIRST_DIGITS = {'1', '2', '3', '5', '6', '8'};
-    private static final String[] VALID_FIRST_DOUBLE_DIGITS =
-        {"45", "70", "71", "72", "74", "75", "77", "79", "90", "91", "98", "99"};
+    private static final Character[] VALID_FIRST_DIGITS = { '1', '2', '3', '5', '6', '8' };
+
+    private static final String[] VALID_FIRST_DOUBLE_DIGITS = { "45", "70", "71", "72", "74", "75", "77", "79", "90", "91", "98", "99" };
 
     @Override
     public String generateInvalid(final BaseProviders faker) {
-        String digits = faker.number().digits(8);
-        int digitSum = calculateDigitSum(digits);
-        // by adding 5 to a valid checksum, we should invalidate
-        // by having the wrong checksum or just the wrong number of digits
-        return digits + (digitSum + 5);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateValid(final BaseProviders faker) {
-        String digits;
-        if (faker.random().nextBoolean()) {
-            final char firstDigit = faker.options().option(VALID_FIRST_DIGITS);
-            digits = firstDigit + faker.number().digits(7);
-        } else {
-            final String firstDoubleDigit = faker.options().option(VALID_FIRST_DOUBLE_DIGITS);
-            digits = firstDoubleDigit + faker.number().digits(6);
-        }
-        int digitSum = calculateDigitSum(digits);
-        return digits + digitSum;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public PersonIdNumber generateValid(BaseProviders faker, IdNumberRequest request) {
-        return new PersonIdNumber(generateValid(faker), birthday(faker, request), gender(faker, request));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private int calculateDigitSum(String numbers) {
@@ -60,7 +47,6 @@ public class PortugueseIdNumber implements IdNumberGenerator {
             int digit = Character.getNumericValue(numbers.charAt(i - 1));
             checkSum += (10 - i) * digit;
         }
-
         int val = (checkSum / 11) * 11;
         checkSum -= val;
         if (checkSum == 0 || checkSum == 1) {

@@ -12,10 +12,10 @@ public class Mountain extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("mountain.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String range() {
-        return resolve("mountain.range");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

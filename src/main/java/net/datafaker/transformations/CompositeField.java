@@ -1,10 +1,10 @@
 package net.datafaker.transformations;
 
 import net.datafaker.providers.base.AbstractProvider;
-
 import java.util.Objects;
 
 public class CompositeField<MyObject extends AbstractProvider<?>, MyType> extends Schema<MyObject, MyType> implements Field<MyObject, MyType> {
+
     private final String name;
 
     public CompositeField(String name, Field<MyObject, MyType>[] fields) {
@@ -14,27 +14,21 @@ public class CompositeField<MyObject extends AbstractProvider<?>, MyType> extend
 
     @Override
     public String getName() {
-        return name;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public MyType transform(MyObject input) {
-        return null;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof CompositeField<?, ?> that)) return false;
-        if (!super.equals(o)) return false;
-
-        return Objects.equals(name, that.name);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

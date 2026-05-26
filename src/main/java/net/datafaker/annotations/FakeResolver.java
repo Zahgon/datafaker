@@ -4,16 +4,15 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.IdentityHashMap;
 import java.util.Map;
-
 import net.datafaker.internal.helper.CopyOnWriteMap;
 import net.datafaker.transformations.JavaObjectTransformer;
 import net.datafaker.transformations.Schema;
-
 import static java.util.Objects.requireNonNull;
 
 public class FakeResolver<T> {
 
     private static final JavaObjectTransformer JAVA_OBJECT_TRANSFORMER = new JavaObjectTransformer();
+
     private static final Map<Class<?>, FakeResolver<?>> CLASS_2_FAKE_RESOLVER = new CopyOnWriteMap<>(IdentityHashMap::new);
 
     private static final Map<Class<?>, Schema<Object, ?>> DEFAULT_SCHEMA_CACHE = new CopyOnWriteMap<>(IdentityHashMap::new);
@@ -25,16 +24,11 @@ public class FakeResolver<T> {
     }
 
     public static <T> FakeResolver<T> of(Class<T> clazz) {
-        var fakeFactory = CLASS_2_FAKE_RESOLVER.computeIfAbsent(clazz, k -> new FakeResolver<>(clazz));
-        return (FakeResolver<T>) fakeFactory;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public T generate(Schema<Object, ?> schema) {
-        if (schema == null) {
-            return generateFromDefaultSchema();
-        }
-
-        return (T) JAVA_OBJECT_TRANSFORMER.apply(clazz, schema);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private T generateFromDefaultSchema() {
@@ -42,7 +36,6 @@ public class FakeResolver<T> {
             FakeForSchema fakeForSchemaAnnotation = checkFakeAnnotation(clazz);
             return getSchema(fakeForSchemaAnnotation.value());
         });
-
         return (T) JAVA_OBJECT_TRANSFORMER.apply(clazz, useSchema);
     }
 
@@ -73,7 +66,6 @@ public class FakeResolver<T> {
 
     private FakeForSchema checkFakeAnnotation(Class<T> clazz) {
         requireNonNull(clazz, "The class is null.");
-
         FakeForSchema annotation = clazz.getAnnotation(FakeForSchema.class);
         if (annotation == null) {
             throw new RuntimeException("The class %s is not annotated with Fake".formatted(clazz.getSimpleName()));

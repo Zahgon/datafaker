@@ -14,15 +14,14 @@ public class SuperMario extends AbstractProvider<VideoGameProviders> {
     }
 
     public String characters() {
-        return resolve("games.super_mario.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String games() {
-        return resolve("games.super_mario.games");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String locations() {
-        return resolve("games.super_mario.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

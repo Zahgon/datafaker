@@ -14,15 +14,14 @@ public class FreshPrinceOfBelAir extends AbstractProvider<EntertainmentProviders
     }
 
     public String characters() {
-        return resolve("fresh_prince_of_bel_air.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String celebrities() {
-        return resolve("fresh_prince_of_bel_air.celebrities");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("fresh_prince_of_bel_air.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

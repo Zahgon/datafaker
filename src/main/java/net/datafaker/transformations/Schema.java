@@ -1,9 +1,9 @@
 package net.datafaker.transformations;
 
-
 import java.util.Arrays;
 
 public class Schema<IN, OUT> {
+
     private final Field<IN, OUT>[] fields;
 
     protected Schema(Field<IN, OUT>[] fields) {
@@ -11,24 +11,21 @@ public class Schema<IN, OUT> {
     }
 
     public Field<IN, OUT>[] getFields() {
-        return fields;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @SafeVarargs
     public static <IN, OUT> Schema<IN, OUT> of(Field<IN, OUT>... fields) {
-        return new Schema<>(fields);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Schema<?, ?> schema)) return false;
-
-        return Arrays.equals(fields, schema.fields);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(fields);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

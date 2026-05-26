@@ -14,23 +14,22 @@ public class WarhammerFantasy extends AbstractProvider<VideoGameProviders> {
     }
 
     public String heros() {
-        return resolve("games.warhammer_fantasy.heros");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("games.warhammer_fantasy.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String locations() {
-        return resolve("games.warhammer_fantasy.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String factions() {
-        return resolve("games.warhammer_fantasy.factions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creatures() {
-        return resolve("games.warhammer_fantasy.creatures");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

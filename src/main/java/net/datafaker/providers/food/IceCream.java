@@ -12,14 +12,14 @@ public class IceCream extends AbstractProvider<FoodProviders> {
     }
 
     public String flavor() {
-        return resolve("ice_cream.flavor");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String shape() {
-        return resolve("ice_cream.shape");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String color() {
-        return resolve("ice_cream.color");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -14,18 +14,18 @@ public class Fallout extends AbstractProvider<VideoGameProviders> {
     }
 
     public String character() {
-        return resolve("fallout.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String faction() {
-        return resolve("fallout.factions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("fallout.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("fallout.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

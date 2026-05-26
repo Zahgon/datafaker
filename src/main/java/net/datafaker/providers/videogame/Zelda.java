@@ -14,10 +14,10 @@ public class Zelda extends AbstractProvider<VideoGameProviders> {
     }
 
     public String game() {
-        return resolve("games.zelda.games");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String character() {
-        return resolve("games.zelda.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

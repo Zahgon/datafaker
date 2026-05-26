@@ -7,15 +7,14 @@ public class LatinLetters {
     private static final Set<Character> VOWELS = Set.of('A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u');
 
     static boolean isConsonant(int c) {
-        return isConsonant((char) c);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     static boolean isConsonant(char c) {
-        return !VOWELS.contains(c);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     static String removeNonLatinLetters(String text) {
-        return text.replaceAll("[^a-zA-Z]+", "");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

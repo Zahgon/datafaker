@@ -3,7 +3,6 @@ package net.datafaker.providers.entertainment;
 import net.datafaker.providers.base.AbstractProvider;
 
 /**
- *
  * @since 2.1.0
  */
 public class Joke extends AbstractProvider<EntertainmentProviders> {
@@ -13,11 +12,10 @@ public class Joke extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String pun() {
-        return resolve("joke.puns");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String knockKnock() {
-        return resolve("joke.knock_knocks");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -12,15 +12,14 @@ public class FamilyGuy extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("family_guy.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("family_guy.location");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("family_guy.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

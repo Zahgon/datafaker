@@ -12,10 +12,10 @@ public class PrincessBride extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("princess_bride.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("princess_bride.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -14,11 +14,10 @@ public class BrooklynNineNine extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("brooklyn_nine_nine.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("brooklyn_nine_nine.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

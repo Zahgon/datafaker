@@ -12,27 +12,26 @@ public class CultureSeries extends AbstractProvider<BaseProviders> {
     }
 
     public String books() {
-        return resolve("culture_series.books");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cultureShips() {
-        return resolve("culture_series.culture_ships");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cultureShipClasses() {
-        return resolve("culture_series.culture_ship_classes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cultureShipClassAbvs() {
-        return resolve("culture_series.culture_ship_class_abvs");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String civs() {
-        return resolve("culture_series.civs");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String planets() {
-        return resolve("culture_series.planets");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

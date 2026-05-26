@@ -4,12 +4,12 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Map;
 import java.util.StringJoiner;
-
 import net.datafaker.sequence.FakeSequence;
 
 public class XmlTransformer<IN> implements Transformer<IN, CharSequence> {
 
     private static final Map<Character, String> ESCAPING_MAP = createEscapeMap();
+
     private static final int INDENTATION_STEP = 4;
 
     private int tagIndex = 0;
@@ -22,45 +22,27 @@ public class XmlTransformer<IN> implements Transformer<IN, CharSequence> {
 
     @Override
     public CharSequence apply(IN input, Schema<IN, ?> schema) {
-        StringBuilder sb = new StringBuilder();
-        Arrays.stream(schema.getFields()).forEach(it -> apply(input, sb, it));
-        return sb.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generate(Iterable<IN> input, Schema<IN, ?> schema) {
-        if (input instanceof FakeSequence<?> fakeSequence && fakeSequence.isInfinite()) {
-            throw new IllegalArgumentException("The sequence should be finite of size: " + fakeSequence);
-        }
-
-        StringJoiner data = new StringJoiner(LINE_SEPARATOR);
-        for (IN in : input) {
-            data.add(apply(in, schema));
-        }
-
-        return data.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public CharSequence generate(Schema<IN, ?> schema, int limit) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < limit; i++) {
-            sb.append(apply(null, schema));
-            if (i < limit - 1) {
-                sb.append(LINE_SEPARATOR);
-            }
-        }
-        return sb.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String getStartStream(Schema<IN, ?> schema) {
-        return "";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String getEndStream() {
-        return "";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static class XmlTransformerBuilder<IN> {
@@ -68,41 +50,33 @@ public class XmlTransformer<IN> implements Transformer<IN, CharSequence> {
         private boolean pretty = false;
 
         public XmlTransformer.XmlTransformerBuilder<IN> pretty(boolean pretty) {
-            this.pretty = pretty;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public XmlTransformer<IN> build() {
-            return new XmlTransformer<>(pretty);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
     private void apply(IN input, StringBuilder sb, Field<IN, ?> xmlNode) {
-
         if (pretty && tagIndex > 0) {
             sb.append(System.lineSeparator()).append(offset(tagIndex));
         }
-
         final String tag = xmlNode.getName().trim();
         sb.append("<").append(tag);
         if (xmlNode instanceof CompositeField) {
             Field<IN, ?>[] attrs = ((CompositeField) xmlNode).getFields();
             applyAttributes(input, sb, attrs);
-
-            xmlNode = Arrays.stream(attrs)
-                .filter(inField -> !isAttribute(inField.getName())).findFirst()
-                .orElse(null);
+            xmlNode = Arrays.stream(attrs).filter(inField -> !isAttribute(inField.getName())).findFirst().orElse(null);
         }
-
         applyTag(input, sb, xmlNode, tag);
     }
 
     private void applyTag(IN input, StringBuilder sb, Field<IN, ?> field, String tag) {
-        if (field == null ) {
+        if (field == null) {
             applyValue(sb, tag, null);
             return;
         }
-
         Object xmlNodeValue = field.transform(input);
         if (xmlNodeValue instanceof Collection<?> children) {
             if (children.isEmpty()) {
@@ -119,7 +93,6 @@ public class XmlTransformer<IN> implements Transformer<IN, CharSequence> {
                 }
                 sb.append("</").append(tag).append(">");
             }
-
         } else if (xmlNodeValue instanceof String) {
             applyValue(sb, tag, (String) xmlNodeValue);
         } else if (xmlNodeValue == null) {

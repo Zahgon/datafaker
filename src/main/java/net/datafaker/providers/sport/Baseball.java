@@ -3,7 +3,6 @@ package net.datafaker.providers.sport;
 import net.datafaker.providers.base.AbstractProvider;
 
 /**
-
  * Generate random components of baseball game, e.g. teams, coaches, positions and players.
  *
  * @since 1.7.0
@@ -11,7 +10,7 @@ import net.datafaker.providers.base.AbstractProvider;
 public class Baseball extends AbstractProvider<SportProviders> {
 
     /**
-     Baseball
+     *     Baseball
      * Create a constructor for Baseball.
      *
      * @param faker The Faker instance for generating random, different kinds of disease, e.g. the internal disease.
@@ -26,7 +25,7 @@ public class Baseball extends AbstractProvider<SportProviders> {
      * @return Baseball teams
      */
     public String teams() {
-        return resolve("baseball.teams");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -35,7 +34,7 @@ public class Baseball extends AbstractProvider<SportProviders> {
      * @return Baseball coaches
      */
     public String coaches() {
-        return resolve("baseball.coaches");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -44,7 +43,7 @@ public class Baseball extends AbstractProvider<SportProviders> {
      * @return Baseball positions
      */
     public String positions() {
-        return resolve("baseball.positions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -53,6 +52,6 @@ public class Baseball extends AbstractProvider<SportProviders> {
      * @return Baseball players
      */
     public String players() {
-        return resolve("baseball.players");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

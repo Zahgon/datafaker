@@ -14,26 +14,26 @@ public class Minecraft extends AbstractProvider<VideoGameProviders> {
     }
 
     public String itemName() {
-        return resolve("minecraft.item_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tileName() {
-        return resolve("minecraft.tile_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String entityName() {
-        return resolve("minecraft.entity_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String monsterName() {
-        return resolve("minecraft.monster_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String animalName() {
-        return resolve("minecraft.animal_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tileItemName() {
-        return faker.random().nextBoolean() ? itemName() : tileName();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

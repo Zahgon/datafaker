@@ -10,7 +10,6 @@ public class Size extends AbstractProvider<BaseProviders> {
     }
 
     public String adjective() {
-        return resolve("size.adjective");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

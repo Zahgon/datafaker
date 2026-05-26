@@ -14,19 +14,18 @@ public class Naruto extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("naruto.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String village() {
-        return resolve("naruto.villages");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String eye() {
-        return resolve("naruto.eyes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String demon() {
-        return resolve("naruto.demons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

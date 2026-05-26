@@ -12,28 +12,30 @@ public class Computer extends AbstractProvider<BaseProviders> {
     }
 
     public String type() {
-        return resolve("computer.type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String platform() {
-        return resolve("computer.platform");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String operatingSystem() {
-        return resolve("computer.os." + faker.options().option("linux", "macos", "windows"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String linux() {
-        return resolve("computer.os.linux");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String macos() {
-        return resolve("computer.os.macos");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String windows() {
-        return resolve("computer.os.windows");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public String brand() { return resolve("computer.brand"); }
+    public String brand() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

@@ -12,27 +12,26 @@ public class OnePiece extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("one_piece.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sea() {
-        return resolve("one_piece.seas");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String island() {
-        return resolve("one_piece.islands");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("one_piece.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("one_piece.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String akumasNoMi() {
-        return resolve("one_piece.akumas_no_mi");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

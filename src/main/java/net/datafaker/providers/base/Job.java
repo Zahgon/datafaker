@@ -10,22 +10,22 @@ public class Job extends AbstractProvider<BaseProviders> {
     }
 
     public String field() {
-        return resolve("job.field");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String seniority() {
-        return resolve("job.seniority");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String position() {
-        return resolve("job.position");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String keySkills() {
-        return resolve("job.key_skills");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String title() {
-        return resolve("job.title");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

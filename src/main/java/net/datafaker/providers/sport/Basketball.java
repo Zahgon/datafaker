@@ -25,7 +25,7 @@ public class Basketball extends AbstractProvider<SportProviders> {
      * @return Basketball teams
      */
     public String teams() {
-        return resolve("basketball.teams");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -34,7 +34,7 @@ public class Basketball extends AbstractProvider<SportProviders> {
      * @return Basketball coaches
      */
     public String coaches() {
-        return resolve("basketball.coaches");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -43,7 +43,7 @@ public class Basketball extends AbstractProvider<SportProviders> {
      * @return Basketball positions
      */
     public String positions() {
-        return resolve("basketball.positions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -52,6 +52,6 @@ public class Basketball extends AbstractProvider<SportProviders> {
      * @return Basketball players
      */
     public String players() {
-        return resolve("basketball.players");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

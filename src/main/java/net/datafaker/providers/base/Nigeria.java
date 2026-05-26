@@ -6,6 +6,7 @@ package net.datafaker.providers.base;
  * @since 1.2.0
  */
 public class Nigeria extends AbstractProvider<BaseProviders> {
+
     private static final String KEY = "nigeria";
 
     protected Nigeria(BaseProviders faker) {
@@ -13,25 +14,22 @@ public class Nigeria extends AbstractProvider<BaseProviders> {
     }
 
     public String places() {
-        return resolve(KEY + ".places");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String name() {
-        return resolve(KEY + ".name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String food() {
-        return resolve(KEY + ".food");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String schools() {
-        return resolve(KEY + ".schools");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String celebrities() {
-        return resolve(KEY + ".celebrities");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }
-
-
-

@@ -14,34 +14,34 @@ public class ElderScrolls extends AbstractProvider<VideoGameProviders> {
     }
 
     public String race() {
-        return resolve("games.elder_scrolls.race");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creature() {
-        return resolve("games.elder_scrolls.creature");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String region() {
-        return resolve("games.elder_scrolls.region");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String dragon() {
-        return resolve("games.elder_scrolls.dragon");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String city() {
-        return resolve("games.elder_scrolls.city");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String firstName() {
-        return resolve("games.elder_scrolls.first_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String lastName() {
-        return resolve("games.elder_scrolls.last_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("games.elder_scrolls.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

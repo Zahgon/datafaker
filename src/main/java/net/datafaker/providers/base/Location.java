@@ -10,27 +10,26 @@ public class Location extends AbstractProvider<BaseProviders> {
     }
 
     public String building() {
-        return resolve("location.building");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String work() {
-        return resolve("location.work");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String nature() {
-        return resolve("location.nature");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String publicSpace() {
-        return resolve("location.public_space");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String privateSpace() {
-        return resolve("location.private_space");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String otherworldly() {
-        return resolve("location.otherworldly");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

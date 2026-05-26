@@ -14,15 +14,14 @@ public class SonicTheHedgehog extends AbstractProvider<VideoGameProviders> {
     }
 
     public String zone() {
-        return resolve("games.sonic_the_hedgehog.zone");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String character() {
-        return resolve("games.sonic_the_hedgehog.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String game() {
-        return resolve("games.sonic_the_hedgehog.game");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -13,19 +13,18 @@ public class CowboyBebop extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("cowboy_bebop.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String episode() {
-        return resolve("cowboy_bebop.episode");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String song() {
-        return resolve("cowboy_bebop.song");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("cowboy_bebop.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

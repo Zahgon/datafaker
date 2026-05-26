@@ -13,31 +13,30 @@ public class Boardgame extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("boardgame.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String category() {
-        return resolve("boardgame.category");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mechanic() {
-        return resolve("boardgame.mechanic");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String subdomain() {
-        return resolve("boardgame.subdomain");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String designer() {
-        return resolve("boardgame.designer");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String artist() {
-        return resolve("boardgame.artist");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String publisher() {
-        return resolve("boardgame.publisher");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

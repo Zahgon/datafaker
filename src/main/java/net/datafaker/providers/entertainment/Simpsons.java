@@ -12,14 +12,14 @@ public class Simpsons extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("simpsons.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("simpsons.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("simpsons.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

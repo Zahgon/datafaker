@@ -10,27 +10,27 @@ public class Barcode extends AbstractProvider<BaseProviders> {
     }
 
     public long ean13() {
-        return ean(13);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public long ean8() {
-        return ean(8);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public long gtin14() {
-        return ean(14);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public long gtin12() {
-        return ean(12);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public long gtin13() {
-        return ean13();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public long gtin8() {
-        return ean8();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static int roundToHighestMultiplyOfTen(int number) {
@@ -44,9 +44,11 @@ public class Barcode extends AbstractProvider<BaseProviders> {
     }
 
     private long ean(int length) {
-        long firstPart = switch (length) {
-            case 8, 12, 13, 14 -> this.faker.number().randomNumber(length - 1);
-            default -> 0;
+        long firstPart = switch(length) {
+            case 8, 12, 13, 14 ->
+                this.faker.number().randomNumber(length - 1);
+            default ->
+                0;
         };
         int odd = 0;
         int even = 0;
@@ -59,7 +61,6 @@ public class Barcode extends AbstractProvider<BaseProviders> {
             } else {
                 even += number % 10;
             }
-
             number /= 10;
         }
         if (i % 2 == 0) {
@@ -67,9 +68,7 @@ public class Barcode extends AbstractProvider<BaseProviders> {
             even = odd;
             odd = tmp;
         }
-
         final int var = calculateVar(length, odd, even);
-
         int rounded = roundToHighestMultiplyOfTen((var));
         int checkDigit = rounded - var;
         int product = 10;
@@ -79,15 +78,18 @@ public class Barcode extends AbstractProvider<BaseProviders> {
         return firstPart * product + checkDigit;
     }
 
-    private int calculateVar(int length, int odd, int even){
+    private int calculateVar(int length, int odd, int even) {
         return switch(length) {
-            case 13 -> odd + even + (even << 1);
-            case 8, 12, 14 -> odd + even + (odd << 1);
-            default -> 0;
+            case 13 ->
+                odd + even + (even << 1);
+            case 8, 12, 14 ->
+                odd + even + (odd << 1);
+            default ->
+                0;
         };
     }
 
     public String type() {
-        return resolve("barcode.types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -12,14 +12,14 @@ public class MoneyHeist extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("money_heist.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String heist() {
-        return resolve("money_heist.heists");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("money_heist.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

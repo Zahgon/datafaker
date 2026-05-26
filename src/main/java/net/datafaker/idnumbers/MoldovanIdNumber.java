@@ -3,9 +3,7 @@ package net.datafaker.idnumbers;
 import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber.IdNumberRequest;
 import net.datafaker.providers.base.PersonIdNumber;
-
 import java.time.LocalDate;
-
 import static net.datafaker.idnumbers.Utils.birthday;
 import static net.datafaker.idnumbers.Utils.multiply;
 import static net.datafaker.idnumbers.Utils.randomGender;
@@ -20,25 +18,21 @@ import static net.datafaker.idnumbers.Utils.randomGender;
  */
 public class MoldovanIdNumber implements IdNumberGenerator {
 
-    private static final int[] CHECKSUM_MASK = {7, 3, 1, 7, 3, 1, 7, 3, 1, 7, 3, 1};
+    private static final int[] CHECKSUM_MASK = { 7, 3, 1, 7, 3, 1, 7, 3, 1, 7, 3, 1 };
 
     @Override
     public String countryCode() {
-        return "MD";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public PersonIdNumber generateValid(BaseProviders faker, IdNumberRequest request) {
-        LocalDate birthday = birthday(faker, request);
-        String basePart = basePart(faker, birthday);
-        String idNumber = basePart + checksum(basePart);
-        return new PersonIdNumber(idNumber, birthday, randomGender(faker));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateInvalid(BaseProviders faker) {
-        String basePart = basePart(faker, faker.timeAndDate().birthday());
-        return basePart + (checksum(basePart) + 1) % 10;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String basePart(BaseProviders faker, LocalDate birthday) {
@@ -75,7 +69,6 @@ public class MoldovanIdNumber implements IdNumberGenerator {
     }
 
     char checksum(String text) {
-        int checksum = multiply(text, CHECKSUM_MASK);
-        return (char) ('0' + checksum % 10);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

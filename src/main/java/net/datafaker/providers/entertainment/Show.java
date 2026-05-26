@@ -12,15 +12,14 @@ public class Show extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String adultMusical() {
-        return resolve("show.adult_musical");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String play() {
-        return resolve("show.play");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String kidsMusical() {
-        return resolve("show.kids_musical");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

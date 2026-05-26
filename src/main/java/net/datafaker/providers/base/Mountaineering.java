@@ -12,7 +12,6 @@ public class Mountaineering extends AbstractProvider<BaseProviders> {
     }
 
     public String mountaineer() {
-        return resolve("mountaineering.mountaineer");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

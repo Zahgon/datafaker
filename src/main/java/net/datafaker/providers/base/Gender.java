@@ -17,7 +17,7 @@ public class Gender extends AbstractProvider<BaseProviders> {
      * @return a string of gender type
      */
     public String types() {
-        return resolve("gender.types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -26,7 +26,7 @@ public class Gender extends AbstractProvider<BaseProviders> {
      * @return a string of binary gender type
      */
     public String binaryTypes() {
-        return resolve("gender.binary_types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -35,6 +35,6 @@ public class Gender extends AbstractProvider<BaseProviders> {
      * @return a string of short binary gender type
      */
     public String shortBinaryTypes() {
-        return resolve("gender.short_binary_types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

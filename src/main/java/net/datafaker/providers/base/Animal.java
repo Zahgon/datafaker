@@ -12,18 +12,18 @@ public class Animal extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("creature.animal.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String scientificName() {
-        return genus() + " " + species();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String genus() {
-        return WordUtils.capitalize(faker.resolve("creature.animal.genus"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String species() {
-        return resolve("creature.animal.species").toLowerCase();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

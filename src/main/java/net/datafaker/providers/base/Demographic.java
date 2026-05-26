@@ -10,22 +10,22 @@ public class Demographic extends AbstractProvider<BaseProviders> {
     }
 
     public String race() {
-        return resolve("demographic.race");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String educationalAttainment() {
-        return resolve("demographic.educational_attainment");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String demonym() {
-        return resolve("demographic.demonym");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sex() {
-        return resolve("demographic.sex");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maritalStatus() {
-        return resolve("demographic.marital_status");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

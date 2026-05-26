@@ -14,15 +14,14 @@ public class Supernatural extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("supernatural.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creature() {
-        return resolve("supernatural.creature");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String weapon() {
-        return resolve("supernatural.weapon");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -14,19 +14,18 @@ public class StreetFighter extends AbstractProvider<VideoGameProviders> {
     }
 
     public String characters() {
-        return resolve("games.street_fighter.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String stages() {
-        return resolve("games.street_fighter.stages");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("games.street_fighter.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String moves() {
-        return resolve("games.street_fighter.moves");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

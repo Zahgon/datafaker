@@ -3,9 +3,7 @@ package net.datafaker.idnumbers;
 import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber;
 import net.datafaker.providers.base.PersonIdNumber;
-
 import java.util.regex.Pattern;
-
 import static net.datafaker.idnumbers.Utils.birthday;
 import static net.datafaker.idnumbers.Utils.gender;
 
@@ -37,74 +35,26 @@ public class IrishIdNumber implements IdNumberGenerator {
 
     @Override
     public String countryCode() {
-        return "IE";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateInvalid(final BaseProviders faker) {
-        // Generate 7 digits and Append always invalid character (es: 'Z')
-        return faker.number().digits(7) + "Z";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateValid(final BaseProviders faker) {
-        int[] weights = {8, 7, 6, 5, 4, 3, 2};
-        // Generate 7 digits
-        String digitsPpsn = faker.number().digits(7);
-        int[] digits = digitsPpsn.chars().map(c -> Character.getNumericValue(c)).toArray();
-
-        String suffix = faker.bool().bool() ? faker.options().option("A", "B", "H", "W") : "";
-        int sum = 0;
-
-        for (int i = 0; i < 7; i++) {
-            sum += digits[i] * weights[i];
-        }
-
-        // If we have suffix include it in the checksum
-        if (!suffix.isEmpty()) {
-            char extraChar = suffix.charAt(0);
-            int extraValue = switch (extraChar) {
-                case 'A', 'B', 'H' -> extraChar - 'A' + 1;
-                case 'W' -> 0;
-                default -> throw new IllegalStateException("Unexpected suffix: " + suffix);
-            };
-            sum += extraValue * 9;
-        }
-
-        // Build the PPSN
-        return digitsPpsn + calculateCheckSumCharacter(sum) + suffix;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     boolean validateAndCheckModulo23(String ppsn) {
-       if (ppsn == null || !IRISH_PPSN.matcher(ppsn).matches()) {
-           return false;
-       }
-        int sum = 0;
-        int[] weights = {8, 7, 6, 5, 4, 3, 2};
-        for (int i = 0; i < 7; i++) {
-            char c = ppsn.charAt(i);
-            if (!Character.isDigit(c)) {
-                return false;
-            }
-            sum += Character.getNumericValue(c) * weights[i];
-        }
-        // if there is a suffix incude it in the checksum
-        if (ppsn.length() == 9) {
-            char extraChar = ppsn.charAt(8);
-            int extraValue = switch (extraChar) {
-                case 'A', 'B', 'H' -> extraChar - 'A' + 1;
-                case 'W' -> 0;
-                default -> -1; // Invalid suffix
-            };
-            if (extraValue == -1) return false;
-            sum += extraValue * 9;
-        }
-        return ppsn.charAt(7) ==  calculateCheckSumCharacter(sum);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public PersonIdNumber generateValid(BaseProviders faker, IdNumber.IdNumberRequest request) {
-        return new PersonIdNumber(generateValid(faker), birthday(faker, request), gender(faker, request));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -113,9 +63,8 @@ public class IrishIdNumber implements IdNumberGenerator {
      * @param sum The weighted sum of the PPSN digits and optional suffix value.
      * @return The checksum character.
      */
-    private char calculateCheckSumCharacter(int sum){
+    private char calculateCheckSumCharacter(int sum) {
         int remainder = sum % 23;
         return (remainder == 0) ? 'W' : (char) ('A' + remainder - 1);
     }
 }
-

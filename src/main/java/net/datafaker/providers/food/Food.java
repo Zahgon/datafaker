@@ -12,35 +12,34 @@ public class Food extends AbstractProvider<FoodProviders> {
     }
 
     public String ingredient() {
-        return resolve("food.ingredients");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String allergen() {
-        return resolve("food.allergens");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String spice() {
-        return resolve("food.spices");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String dish() {
-        return resolve("food.dish");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String fruit() {
-        return resolve("food.fruits");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String vegetable() {
-        return resolve("food.vegetables");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sushi() {
-        return resolve("food.sushi");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String measurement() {
-        return resolve("food.measurement_sizes") +
-            " " + resolve("food.measurements");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

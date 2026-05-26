@@ -10,22 +10,22 @@ public class University extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("university.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String degree() {
-        return resolve("university.degree");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String prefix() {
-        return resolve("university.prefix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String suffix() {
-        return resolve("university.suffix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String place() {
-        return resolve("university.place");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

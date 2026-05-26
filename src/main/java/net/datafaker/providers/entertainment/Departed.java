@@ -17,7 +17,7 @@ public class Departed extends AbstractProvider<EntertainmentProviders> {
      * @return a string of actor's name from The Departed.
      */
     public String actor() {
-        return resolve("departed.actors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -26,7 +26,7 @@ public class Departed extends AbstractProvider<EntertainmentProviders> {
      * @return a string of character's name from The Departed.
      */
     public String character() {
-        return resolve("departed.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -35,6 +35,6 @@ public class Departed extends AbstractProvider<EntertainmentProviders> {
      * @return a string of quote from The Departed.
      */
     public String quote() {
-        return resolve("departed.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

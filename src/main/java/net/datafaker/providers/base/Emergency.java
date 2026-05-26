@@ -18,7 +18,7 @@ public class Emergency extends AbstractProvider<BaseProviders> {
      * @return a type of emergency, e.g. "Fire", "Flood", "Tornado".
      */
     public String nature() {
-        return resolve("emergency.nature");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -26,7 +26,7 @@ public class Emergency extends AbstractProvider<BaseProviders> {
      * e.g. "Highway", "Downtown office building".
      */
     public String location() {
-        return resolve("emergency.location");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -34,7 +34,7 @@ public class Emergency extends AbstractProvider<BaseProviders> {
      * "Evacuate the building", "Shelter in place".
      */
     public String instruction() {
-        return resolve("emergency.instruction");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -42,7 +42,7 @@ public class Emergency extends AbstractProvider<BaseProviders> {
      * for a real emergency.
      */
     public boolean dryRun() {
-        return faker.random().nextBoolean();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -50,8 +50,9 @@ public class Emergency extends AbstractProvider<BaseProviders> {
      * {@link #location()}, {@link #instruction()}, and {@link #dryRun()}.
      */
     public EmergencyCase emergencyCase() {
-        return new EmergencyCase(nature(), location(), instruction(), dryRun());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public record EmergencyCase(String nature, String location, String instruction, boolean dryRun) { }
+    public record EmergencyCase(String nature, String location, String instruction, boolean dryRun) {
+    }
 }

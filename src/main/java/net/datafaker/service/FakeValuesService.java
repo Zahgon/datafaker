@@ -14,7 +14,6 @@ import net.datafaker.transformations.Field;
 import net.datafaker.transformations.JsonTransformer;
 import net.datafaker.transformations.Schema;
 import net.datafaker.transformations.SimpleField;
-
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
@@ -41,7 +40,6 @@ import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
-
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptyMap;
 import static java.util.Locale.ROOT;
@@ -51,23 +49,33 @@ import static java.util.logging.Level.SEVERE;
 import static net.datafaker.transformations.Field.field;
 
 public class FakeValuesService {
-    private static final Class<?>[] PRIMITIVES = {Byte.TYPE, Short.TYPE, Integer.TYPE, Long.TYPE, Float.TYPE, Double.TYPE};
+
+    private static final Class<?>[] PRIMITIVES = { Byte.TYPE, Short.TYPE, Integer.TYPE, Long.TYPE, Float.TYPE, Double.TYPE };
+
     private static final char[] DIGITS = "0123456789".toCharArray();
+
     private static final String[] EMPTY_ARRAY = new String[0];
+
     private static final Logger LOG = Logger.getLogger(FakeValuesService.class.getName());
+
     public static final Supplier<Map<String, Object>> MAP_STRING_OBJECT_SUPPLIER = () -> new CopyOnWriteMap<>(() -> new WeakHashMap<>());
+
     public static final Supplier<Map<String, String>> MAP_STRING_STRING_SUPPLIER = () -> new CopyOnWriteMap<>(() -> new WeakHashMap<>());
 
     private final Map<SingletonLocale, FakeValuesInterface> fakeValuesInterfaceMap = new CopyOnWriteMap<>(IdentityHashMap::new);
+
     public static final SingletonLocale DEFAULT_LOCALE = SingletonLocale.get(Locale.ENGLISH);
 
     private static final Map<Class<?>, Map<String, Collection<Method>>> CLASS_2_METHODS_CACHE = new CopyOnWriteMap<>(IdentityHashMap::new);
+
     private static final Map<Class<?>, Constructor<?>> CLASS_2_CONSTRUCTOR_CACHE = new CopyOnWriteMap<>(IdentityHashMap::new);
 
     private static final JsonTransformer<Object> JSON_TRANSFORMER = JsonTransformer.builder().build();
 
     private final Map<String, RgxGen> expression2generex = new CopyOnWriteMap<>(WeakHashMap::new);
+
     private final CopyOnWriteMap<SingletonLocale, Map<String, String>> key2Expression = new CopyOnWriteMap<>(IdentityHashMap::new);
+
     private static final Map<String, String[]> ARGS_2_SPLITTED_ARGS = new CopyOnWriteMap<>(WeakHashMap::new);
 
     private static final Map<String, String[]> KEY_2_SPLITTED_KEY = new CopyOnWriteMap<>(WeakHashMap::new);
@@ -77,22 +85,21 @@ public class FakeValuesService {
     private static final Map<String, String> NAME_2_YAML = new CopyOnWriteMap<>(WeakHashMap::new);
 
     private static final Map<String, String> REMOVED_UNDERSCORE = new CopyOnWriteMap<>(WeakHashMap::new);
+
     private static final Map<Class<?>, Map<String, Map<String[], MethodAndCoercedArgs>>> MAP_OF_METHOD_AND_COERCED_ARGS = new CopyOnWriteMap<>(IdentityHashMap::new);
 
     private static final Map<String, String[]> EXPRESSION_2_SPLITTED = new CopyOnWriteMap<>(WeakHashMap::new);
 
     private final Map<RegExpContext, ValueResolver> REGEXP2SUPPLIER_MAP = new CopyOnWriteMap<>(HashMap::new);
+
     public void updateFakeValuesInterfaceMap(List<SingletonLocale> locales) {
-        for (final SingletonLocale l : locales) {
-            fakeValuesInterfaceMap.computeIfAbsent(l, this::getCachedFakeValue);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private FakeValuesInterface getCachedFakeValue(SingletonLocale locale) {
         if (DEFAULT_LOCALE == locale) {
             return FakeValuesGrouping.getEnglishFakeValueGrouping();
         }
-
         return FakeValues.of(FakeValuesContext.of(locale.getLocale()));
     }
 
@@ -104,15 +111,7 @@ public class FakeValuesService {
      * @throws IllegalArgumentException in case of invalid path
      */
     public void addPath(Locale locale, Path path) {
-        requireNonNull(locale);
-        if (path == null || Files.notExists(path) || Files.isDirectory(path) || !Files.isReadable(path)) {
-            throw new IllegalArgumentException("Path should be an existing readable file: \"%s\"".formatted(path));
-        }
-        try {
-            addUrl(locale, path.toUri().toURL());
-        } catch (MalformedURLException e) {
-            throw new IllegalArgumentException("Failed to read \"%s\"".formatted(path), e);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -123,50 +122,27 @@ public class FakeValuesService {
      * @throws IllegalArgumentException in case of invalid url
      */
     public void addUrl(Locale locale, URL url) {
-        requireNonNull(locale);
-        if (url == null) {
-            throw new IllegalArgumentException("url should be an existing readable file");
-        }
-        final FakeValues fakeValues = FakeValues.of(FakeValuesContext.of(locale, url));
-        final SingletonLocale sLocale = SingletonLocale.get(locale);
-        fakeValuesInterfaceMap.merge(sLocale, fakeValues,
-            (prevValue, newValue) -> {
-                FakeValuesGrouping fvg = new FakeValuesGrouping();
-                fvg.add(prevValue);
-                fvg.add(newValue);
-                return fvg;
-            });
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Fetch a random value from an array item specified by the key
      */
     public Object fetch(String key, FakerContext context) {
-        List<?> valuesArray = null;
-        final Object o = fetchObject(key, context);
-        if (o instanceof List) {
-            valuesArray = (List<?>) o;
-            final int size = valuesArray.size();
-            if (size == 0) {
-                return null;
-            }
-            if (size == 1) {
-                return valuesArray.get(0);
-            }
-        }
-        return valuesArray == null
-            ? null : valuesArray.get(context.getRandomService().nextInt(valuesArray.size()));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Same as {@link #fetch(String, FakerContext)} but casts the result to a String
      */
     public String fetchString(String key, FakerContext context) {
-        return (String) fetch(key, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private class SafeFetchResolver implements ValueResolver {
+
         private final String simpleDirective;
+
         private final FakerContext context;
 
         private SafeFetchResolver(String simpleDirective, FakerContext context) {
@@ -176,12 +152,12 @@ public class FakeValuesService {
 
         @Override
         public Object resolve() {
-            return safeFetch(simpleDirective, context, null);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         @Override
         public String toString() {
-            return "%s[simpleDirective=%s, context=%s]".formatted(getClass().getSimpleName(), simpleDirective, context);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
@@ -203,22 +179,7 @@ public class FakeValuesService {
      */
     @SuppressWarnings("unchecked")
     public String safeFetch(String key, FakerContext context, String defaultIfNull) {
-        Object o = fetchObject(key, context);
-        String str;
-        if (o == null) return defaultIfNull;
-        if (o instanceof List) {
-            final List<String> values = (List<String>) o;
-            final int size = values.size();
-            return switch (size) {
-                case 0 -> defaultIfNull;
-                case 1 -> values.get(0);
-                default -> values.get(context.getRandomService().nextInt(size));
-            };
-        } else if (isSlashDelimitedRegex(str = o.toString())) {
-            return "#{regexify '%s'}".formatted(trimRegexSlashes(str));
-        } else {
-            return (String) o;
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -229,50 +190,7 @@ public class FakeValuesService {
      */
     @SuppressWarnings("unchecked")
     public <T> T fetchObject(String key, FakerContext context) {
-        Object result = null;
-        final List<SingletonLocale> localeChain = context.getLocaleChain();
-        final boolean hasMoreThanOneLocales = localeChain.size() > 1;
-        for (SingletonLocale sLocale : localeChain) {
-            // exclude default locale from cache checks
-            if (sLocale == DEFAULT_LOCALE && hasMoreThanOneLocales) {
-                continue;
-            }
-            Map<String, Object> stringObjectMap = key2fetchedObject.get(sLocale);
-            if (stringObjectMap != null && (result = stringObjectMap.get(key)) != null) {
-                return (T) result;
-            }
-        }
-
-        String[] path = split(key);
-        SingletonLocale local2Add = null;
-        path[0] = path[0].toLowerCase(ROOT);
-        for (SingletonLocale sLocale : localeChain) {
-            Object currentValue = fakeValuesInterfaceMap.get(sLocale);
-            for (int p = 0; currentValue != null && p < path.length; p++) {
-                String currentPath = path[p];
-                if (currentValue instanceof Map) {
-                    currentValue = ((Map<?, ?>) currentValue).get(currentPath);
-                } else {
-                    currentValue = ((FakeValuesInterface) currentValue).get(currentPath);
-                }
-            }
-            result = currentValue;
-            if (result != null) {
-                local2Add = sLocale;
-                break;
-            }
-        }
-        if (local2Add != null) {
-            Object valueToCache = result;
-            Object curResult = key2fetchedObject.getOrDefault(local2Add, emptyMap()).get(key);
-            if (curResult != null) {
-                return (T) result; // Strange... Why return result, not curResult?
-            }
-            key2fetchedObject
-                .computeIfAbsent(local2Add, (__) -> MAP_STRING_OBJECT_SUPPLIER.get())
-                .computeIfAbsent(key, (__) -> valueToCache);
-        }
-        return (T) result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String[] split(String string) {
@@ -285,7 +203,6 @@ public class FakeValuesService {
                     size++;
                 }
             }
-
             String[] result = new String[size + 1];
             final char[] chars = string.toCharArray();
             int start = 0;
@@ -310,7 +227,7 @@ public class FakeValuesService {
      * For example, the string "ABC##EFG" could be replaced with a string like "ABC99EFG".
      */
     public String numerify(String numberString, FakerContext context) {
-        return bothify(numberString, context, false, true, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -318,7 +235,7 @@ public class FakeValuesService {
      * over the incoming string.
      */
     public String bothify(String string, FakerContext context) {
-        return bothify(string, context, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -326,7 +243,7 @@ public class FakeValuesService {
      * over the incoming string.
      */
     public String bothify(String input, FakerContext context, boolean isUpper) {
-        return bothify(input, context, isUpper, true, true);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String bothify(String input, FakerContext context, boolean isUpper, boolean numerify, boolean letterify) {
@@ -335,30 +252,34 @@ public class FakeValuesService {
         final char[] res = input.toCharArray();
         RandomService randomService = context.getRandomService();
         for (int i = 0; i < res.length; i++) {
-            switch (res[i]) {
-                case '#' -> {
-                    if (numerify) {
-                        changed = true;
-                        i += GenerationUtils.generateAndSetNumber(i, res, res[i], randomService) - 1;
+            switch(res[i]) {
+                case '#' ->
+                    {
+                        if (numerify) {
+                            changed = true;
+                            i += GenerationUtils.generateAndSetNumber(i, res, res[i], randomService) - 1;
+                        }
                     }
-                }
-                case 'Ø' -> {
-                    if (numerify) {
-                        changed = true;
-                        res[i] = DIGITS[randomService.nextInt(1, 9)];
+                case 'Ø' ->
+                    {
+                        if (numerify) {
+                            changed = true;
+                            res[i] = DIGITS[randomService.nextInt(1, 9)];
+                        }
                     }
-                }
-                case '?' -> {
-                    if (letterify) {
-                        changed = true;
-                        res[i] = (char) (baseChar + randomService.nextInt(26)); // a-z
+                case '?' ->
+                    {
+                        if (letterify) {
+                            changed = true;
+                            // a-z
+                            res[i] = (char) (baseChar + randomService.nextInt(26));
+                        }
                     }
-                }
-                default -> {
-                }
+                default ->
+                    {
+                    }
             }
         }
-
         return changed ? String.valueOf(res) : input;
     }
 
@@ -366,29 +287,14 @@ public class FakeValuesService {
      * Generates a String that matches the given regular expression.
      */
     public String regexify(String regex, FakerContext context) {
-        RgxGen rgxGen = expression2generex.computeIfAbsent(regex, (__) -> RgxGen.parse(regex));
-        return rgxGen.generate(context.getRandomService().getRandomInternal());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Generates a String by example. The output string will have the same pattern as the input string.
      */
     public String examplify(String example, FakerContext context) {
-        if (example == null) {
-            return null;
-        }
-        final char[] chars = example.toCharArray();
-
-        for (int i = 0; i < chars.length; i++) {
-            if (Character.isLetter(chars[i])) {
-                chars[i] = letterify("?", context, Character.isUpperCase(chars[i])).charAt(0);
-            } else if (Character.isDigit(chars[i])) {
-                chars[i] = DIGITS[context.getRandomService().nextInt(10)];
-            }
-        }
-
-        return String.valueOf(chars);
-
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -398,7 +304,7 @@ public class FakeValuesService {
      * For example, the string "12??34" could be replaced with a string like "12AB34".
      */
     public String letterify(String letterString, FakerContext context) {
-        return this.letterify(letterString, context, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -408,7 +314,7 @@ public class FakeValuesService {
      * For example, the string "12??34" could be replaced with a string like "12AB34".
      */
     public String letterify(String letterString, FakerContext context, boolean isUpper) {
-        return bothify(letterString, context, isUpper, false, true);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -416,7 +322,7 @@ public class FakeValuesService {
      * characters from options
      */
     public String templatify(String letterString, char char2replace, FakerContext context, String... options) {
-        return templatify(letterString, Map.of(char2replace, options), context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -424,18 +330,7 @@ public class FakeValuesService {
      * characters from corresponding optionsMap.values()
      */
     public String templatify(String letterString, Map<Character, String[]> optionsMap, FakerContext context) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < letterString.length(); i++) {
-            final char key = letterString.charAt(i);
-            if (optionsMap.containsKey(key)) {
-                final String[] options = optionsMap.get(key);
-                requireNonNull(options, "Array with available options should be non null");
-                sb.append(options[context.getRandomService().nextInt(options.length)]);
-            } else {
-                sb.append(key);
-            }
-        }
-        return sb.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -446,11 +341,11 @@ public class FakeValuesService {
      * #{Person.hello_someone} will result in a method call to person.helloSomeone();
      */
     public String resolve(String key, Object current, BaseFaker root, FakerContext context) {
-        return resolve(key, current, root, () -> key + " resulted in null expression", context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String resolve(String key, AbstractProvider<?> provider, FakerContext context) {
-        return resolve(key, provider, provider.getFaker(), () -> key + " resulted in null expression", context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -461,40 +356,21 @@ public class FakeValuesService {
      * #{Person.hello_someone} will result in a method call to person.helloSomeone();
      */
     public String resolve(String key, Object current, final ProviderRegistration root, Supplier<String> exceptionMessage, FakerContext context) {
-        String expression;
-        if (root == null) {
-            expression = key2Expression
-                .computeIfAbsent(context.getSingletonLocale(), (__) -> MAP_STRING_STRING_SUPPLIER.get())
-                .computeIfAbsent(key, (__) -> safeFetch(key, context, null));
-        } else {
-            expression = safeFetch(key, context, null);
-        }
-
-        if (expression == null) {
-            throw new RuntimeException(exceptionMessage.get());
-        }
-
-        return resolveExpression(expression, current, root, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Resolves an expression using the current faker.
      */
     public String expression(String expression, BaseFaker faker, FakerContext context) {
-        return resolveExpression(expression, null, faker, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Resolves an expression in file using the current faker.
      */
     public String fileExpression(Path path, BaseFaker faker, FakerContext context) {
-        try {
-            return Files.readAllLines(path)
-                .stream().map(t -> expression(t, faker, context))
-                .collect(Collectors.joining(System.lineSeparator()));
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to read \"%s\"".formatted(path), e);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -502,67 +378,28 @@ public class FakeValuesService {
      * This method uses default separator, quote and always prints header.
      */
     public String csv(int limit, String... columnExpressions) {
-        return csv(CsvTransformer.DEFAULT_SEPARATOR, CsvTransformer.DEFAULT_QUOTE, true, limit, columnExpressions);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Generates csv based on input.
      */
     public String csv(String delimiter, char quote, boolean withHeader, int limit, String... columnExpressions) {
-        if ((columnExpressions.length & 1) == 1) {
-            throw new IllegalArgumentException("Total number of column names and column values should be even (received %s columns: %s)".formatted(
-                columnExpressions.length, Arrays.toString(columnExpressions)));
-        }
-        Field<String, String>[] fields = new Field[columnExpressions.length >> 1];
-        for (int i = 0; i < columnExpressions.length; i += 2) {
-            final int index = i;
-            fields[i >> 1] = Field.field(columnExpressions[index], () -> columnExpressions[index + 1]);
-        }
-        Schema<String, String> schema = Schema.of(fields);
-        return CsvTransformer.<String>builder().separator(delimiter).quote(quote).header(withHeader)
-            .build().generate(schema, limit);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Generates json based on input.
      */
     public String json(String... fieldExpressions) {
-        if ((fieldExpressions.length & 1) == 1) {
-            throw new IllegalArgumentException("Total number of field names and field values should be even (received %s fields: %s)".formatted(
-                fieldExpressions.length, Arrays.toString(fieldExpressions)));
-        }
-
-        List<SimpleField<Object, ?>> fields = new ArrayList<>();
-        for (int i = 0; i < fieldExpressions.length; i += 2) {
-            final int index = i;
-            fields.add(field(fieldExpressions[index], () -> fieldExpressions[index + 1]));
-        }
-        Schema<Object, ?> schema = Schema.of(fields.toArray(new SimpleField[0]));
-        return JSON_TRANSFORMER.generate(schema, 1);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Generates json based on input.
      */
     public String jsona(String... fieldExpressions) {
-        if (fieldExpressions.length % 3 != 0) {
-            throw new IllegalArgumentException(("Total number of field names and field values should be dividable by 3 " +
-                "(received %s field expressions: %s)").formatted(fieldExpressions.length, Arrays.toString(fieldExpressions)));
-        }
-
-        List<SimpleField<Object, ?>> fields = new ArrayList<>();
-        for (int i = 0; i < fieldExpressions.length; i += 3) {
-            final int index = i;
-            if (fieldExpressions[i] != null && Integer.parseInt(fieldExpressions[index]) > 0) {
-                Object[] objects = new Object[Integer.parseInt(fieldExpressions[index])];
-                Arrays.fill(objects, fieldExpressions[index + 2]);
-                fields.add(field(fieldExpressions[index + 1], () -> objects));
-            } else {
-                fields.add(field(fieldExpressions[index + 1], () -> fieldExpressions[index + 2]));
-            }
-        }
-        Schema<Object, ?> schema = Schema.of(fields.toArray(new SimpleField[0]));
-        return JSON_TRANSFORMER.generate(schema, 1);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -577,43 +414,7 @@ public class FakeValuesService {
      * {@link BaseFaker#address()}'s {@link Address#streetName()}.
      */
     protected String resolveExpression(String expression, Object current, ProviderRegistration root, FakerContext context) {
-        // indexOf(<String>) is faster than indexOf(<char>) since it has jvm intrinsic
-        if (!expression.contains("}")) {
-            return expression;
-        }
-        final int expressionLength = expression.length();
-        final String[] expressions = splitExpressions(expression, expressionLength);
-        final StringBuilder result = new StringBuilder(expressions.length * expressionLength);
-        for (int i = 0; i < expressions.length; i++) {
-            // odd are expressions, even are not expressions, just strings
-            final String expr = expressions[i];
-            if ((i & 1) == 0) {
-                if (!expr.isEmpty()) {
-                    result.append(expr);
-                }
-                continue;
-            }
-            final RegExpContext regExpContext = new RegExpContext(expr, root, context);
-            final ValueResolver val = REGEXP2SUPPLIER_MAP.get(regExpContext);
-            final Object resolved;
-            if (val != null) {
-                resolved = val.resolve();
-            } else {
-                int j = 0;
-                final int length = expr.length();
-                while (j < length && !Character.isWhitespace(expr.charAt(j))) j++;
-                String directive = expr.substring(0, j);
-                while (j < length && Character.isWhitespace(expr.charAt(j))) j++;
-                final String arguments = j == length ? "" : expr.substring(j);
-                final String[] args = splitArguments(arguments);
-                resolved = resExp(directive, args, current, root, context, regExpContext);
-            }
-            if (resolved == null) {
-                throw new RuntimeException("Unable to resolve #{" + expr + "} directive for FakerContext " + context + ".");
-            }
-            result.append(resolveExpression(Objects.toString(resolved), current, root, context));
-        }
-        return result.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String[] splitArguments(String arguments) {
@@ -724,7 +525,6 @@ public class FakeValuesService {
             return directive;
         }
         final int dotIndex = getDotIndex(directive);
-
         List<ValueResolver> res = new ArrayList<>();
         if (args.length == 0) {
             // resolve method references on CURRENT object like #{number_between '1','10'} on Number or
@@ -750,9 +550,7 @@ public class FakeValuesService {
                 }
             }
         }
-        final String simpleDirective = (dotIndex >= 0 || current == null)
-            ? directive
-            : classNameToYamlName(current) + "." + directive;
+        final String simpleDirective = (dotIndex >= 0 || current == null) ? directive : classNameToYamlName(current) + "." + directive;
         // simple fetch of a value from the yaml file. the directive may have been mutated
         // such that if the current yml object is car: and directive is #{wheel} then
         // car.wheel will be looked up in the YAML file.
@@ -760,17 +558,14 @@ public class FakeValuesService {
         if (args.length == 0) {
             res.add(new SafeFetchResolver(simpleDirective, context));
         }
-
         // resolve method references on faker object like #{regexify '[a-z]'}
         if (dotIndex == -1 && root != null && (current == null || root.getClass() != current.getClass())) {
             res.add(resolveFromMethodOn(root, directive, args));
         }
-
         // Resolve Faker Object method references like #{ClassName.method_name}
         if (dotIndex >= 0) {
             res.add(resolveFakerObjectAndMethod(root, directive, dotIndex, args));
         }
-
         // last ditch effort.  Due to Ruby's dynamic nature, something like 'Address.street_title' will resolve
         // because 'street_title' is a dynamic method on the Address object.  We can't do this in Java so we go
         // through the normal resolution above, but if we will can't resolve it, we once again do a 'safeFetch' as we
@@ -780,10 +575,8 @@ public class FakeValuesService {
             final String key = javaNameToYamlName(simpleDirective);
             res.add(new SafeFetchResolver(key, context));
         }
-
         return res;
     }
-
 
     /**
      * @param expression input expression
@@ -820,7 +613,6 @@ public class FakeValuesService {
      */
     private String javaNameToYamlName(String expression) {
         return NAME_2_YAML.computeIfAbsent(expression, (__) -> {
-
             final int length = expression.length();
             final boolean firstLetterUpperCase = length > 0 && Character.isUpperCase(expression.charAt(0));
             int cnt = firstLetterUpperCase ? 1 : 0;
@@ -854,7 +646,6 @@ public class FakeValuesService {
         });
     }
 
-
     /**
      * Given a directive like 'firstName', attempts to resolve it to a method.  For example if obj is an instance of
      * {@link Name} then this method would return {@link Name#firstName()}.  Returns null if the directive is nested
@@ -877,11 +668,10 @@ public class FakeValuesService {
     private ValueResolver resolveFakerObjectAndMethod(ProviderRegistration faker, String key, int dotIndex, String[] args) {
         final String[] classAndMethod;
         if (dotIndex == -1) {
-            classAndMethod = new String[]{key};
+            classAndMethod = new String[] { key };
         } else {
-            classAndMethod = new String[]{key.substring(0, dotIndex), dotIndex == key.length() - 1 ? "" : key.substring(dotIndex + 1)};
+            classAndMethod = new String[] { key.substring(0, dotIndex), dotIndex == key.length() - 1 ? "" : key.substring(dotIndex + 1) };
         }
-
         try {
             String fakerMethodName = removeUnderscoreChars(classAndMethod[0]);
             final MethodAndCoercedArgs fakerAccessor = retrieveMethodAccessor(faker, fakerMethodName, EMPTY_ARRAY);
@@ -895,21 +685,15 @@ public class FakeValuesService {
             if (accessor == null) {
                 return NULL_VALUE;
             }
-
             return new MethodAndCoercedArgsResolver(accessor, objectWithMethodToInvoke);
         } catch (InvocationTargetException | IllegalAccessException e) {
-            throw new RuntimeException("Failed to resolve faker object and method for %s (dotIndex=%s, args=%s)"
-                .formatted(key, dotIndex, Arrays.toString(args)), e);
+            throw new RuntimeException("Failed to resolve faker object and method for %s (dotIndex=%s, args=%s)".formatted(key, dotIndex, Arrays.toString(args)), e);
         }
     }
 
     private MethodAndCoercedArgs retrieveMethodAccessor(Object object, String methodName, String[] args) {
         Class<?> clazz = object.getClass();
-
-        MethodAndCoercedArgs accessor = MAP_OF_METHOD_AND_COERCED_ARGS
-            .computeIfAbsent(clazz, cl -> new CopyOnWriteMap<>(WeakHashMap::new))
-            .computeIfAbsent(methodName, mn -> new CopyOnWriteMap<>(WeakHashMap::new))
-            .computeIfAbsent(args, (__) -> accessor(clazz, methodName, args));
+        MethodAndCoercedArgs accessor = MAP_OF_METHOD_AND_COERCED_ARGS.computeIfAbsent(clazz, cl -> new CopyOnWriteMap<>(WeakHashMap::new)).computeIfAbsent(methodName, mn -> new CopyOnWriteMap<>(WeakHashMap::new)).computeIfAbsent(args, (__) -> accessor(clazz, methodName, args));
         if (accessor == null) {
             LOG.fine(() -> "Can't find method on %s called %s.".formatted(object.getClass().getSimpleName(), methodName));
         }
@@ -922,11 +706,9 @@ public class FakeValuesService {
     private MethodAndCoercedArgs accessor(Class<?> clazz, final String accessorName, String[] args) {
         LOG.fine(() -> "Find accessor named %s on %s with args %s".formatted(accessorName, clazz.getSimpleName(), Arrays.toString(args)));
         String name = removeUnderscoreChars(accessorName);
-
         Map<String, Collection<Method>> classMethodsMap = CLASS_2_METHODS_CACHE.computeIfAbsent(clazz, (__) -> {
             Method[] classMethods = clazz.getMethods();
-            Map<String, Collection<Method>> methodMap =
-                classMethods.length == 0 ? emptyMap() : new HashMap<>(classMethods.length);
+            Map<String, Collection<Method>> methodMap = classMethods.length == 0 ? emptyMap() : new HashMap<>(classMethods.length);
             for (Method m : classMethods) {
                 String key = m.getName().toLowerCase(ROOT);
                 methodMap.computeIfAbsent(key, k -> new ArrayList<>()).add(m);
@@ -934,24 +716,22 @@ public class FakeValuesService {
             LOG.fine(() -> "Detected accessor named %s on %s, stored to cache: %s".formatted(accessorName, clazz.getSimpleName(), methodMap));
             return methodMap;
         });
-
         Collection<Method> methods = classMethodsMap.getOrDefault(name, emptyList());
         if (methods.isEmpty()) {
             LOG.fine(() -> "Didn't find accessor named %s on %s with args %s".formatted(accessorName, clazz.getSimpleName(), Arrays.toString(args)));
             return null;
         }
         LOG.fine(() -> "Found accessor named %s on %s in cache: %s".formatted(accessorName, clazz.getSimpleName(), methods));
-
         Method mostRestrictive = null;
         Object[] coercedArgumentsForMostRestrictive = null;
         for (Method current : methods) {
             if (current.getParameterCount() == args.length || current.getParameterCount() < args.length && current.isVarArgs()) {
                 final Object[] coercedArguments = args.length == 0 ? EMPTY_ARRAY : coerceArguments(current, args);
                 if (coercedArguments != null && rightIsMostRestrictive(mostRestrictive, current)) {
-                        mostRestrictive = current;
-                        coercedArgumentsForMostRestrictive = coercedArguments;
-                    }
+                    mostRestrictive = current;
+                    coercedArgumentsForMostRestrictive = coercedArguments;
                 }
+            }
         }
         if (mostRestrictive != null) {
             return new MethodAndCoercedArgs(mostRestrictive, coercedArgumentsForMostRestrictive);
@@ -983,7 +763,7 @@ public class FakeValuesService {
                 return true;
             }
             if (parameterTypes1[j].isPrimitive()) {
-                for (Class<?> primitive: PRIMITIVES) {
+                for (Class<?> primitive : PRIMITIVES) {
                     if (primitive == parameterTypes1[j]) {
                         return false;
                     } else if (primitive == parameterTypes2[j]) {
@@ -1094,8 +874,7 @@ public class FakeValuesService {
                     }
                 }
                 coerced[i] = coercedArgument;
-            } catch (InstantiationException | IllegalAccessException | IllegalArgumentException |
-                     InvocationTargetException | NoSuchMethodException | NoSuchMethodRuntimeException e) {
+            } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | NoSuchMethodRuntimeException e) {
                 Throwable cause = unwrap(e);
                 Level level = cause instanceof IllegalArgumentException || cause instanceof NoSuchMethodException || cause instanceof NoSuchMethodRuntimeException ? FINE : SEVERE;
                 LOG.log(level, "Unable to coerce " + args[i] + " to " + toType.getSimpleName() + " via " + toType.getSimpleName() + "(String) constructor", e);
@@ -1120,10 +899,7 @@ public class FakeValuesService {
     }
 
     public static Class<?> primitiveToWrapper(final Class<?> cls) {
-        if (cls != null && cls.isPrimitive()) {
-            return PRIMITIVE_WRAPPER_MAP.get(cls);
-        }
-        return cls;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -1132,6 +908,7 @@ public class FakeValuesService {
      * shot, returning both when successful.  This saves us from doing it more than once (coercing args).
      */
     private record MethodAndCoercedArgs(Method method, Object[] coerced) {
+
         private MethodAndCoercedArgs {
             requireNonNull(method, "method cannot be null");
             requireNonNull(coerced, "coerced arguments cannot be null");
@@ -1143,8 +920,7 @@ public class FakeValuesService {
 
         @Override
         public String toString() {
-            return "%s[method=%s.%s(), coerced=%s]".formatted(getClass().getSimpleName(),
-                method.getDeclaringClass().getSimpleName(), method.getName(), Arrays.toString(coerced));
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
@@ -1152,41 +928,40 @@ public class FakeValuesService {
     }
 
     private interface ValueResolver {
+
         Object resolve();
     }
 
     private record ConstantResolver(String value) implements ValueResolver {
+
         @Override
         public Object resolve() {
-            return value;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
     private static final ConstantResolver EMPTY_STRING = new ConstantResolver("");
+
     private static final ConstantResolver NULL_VALUE = new ConstantResolver(null);
 
     private record MethodResolver(Method method, Object current, Object[] args) implements ValueResolver {
+
         @Override
         public Object resolve() {
-            try {
-                return method.invoke(current);
-            } catch (Exception e) {
-                throw new RuntimeException("Failed to call method %s.%s() on %s (args: %s)".formatted(
-                    method.getDeclaringClass().getName(), method.getName(), current, Arrays.toString(args)), e);
-            }
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         @Override
         public String toString() {
-            return "%s[method=%s.%s(), current=%s, args=%s]".formatted(getClass().getSimpleName(),
-                method.getDeclaringClass().getSimpleName(), method.getName(), current, Arrays.toString(args));
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
     private record MethodAndCoercedArgsResolver(MethodAndCoercedArgs accessor, Object obj) implements ValueResolver {
+
         @Override
         public Object resolve() {
-            return invokeAndToString(accessor, obj);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         private static Object invokeAndToString(MethodAndCoercedArgs accessor, Object objectWithMethodToInvoke) {
@@ -1211,6 +986,7 @@ public class FakeValuesService {
     }
 
     private static class NoSuchMethodRuntimeException extends RuntimeException {
+
         public NoSuchMethodRuntimeException(NoSuchMethodException cause) {
             super(cause);
         }

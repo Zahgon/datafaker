@@ -12,7 +12,6 @@ public class NatoPhoneticAlphabet extends AbstractProvider<BaseProviders> {
     }
 
     public String codeWord() {
-        return resolve("nato_phonetic_alphabet.code_word");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

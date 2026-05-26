@@ -21,10 +21,7 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @return a future time from now.
      */
     public long future(int atMost, ChronoUnit unit) {
-        final LocalTime now = LocalTime.now();
-        final long atMostTime = now.plus(atMost, unit).toNanoOfDay();
-        final long time = now.toNanoOfDay();
-        return faker.number().numberBetween(time, atMostTime);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -36,7 +33,7 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @return a string representation of a future time from now.
      */
     public String future(int atMost, ChronoUnit unit, String pattern) {
-        return LocalTime.ofNanoOfDay(future(atMost, unit)).format(DateTimeFormatter.ofPattern(pattern));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -48,10 +45,7 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @return a future time from now, with a minimum time.
      */
     public long future(int atMost, int minimum, ChronoUnit unit) {
-        final LocalTime now = LocalTime.now();
-        final long atMostTime = now.plus(atMost, unit).toNanoOfDay();
-        final long time = now.plus(minimum, unit).toNanoOfDay();
-        return faker.number().numberBetween(time, atMostTime);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -65,7 +59,7 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @return a string representation of a future time from now, with a minimum time.
      */
     public String future(int atMost, int minimum, ChronoUnit unit, String pattern) {
-        return LocalTime.ofNanoOfDay(future(atMost, minimum, unit)).format(DateTimeFormatter.ofPattern(pattern));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -76,10 +70,7 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @return a past time from now.
      */
     public long past(int atLeast, ChronoUnit unit) {
-        final LocalTime now = LocalTime.now();
-        final long atLeastTime = now.minus(atLeast, unit).toNanoOfDay();
-        final long time = now.toNanoOfDay();
-        return faker.number().numberBetween(atLeastTime, time);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -91,7 +82,7 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @return a string representation of a past time from now.
      */
     public String past(int atMost, ChronoUnit unit, String pattern) {
-        return LocalTime.ofNanoOfDay(past(atMost, unit)).format(DateTimeFormatter.ofPattern(pattern));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -103,10 +94,7 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @return a past time from now.
      */
     public long past(int atMost, int minimum, ChronoUnit unit) {
-        final LocalTime now = LocalTime.now();
-        final long atMostTime = now.minus(atMost, unit).toNanoOfDay();
-        final long time = now.minus(minimum, unit).toNanoOfDay();
-        return faker.number().numberBetween(atMostTime, time);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -119,7 +107,7 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @return a string representation of a past time from now, with a minimum time.
      */
     public String past(int atMost, int minimum, ChronoUnit unit, String pattern) {
-        return LocalTime.ofNanoOfDay(past(atMost, minimum, unit)).format(DateTimeFormatter.ofPattern(pattern));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -131,15 +119,7 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code to} time represents an earlier time than {@code from} time.
      */
     public long between(LocalTime from, LocalTime to) throws IllegalArgumentException {
-        if (to.isBefore(from)) {
-            throw new IllegalArgumentException("Invalid time range: the upper bound time (%s) is before the lower bound (%s)".formatted(to, from));
-        }
-
-        if (from.equals(to)) {
-            return from.toNanoOfDay();
-        }
-
-        return faker.number().numberBetween(from.toNanoOfDay(), to.toNanoOfDay());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -152,6 +132,6 @@ public class Time extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if the {@code to} time represents an earlier time than {@code from} time.
      */
     public String between(LocalTime from, LocalTime to, String pattern) throws IllegalArgumentException {
-        return LocalTime.ofNanoOfDay(between(from, to)).format(DateTimeFormatter.ofPattern(pattern));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

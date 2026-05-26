@@ -12,26 +12,26 @@ public class HarryPotter extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("harry_potter.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("harry_potter.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("harry_potter.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String book() {
-        return resolve("harry_potter.books");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String house() {
-        return resolve("harry_potter.houses");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String spell() {
-        return resolve("harry_potter.spells");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

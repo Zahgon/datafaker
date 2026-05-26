@@ -12,210 +12,211 @@ public class Planet extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("planet.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String symbol() {
-        return symbol(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String symbol(PlanetName planetName) {
-        return resolve("planet.symbol." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String classification() {
-        return classification(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String classification(PlanetName planetName) {
-        return resolve("planet.classification." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String discoveryYear() {
-        return discoveryYear(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String discoveryYear(PlanetName planetName) {
-        return resolve("planet.discovery_year." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meanDistanceFromTheSun() {
-        return meanDistanceFromTheSun(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meanDistanceFromTheSun(PlanetName planetName) {
-        return resolve("planet.mean_distance_from_the_sun." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String lengthOfDay() {
-        return meanDistanceFromTheSun(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String lengthOfDay(PlanetName planetName) {
-        return resolve("planet.length_of_day." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String equatorialRadius() {
-        return equatorialRadius(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String equatorialRadius(PlanetName planetName) {
-        return resolve("planet.equatorial_radius." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String surfaceArea() {
-        return surfaceArea(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String surfaceArea(PlanetName planetName) {
-        return resolve("planet.surface_area." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String volume() {
-        return volume(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String volume(PlanetName planetName) {
-        return resolve("planet.volume." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mass() {
-        return mass(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mass(PlanetName planetName) {
-        return resolve("planet.mass." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gravitationParameters() {
-        return gravitationParameters(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gravitationParameters(PlanetName planetName) {
-        return resolve("planet.gravitational_parameters." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String density() {
-        return density(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String density(PlanetName planetName) {
-        return resolve("planet.density." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String equatorialGravity() {
-        return equatorialGravity(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String equatorialGravity(PlanetName planetName) {
-        return resolve("planet.equatorial_gravity." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String escapeVelocity() {
-        return escapeVelocity(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String escapeVelocity(PlanetName planetName) {
-        return resolve("planet.escape_velocity." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rotationPeriod() {
-        return rotationPeriod(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rotationPeriod(PlanetName planetName) {
-        return resolve("planet.rotation_period." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String orbitalPeriod() {
-        return orbitalPeriod(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String orbitalPeriod(PlanetName planetName) {
-        return resolve("planet.orbital_period." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meanOrbitalSpeed() {
-        return meanOrbitalSpeed(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meanOrbitalSpeed(PlanetName planetName) {
-        return resolve("planet.mean_orbital_speed." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String eccentricity() {
-        return eccentricity(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String eccentricity(PlanetName planetName) {
-        return resolve("planet.eccentricity." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String inclination() {
-        return inclination(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String inclination(PlanetName planetName) {
-        return resolve("planet.inclination." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String axialTilt() {
-        return axialTilt(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String axialTilt(PlanetName planetName) {
-        return resolve("planet.axial_tilt." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meanSurfaceTemperature() {
-        return meanSurfaceTemperature(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meanSurfaceTemperature(PlanetName planetName) {
-        return resolve("planet.mean_surface_temperature." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meanAirTemperature() {
-        return meanAirTemperature(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String meanAirTemperature(PlanetName planetName) {
-        return resolve("planet.mean_air_temperature." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String atmosphericComposition() {
-        return atmosphericComposition(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String atmosphericComposition(PlanetName planetName) {
-        return resolve("planet.atmospheric_composition." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String numberOfKnownMoons() {
-        return numberOfKnownMoons(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String numberOfKnownMoons(PlanetName planetName) {
-        return resolve("planet.number_of_known_moons." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rings() {
-        return rings(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rings(PlanetName planetName) {
-        return resolve("planet.rings." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String planetaryDiscriminant() {
-        return planetaryDiscriminant(faker.options().option(PlanetName.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String planetaryDiscriminant(PlanetName planetName) {
-        return resolve("planet.planetary_discriminant." + planetName.getName());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public enum PlanetName {
+
         JUPITER("jupiter"),
         MARS("mars"),
         VENUS("venus"),
@@ -233,8 +234,7 @@ public class Planet extends AbstractProvider<BaseProviders> {
         }
 
         public String getName() {
-            return name;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
-
 }

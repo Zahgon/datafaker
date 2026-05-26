@@ -10,18 +10,18 @@ public class Book extends AbstractProvider<BaseProviders> {
     }
 
     public String author() {
-        return resolve("book.author");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String title() {
-        return resolve("book.title");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String publisher() {
-        return resolve("book.publisher");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String genre() {
-        return resolve("book.genre");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

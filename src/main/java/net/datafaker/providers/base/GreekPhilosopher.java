@@ -15,7 +15,7 @@ public class GreekPhilosopher extends AbstractProvider<BaseProviders> {
      * @return a string of greek philosopher's name.
      */
     public String name() {
-        return resolve("greek_philosophers.names");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -24,6 +24,6 @@ public class GreekPhilosopher extends AbstractProvider<BaseProviders> {
      * @return a string of greek philosopher's quote.
      */
     public String quote() {
-        return resolve("greek_philosophers.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

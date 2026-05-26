@@ -10,27 +10,26 @@ public class Restaurant extends AbstractProvider<BaseProviders> {
     }
 
     public String namePrefix() {
-        return faker.bothify(resolve("restaurant.name_prefix"), true);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String nameSuffix() {
-        return resolve("restaurant.name_suffix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String name() {
-        return resolve("restaurant.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String type() {
-        return resolve("restaurant.type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String description() {
-        return resolve("restaurant.description");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String review() {
-        return resolve("restaurant.review");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

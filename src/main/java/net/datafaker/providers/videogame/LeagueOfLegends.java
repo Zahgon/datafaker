@@ -14,26 +14,26 @@ public class LeagueOfLegends extends AbstractProvider<VideoGameProviders> {
     }
 
     public String champion() {
-        return resolve("games.league_of_legends.champion");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("games.league_of_legends.location");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("games.league_of_legends.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String summonerSpell() {
-        return resolve("games.league_of_legends.summoner_spell");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String masteries() {
-        return resolve("games.league_of_legends.masteries");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rank() {
-        return resolve("games.league_of_legends.rank");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -20,6 +20,6 @@ public class MartialArt extends AbstractProvider<SportProviders> {
     }
 
     public String name() {
-        return resolve("martial_art.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -4,10 +4,8 @@ import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber.IdNumberRequest;
 import net.datafaker.providers.base.PersonIdNumber;
 import net.datafaker.providers.base.PersonIdNumber.Gender;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import static net.datafaker.idnumbers.Utils.birthday;
 import static net.datafaker.idnumbers.Utils.gender;
 import static net.datafaker.idnumbers.Utils.multiply;
@@ -20,34 +18,28 @@ import static net.datafaker.idnumbers.Utils.randomGender;
  * <a href="https://en.wikipedia.org/wiki/Romanian_identity_card#CNP">Description</a>
  */
 public class RomanianIdNumber implements IdNumberGenerator {
+
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyMMdd");
-    private static final int[] CHECKSUM_WEIGHTS = {2, 7, 9, 1, 4, 6, 3, 5, 8, 2, 7, 9};
+
+    private static final int[] CHECKSUM_WEIGHTS = { 2, 7, 9, 1, 4, 6, 3, 5, 8, 2, 7, 9 };
 
     @Override
     public String countryCode() {
-        return "RO";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public PersonIdNumber generateValid(BaseProviders faker, IdNumberRequest request) {
-        LocalDate birthday = birthday(faker, request);
-        Gender gender = gender(faker, request);
-        String basePart = basePart(faker, birthday, gender);
-        String idNumber = basePart + checksum(basePart);
-        return new PersonIdNumber(idNumber, birthday, gender);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generateInvalid(BaseProviders faker) {
-        LocalDate birthday = faker.timeAndDate().birthday();
-        Gender gender = randomGender(faker);
-        String basePart = basePart(faker, birthday, gender);
-        return basePart + (checksum(basePart) + 1) % 10;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String basePart(BaseProviders faker, LocalDate birthday, Gender gender) {
-        return firstCharacter(birthday, gender) +
-            dateOfBirth(birthday) + countyCode(faker) + sequenceNumber(faker);
+        return firstCharacter(birthday, gender) + dateOfBirth(birthday) + countyCode(faker) + sequenceNumber(faker);
     }
 
     /**
@@ -60,31 +52,18 @@ public class RomanianIdNumber implements IdNumberGenerator {
      * – 6 for female persons born between the years 2000-2099;
      */
     int firstCharacter(LocalDate birthday, Gender gender) {
-        int digit = switch (birthday.getYear() / 100) {
-            case 18 -> 3;
-            case 19 -> 1;
-            case 20 -> 5;
-            default -> throw new IllegalArgumentException("Too far in the past or future: " + birthday);
-        };
-
-        return switch (gender) {
-            case FEMALE -> digit + 1;
-            case MALE -> digit;
-        };
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     String dateOfBirth(LocalDate birthday) {
-        return DATE_TIME_FORMATTER.format(birthday);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Character 8–9: 01–46 or 51 or 52
      */
     String countyCode(BaseProviders faker) {
-        int countyCode = faker.bool().bool() ?
-            faker.number().numberBetween(1, 47) :
-            faker.number().numberBetween(51, 53);
-        return "%02d".formatted(countyCode);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -92,7 +71,7 @@ public class RomanianIdNumber implements IdNumberGenerator {
      * Each number is allocated only once per person per day.
      */
     String sequenceNumber(BaseProviders faker) {
-        return "%03d".formatted(faker.number().numberBetween(1, 1_000));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -102,7 +81,6 @@ public class RomanianIdNumber implements IdNumberGenerator {
      * if the result is 10 then the digit is 1, otherwise is the result.
      */
     int checksum(String basePart) {
-        int result = multiply(basePart, CHECKSUM_WEIGHTS) % 11;
-        return result == 10 ? 1 : result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

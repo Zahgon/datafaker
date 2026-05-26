@@ -10,18 +10,18 @@ public class Ancient extends AbstractProvider<BaseProviders> {
     }
 
     public String god() {
-        return resolve("ancient.god");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String primordial() {
-        return resolve("ancient.primordial");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String titan() {
-        return resolve("ancient.titan");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hero() {
-        return resolve("ancient.hero");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

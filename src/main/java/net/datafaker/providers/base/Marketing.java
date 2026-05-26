@@ -12,6 +12,6 @@ public class Marketing extends AbstractProvider<BaseProviders> {
     }
 
     public String buzzwords() {
-        return resolve("marketing.buzzwords");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

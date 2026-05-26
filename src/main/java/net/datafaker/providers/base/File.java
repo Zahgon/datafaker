@@ -12,22 +12,18 @@ public class File extends AbstractProvider<BaseProviders> {
     }
 
     public String extension() {
-        return resolve("file.extension");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mimeType() {
-        return resolve("file.mime_type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String fileName() {
-        return fileName(null, null, null, null);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String fileName(String dirOrNull, String nameOrNull, String extensionOrNull, String separatorOrNull) {
-        final String sep = separatorOrNull == null ? FileSystems.getDefault().getSeparator() : separatorOrNull;
-        final String dir = dirOrNull == null ? faker.internet().slug() : dirOrNull;
-        final String name = nameOrNull == null ? faker.lorem().word().toLowerCase(faker.getContext().getLocale()) : nameOrNull;
-        final String ext = extensionOrNull == null ? extension() : extensionOrNull;
-        return dir + sep + name + "." + ext;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

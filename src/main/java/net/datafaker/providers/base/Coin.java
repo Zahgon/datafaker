@@ -13,6 +13,6 @@ public class Coin extends AbstractProvider<BaseProviders> {
      * @return coin side e.g. "Heads", "Tails".
      */
     public String flip() {
-        return resolve("coin.flip");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

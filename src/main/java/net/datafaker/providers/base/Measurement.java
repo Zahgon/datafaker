@@ -15,7 +15,7 @@ public class Measurement extends AbstractProvider<BaseProviders> {
      * @return a string of height measurement.
      */
     public String height() {
-        return resolve("measurement.height");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -24,7 +24,7 @@ public class Measurement extends AbstractProvider<BaseProviders> {
      * @return a string of length measurement.
      */
     public String length() {
-        return resolve("measurement.length");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -33,7 +33,7 @@ public class Measurement extends AbstractProvider<BaseProviders> {
      * @return a string of volume measurement.
      */
     public String volume() {
-        return resolve("measurement.volume");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -42,7 +42,7 @@ public class Measurement extends AbstractProvider<BaseProviders> {
      * @return a string of weight measurement.
      */
     public String weight() {
-        return resolve("measurement.weight");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -51,7 +51,7 @@ public class Measurement extends AbstractProvider<BaseProviders> {
      * @return a string of metric height measurement.
      */
     public String metricHeight() {
-        return resolve("measurement.metric_height");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -60,7 +60,7 @@ public class Measurement extends AbstractProvider<BaseProviders> {
      * @return a string of metric length measurement.
      */
     public String metricLength() {
-        return resolve("measurement.metric_length");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -69,7 +69,7 @@ public class Measurement extends AbstractProvider<BaseProviders> {
      * @return a string of metric volume measurement.
      */
     public String metricVolume() {
-        return resolve("measurement.metric_volume");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -78,6 +78,6 @@ public class Measurement extends AbstractProvider<BaseProviders> {
      * @return a string of metric weight measurement.
      */
     public String metricWeight() {
-        return resolve("measurement.metric_weight");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -1,6 +1,5 @@
 package net.datafaker.providers.base;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -17,115 +16,94 @@ public class Vehicle extends AbstractProvider<BaseProviders> {
     }
 
     public String vin() {
-        return faker.regexify(VIN_REGEX);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String manufacturer() {
-        return resolve("vehicle.manufacture");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String make() {
-        return resolve("vehicle.makes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String model() {
-        return model(make());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String model(String make) {
-        return resolve("vehicle.models_by_make." + make);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String makeAndModel() {
-        String make = make();
-        return make + " " + model(make);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String style() {
-        return resolve("vehicle.styles");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String color() {
-        return resolve("vehicle.colors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String upholsteryColor() {
-        return resolve("vehicle.upholstery_colors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String upholsteryFabric() {
-        return resolve("vehicle.upholstery_fabrics");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String upholstery() {
-        return resolve("vehicle.upholsteries");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String transmission() {
-        return resolve("vehicle.transmissions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String driveType() {
-        return resolve("vehicle.drive_types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String fuelType() {
-        return resolve("vehicle.fuel_types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String carType() {
-        return resolve("vehicle.car_types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String engine() {
-        return resolve("vehicle.engine_sizes")
-            + " "
-            + resolve("vehicle.cylinder_engine");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<String> carOptions() {
-        return carOptions(5, 10);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<String> carOptions(int min, int max) {
-        int optionSize = faker.number().numberBetween(min, max);
-        List<String> arr = new ArrayList<>(optionSize);
-        while (optionSize > 0) {
-            arr.add(faker.resolve("vehicle.car_options"));
-            optionSize -= 1;
-        }
-        return arr;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<String> standardSpecs() {
-        return standardSpecs(5, 10);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<String> standardSpecs(int min, int max) {
-        int standardSpecsSize = faker.number().numberBetween(min, max);
-        List<String> arr = new ArrayList<>(standardSpecsSize);
-        while (standardSpecsSize > 0) {
-            arr.add(faker.resolve("vehicle.standard_specs"));
-            standardSpecsSize -= 1;
-        }
-        return arr;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String doors() {
-        return resolve("vehicle.doors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String licensePlate() {
-        return faker.bothify(faker.resolve("vehicle.license_plate")).toUpperCase(Locale.ROOT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String licensePlate(String stateAbbreviation) {
-
-        if ("".equals(stateAbbreviation)) {
-            return null;
-        }
-
-        String licensePlatesByState = resolve("vehicle.license_plate_by_state." + stateAbbreviation);
-        return licensePlatesByState == null ? null : faker.bothify(licensePlatesByState).toUpperCase(Locale.ROOT);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

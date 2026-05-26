@@ -12,11 +12,10 @@ public class Movie extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String quote() {
-        return resolve("movie.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     public String name() {
-        return resolve("movie.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
 }

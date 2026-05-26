@@ -15,7 +15,7 @@ public class Pronouns extends AbstractProvider<BaseProviders> {
      * @return a gender neutral subjective pronoun
      */
     public String subjective() {
-        return resolve("pronouns.subjective");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -23,7 +23,7 @@ public class Pronouns extends AbstractProvider<BaseProviders> {
      * @return a gender neutral objective pronoun
      */
     public String objective() {
-        return resolve("pronouns.objective");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -31,7 +31,7 @@ public class Pronouns extends AbstractProvider<BaseProviders> {
      * @return a gender neutral possessive pronoun
      */
     public String possessive() {
-        return resolve("pronouns.possessive");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -39,6 +39,6 @@ public class Pronouns extends AbstractProvider<BaseProviders> {
      * @return a gender neutral reflexive pronoun
      */
     public String reflexive() {
-        return resolve("pronouns.reflexive");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

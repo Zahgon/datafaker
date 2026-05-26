@@ -14,11 +14,10 @@ public class SouthPark extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("south_park.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("south_park.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

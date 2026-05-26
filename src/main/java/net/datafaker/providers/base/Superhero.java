@@ -10,22 +10,22 @@ public class Superhero extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("superhero.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String prefix() {
-        return resolve("superhero.prefix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String suffix() {
-        return resolve("superhero.suffix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String power() {
-        return resolve("superhero.power");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String descriptor() {
-        return resolve("superhero.descriptor");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

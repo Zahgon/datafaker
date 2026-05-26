@@ -3,7 +3,6 @@ package net.datafaker.providers.base;
 import net.datafaker.service.FakeValuesService;
 import net.datafaker.service.FakerContext;
 import net.datafaker.service.RandomService;
-
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.Locale;
@@ -12,16 +11,16 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public interface ProviderRegistration {
+
     <B extends ProviderRegistration> B getFaker();
 
     FakerContext getContext();
 
     default <PR extends ProviderRegistration, AP extends AbstractProvider<PR>> AP getProvider(String simpleClassName) {
-        return ObjectMethods.executeMethodByReturnType(this, simpleClassName);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    <PR extends ProviderRegistration, AP extends AbstractProvider<PR>> AP getProvider(
-        Class<AP> clazz, Function<PR, AP> valueSupplier);
+    <PR extends ProviderRegistration, AP extends AbstractProvider<PR>> AP getProvider(Class<AP> clazz, Function<PR, AP> valueSupplier);
 
     String resolve(String key);
 
@@ -155,7 +154,7 @@ public interface ProviderRegistration {
     FakeValuesService fakeValuesService();
 
     default Options options() {
-        return getProvider(Options.class, Options::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     void addPath(Locale locale, Path path);

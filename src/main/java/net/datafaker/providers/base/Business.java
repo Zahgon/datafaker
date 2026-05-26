@@ -10,23 +10,24 @@ import java.time.format.DateTimeFormatter;
 public class Business extends AbstractProvider<BaseProviders> {
 
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
     protected Business(BaseProviders faker) {
         super(faker);
     }
 
     public String creditCardNumber() {
-        return faker.numerify(resolve("business.credit_card_numbers_format"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creditCardType() {
-        return resolve("business.credit_card_types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creditCardExpiry() {
-        return DATE_FORMATTER.format(LocalDate.now().plus(faker.timeAndDate().period(Period.ZERO, Period.of(20, 0, 0))));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String securityCode() {
-        return faker.numerify(resolve("business.security_code"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

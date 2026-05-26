@@ -1,8 +1,6 @@
 package net.datafaker.providers.food;
 
-
 import net.datafaker.providers.base.AbstractProvider;
-
 import java.util.Locale;
 
 /**
@@ -15,50 +13,51 @@ public class Coffee extends AbstractProvider<FoodProviders> {
     }
 
     public String country() {
-        return resolve("coffee.country");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String region() {
-        return region(faker.options().option(Coffee.Country.class));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String region(Coffee.Country country) {
-        return resolve("coffee.regions." + country.name().toLowerCase(Locale.ROOT));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String variety() {
-        return resolve("coffee.variety");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String intensifier() {
-        return resolve("coffee.intensifier");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String body() {
-        return resolve("coffee.body");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String descriptor() {
-        return resolve("coffee.descriptor");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String notes() {
-        return resolve("coffee.notes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String name1() {
-        return resolve("coffee.name_1");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String name2() {
-        return resolve("coffee.name_2");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String blendName() {
-        return resolve("coffee.blend_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public enum Country {
+
         BRAZIL,
         COLOMBIA,
         SUMATRA,

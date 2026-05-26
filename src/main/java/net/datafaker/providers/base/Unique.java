@@ -32,28 +32,7 @@ public class Unique extends AbstractProvider<BaseProviders> {
      *                                have been returned
      */
     public String fetchFromYaml(String key) {
-        Locale locale = faker.getContext().getLocale();
-
-        Map<String, List<String>> valuesByKey = valuesByKeyAndLocale.getOrDefault(locale, new HashMap<>());
-        List<String> values = valuesByKey.get(key);
-
-        if (values == null) {
-            values = fetchValues(key);
-        }
-
-        if (values.isEmpty()) {
-            throw new NoSuchElementException("All possible values have been generated for key %s under locale %s".formatted(
-                key,
-                locale));
-        }
-
-        int index = faker.random().nextInt(0, values.size() - 1);
-        String value = removeAtIndex(values, index);
-
-        valuesByKey.put(key, values);
-        valuesByKeyAndLocale.put(locale, valuesByKey);
-
-        return value;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String removeAtIndex(List<String> values, int index) {
@@ -64,25 +43,17 @@ public class Unique extends AbstractProvider<BaseProviders> {
 
     private List<String> fetchValues(String key) {
         Object object = faker.fakeValuesService().fetchObject(key, faker.getContext());
-
         if (!(object instanceof List)) {
             throw noValuesFoundException(key);
         }
-
-        List<String> values = ((List<?>) object).stream()
-            .filter(value -> !(value instanceof List))
-            .map(String::valueOf)
-            .collect(Collectors.toList());
-
+        List<String> values = ((List<?>) object).stream().filter(value -> !(value instanceof List)).map(String::valueOf).collect(Collectors.toList());
         if (values.isEmpty()) {
             throw noValuesFoundException(key);
         }
-
         return values;
     }
 
     private NoSuchElementException noValuesFoundException(String key) {
-        return new NoSuchElementException("No values found for key %s".formatted(
-            key));
+        return new NoSuchElementException("No values found for key %s".formatted(key));
     }
 }

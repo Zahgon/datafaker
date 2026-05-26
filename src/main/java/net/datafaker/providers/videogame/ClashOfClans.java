@@ -14,14 +14,14 @@ public class ClashOfClans extends AbstractProvider<VideoGameProviders> {
     }
 
     public String troop() {
-        return resolve("clash_of_clans.troops");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String rank() {
-        return resolve("clash_of_clans.ranks");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String defensiveBuilding() {
-        return resolve("clash_of_clans.defensive_buildings");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

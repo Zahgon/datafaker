@@ -6,7 +6,9 @@ import java.util.Locale;
  * @since 0.8.0
  */
 public class Nation extends AbstractProvider<BaseProviders> {
+
     private static final String[] isoLanguages = Locale.getISOLanguages();
+
     private static final String[] isoCountries = Locale.getISOCountries();
 
     protected Nation(BaseProviders faker) {
@@ -14,26 +16,26 @@ public class Nation extends AbstractProvider<BaseProviders> {
     }
 
     public String nationality() {
-        return resolve("nation.nationality");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String language() {
-        return resolve("nation.language");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String capitalCity() {
-        return resolve("nation.capital_city");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String flag() {
-        return resolve("nation.flag");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String isoLanguage() {
-        return faker.options().option(isoLanguages);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String isoCountry() {
-        return faker.options().option(isoCountries);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

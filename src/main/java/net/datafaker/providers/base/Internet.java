@@ -2,7 +2,6 @@ package net.datafaker.providers.base;
 
 import net.datafaker.internal.helper.FakerIDN;
 import net.datafaker.service.RandomService;
-
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -19,9 +18,13 @@ import java.util.regex.Pattern;
  * @since 0.8.0
  */
 public class Internet extends AbstractProvider<BaseProviders> {
+
     private static final Pattern COLON = Pattern.compile(":");
+
     private static final List<String> HTTP_SCHEMES = List.of("http://", "https://");
+
     private static final int MIN_PORT_NUMBER = 0;
+
     private static final int MAX_PORT_NUMBER = 65535;
 
     protected Internet(BaseProviders faker) {
@@ -48,7 +51,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
     }
 
     public String emailAddress() {
-        return emailAddress(faker.credentials().username());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -72,11 +75,11 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @see Name#nameWithMiddle()
      */
     public String emailAddress(String name) {
-        return emailAddress(toLocalPart(name), FakerIDN.toASCII(faker.resolve("internet.free_email")));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String safeEmailAddress() {
-        return safeEmailAddress(faker.credentials().username());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -93,7 +96,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @see #emailAddress(String)
      */
     public String safeEmailAddress(String name) {
-        return emailAddress(toLocalPart(name), FakerIDN.toASCII(faker.resolve("internet.safe_email")));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String emailAddress(String localPart, String domain) {
@@ -101,11 +104,10 @@ public class Internet extends AbstractProvider<BaseProviders> {
     }
 
     public String emailSubject() {
-        return resolve("internet.email_subject");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public static final Pattern DIACRITICS_AND_FRIENDS
-        = Pattern.compile("[\\p{InCombiningDiacriticalMarks}\\p{IsLm}\\p{IsSk}]+");
+    public static final Pattern DIACRITICS_AND_FRIENDS = Pattern.compile("[\\p{InCombiningDiacriticalMarks}\\p{IsLm}\\p{IsSk}]+");
 
     private String stripAccents(String input) {
         // strip accents from input
@@ -130,49 +132,35 @@ public class Internet extends AbstractProvider<BaseProviders> {
      */
     private String toLocalPart(String name) {
         String[] parts = stripAccents(name).split(" ");
-
         Object prefixObj = faker.fakeValuesService().fetchObject("name.prefix", faker.getContext());
-        final List<String> prefixList = (prefixObj instanceof List<?> list
-                && list.stream().allMatch(String.class::isInstance))
-                        ? list.stream().map(String.class::cast).toList()
-                        : Collections.emptyList();
+        final List<String> prefixList = (prefixObj instanceof List<?> list && list.stream().allMatch(String.class::isInstance)) ? list.stream().map(String.class::cast).toList() : Collections.emptyList();
         if (prefixList.contains(parts[0])) {
             parts = Arrays.copyOfRange(parts, 1, parts.length);
         }
-
         Object suffixObj = faker.fakeValuesService().fetchObject("name.suffix", faker.getContext());
-        final List<String> suffixList = (suffixObj instanceof List<?> list
-                && list.stream().allMatch(String.class::isInstance))
-                        ? list.stream().map(String.class::cast).toList()
-                        : Collections.emptyList();
+        final List<String> suffixList = (suffixObj instanceof List<?> list && list.stream().allMatch(String.class::isInstance)) ? list.stream().map(String.class::cast).toList() : Collections.emptyList();
         if (suffixList.contains(parts[parts.length - 1])) {
             parts = Arrays.copyOfRange(parts, 0, parts.length - 1);
         }
-
         if (parts.length == 0) {
             return LOCALPART.matcher(name.toLowerCase(faker.getContext().getLocale())).replaceAll("");
         }
-
         if (parts.length == 1) {
             return LOCALPART.matcher(parts[0].toLowerCase(faker.getContext().getLocale())).replaceAll("");
         }
-
-        return String.join(".",
-            LOCALPART.matcher(parts[0].toLowerCase(faker.getContext().getLocale())).replaceAll(""),
-            LOCALPART.matcher(parts[parts.length - 1].toLowerCase(faker.getContext().getLocale())).replaceAll(""));
+        return String.join(".", LOCALPART.matcher(parts[0].toLowerCase(faker.getContext().getLocale())).replaceAll(""), LOCALPART.matcher(parts[parts.length - 1].toLowerCase(faker.getContext().getLocale())).replaceAll(""));
     }
 
     public String domainName() {
-        return domainWord() + "." + domainSuffix();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String domainWord() {
-        return FakerIDN.toASCII(
-            faker.name().lastName().toLowerCase(faker.getContext().getLocale()).replace("'", ""));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String domainSuffix() {
-        return resolve("internet.domain_suffix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -183,10 +171,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @since 2.0.0
      */
     public String url() {
-        final byte[] bts = faker.random().nextRandomBytes(6);
-        return url(bts[0] % 2 == 0, bts[1] % 2 == 0,
-            bts[2] % 2 == 0, bts[3] % 2 == 0,
-            bts[4] % 2 == 0, bts[5] % 2 == 0);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -202,13 +187,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @since 2.0.0
      */
     public String url(boolean schemeChoice, boolean portChoice, boolean pathChoice, boolean fileChoice, boolean paramsChoice, boolean anchorChoice) {
-        String scheme = schemeChoice ? faker.options().nextElement(HTTP_SCHEMES) : "https://";
-        String port = portChoice ? (":" + port()) : "";
-        String path = pathChoice ? ("/" + slug(faker.lorem().words(2), "/")) : "/";
-        String file = fileChoice ? faker.lorem().words(1).get(0) : "";
-        String params = paramsChoice ? ("?" + slug(faker.lorem().words(2), "=") + "&" + slug(faker.lorem().words(2), "=")) : "";
-        String anchor = anchorChoice ? ("#" + faker.lorem().words(1).get(0)) : "";
-        return scheme + webdomain() + port + path + file + params + anchor;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -218,37 +197,23 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @since 2.0.0
      */
     public String webdomain() {
-        return String.join("",
-            "www", ".",
-            FakerIDN.toASCII(
-                faker.name().firstName().toLowerCase(
-                    faker.getContext().getLocale()).replace("'", "") + "-" +
-                    domainWord()
-            ),
-            ".",
-            domainSuffix()
-        );
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String image() {
-        String[] dimension = resolve("internet.image_dimension").split("x");
-        if (dimension.length == 0) {
-            return "";
-        } else {
-            return image(Integer.parseInt(dimension[0].trim()), Integer.parseInt(dimension[1].trim()));
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String image(int width, int height) {
-        return "https://picsum.photos/%s/%s".formatted(width, height);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String image(int width, int height, String seed) {
-        return "https://picsum.photos/seed/%s/%s/%s".formatted(seed, width, height);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String httpMethod() {
-        return resolve("internet.http_method");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -305,7 +270,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a port number
      */
     public int port() {
-        return port(MIN_PORT_NUMBER, MAX_PORT_NUMBER);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -315,7 +280,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a port number
      */
     public int port(PortRange range) {
-        return port(range.from, range.to);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -326,11 +291,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a port number within given range
      */
     public int port(int from, int to) {
-        if (from < MIN_PORT_NUMBER)
-            throw new IllegalArgumentException("Port number %s cannot be less than %s".formatted(from, MIN_PORT_NUMBER));
-        if (to > MAX_PORT_NUMBER)
-            throw new IllegalArgumentException("Port number %s cannot be greater than %s".formatted(to, MAX_PORT_NUMBER));
-        return faker.random().nextInt(from, to);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -340,27 +301,14 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a correctly formatted MAC address
      */
     public String macAddress(String prefix) {
-        final String tmp = (prefix == null) ? "" : prefix;
-        final int prefixLength = tmp.trim().isEmpty()
-            ? 0
-            : COLON.split(tmp).length;
-
-        final StringBuilder out = new StringBuilder(tmp);
-        for (int i = 0; i < 6 - prefixLength; i++) {
-            if (!out.isEmpty()) {
-                out.append(':');
-            }
-            out.append(Integer.toHexString(faker.random().nextInt(16)));
-            out.append(Integer.toHexString(faker.random().nextInt(16)));
-        }
-        return out.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @see Internet#macAddress(String)
      */
     public String macAddress() {
-        return macAddress("");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -369,7 +317,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a correctly formatted IPv4 address.
      */
     public String ipV4Address() {
-        return getIpV4Address().getHostAddress();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -378,75 +326,42 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return an IPv4 address.
      */
     public InetAddress getIpV4Address() {
-        return inet4Address(
-            (byte) (faker.random().nextInt(254) + 2),
-            (byte) (faker.random().nextInt(254) + 2),
-            (byte) (faker.random().nextInt(254) + 2),
-            (byte) (faker.random().nextInt(254) + 2)
-        );
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a valid private IPV4 address in dot notation
      */
     public String privateIpV4Address() {
-        return getPrivateIpV4Address().getHostAddress();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a private IPV4 address
      */
     public InetAddress getPrivateIpV4Address() {
-        final Byte[] PRIVATE_FIRST_OCTET = {10, 127, (byte) 169, (byte) 192, (byte) 172};
-        final Byte[] PRIVATE_SECOND_OCTET_172 = {16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31};
-
-        final RandomService r = faker.random();
-        byte first = random(PRIVATE_FIRST_OCTET),
-            second = (byte) r.nextInt(256),
-            third = (byte) r.nextInt(256),
-            fourth = (byte) r.nextInt(256);
-
-        switch (first) {
-            case (byte) 172 -> second = random(PRIVATE_SECOND_OCTET_172);
-            case (byte) 192 -> second = (byte) 168;
-            case (byte) 169 -> second = (byte) 254;
-        }
-        return inet4Address(first, second, third, fourth);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a valid public IPV4 address in dot notation
      */
     public String publicIpV4Address() {
-        return getPublicIpV4Address().getHostAddress();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a valid public IPV4 address
      */
     public InetAddress getPublicIpV4Address() {
-        final RandomService r = faker.random();
-
-        final byte[] PRIVATE_FIRST_OCTET = {10, 127, (byte) 169, (byte) 192, (byte) 172};
-
-        byte first = (byte) r.nextInt(256),
-            second = (byte) r.nextInt(256),
-            third = (byte) r.nextInt(256),
-            fourth = (byte) r.nextInt(256);
-
-        while (Arrays.binarySearch(PRIVATE_FIRST_OCTET, first) > 0) {
-            first = (byte) r.nextInt(256);
-        }
-        return inet4Address(first, second, third, fourth);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a valid IPV4 CIDR
      */
     public String ipV4Cidr() {
-        return ipV4Address() +
-            '/' +
-            (faker.random().nextInt(31) + 1);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -455,7 +370,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a correctly formatted IPv6 address.
      */
     public String ipV6Address() {
-        return getIpV6Address().getHostAddress();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -464,33 +379,21 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a IPV6 address.
      */
     public InetAddress getIpV6Address() {
-        final RandomService random = faker.random();
-        final char[] res = new char[4 * 8 + 7];
-        for (int i = 0; i < 8; i++) {
-            int offset = 4 * i;
-            if (i > 0) {
-                res[i - 1 + offset] = ':';
-            }
-            char[] hex = random.hex(4, false).toCharArray();
-            System.arraycopy(hex, 0, res, i + offset, hex.length);
-        }
-        return inet6Address(String.valueOf(res));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a valid IPV6 CIDR
      */
     public String ipV6Cidr() {
-        return ipV6Address() +
-            '/' +
-            (faker.random().nextInt(127) + 1);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a slug using '_' as the word separator and two {@link Lorem} words as the values
      */
     public String slug() {
-        return slug(faker.lorem().words(2), "_");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -499,21 +402,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a slug string combining wordsOrNull with glueOrNull (ex. x_y)
      */
     public String slug(List<String> wordsOrNull, String glueOrNull) {
-        final String glue = glueOrNull == null
-            ? "_"
-            : glueOrNull;
-        final List<String> words = wordsOrNull == null
-            ? faker.lorem().words(2)
-            : wordsOrNull;
-
-        final StringBuilder slug = new StringBuilder();
-        for (int i = 0; i < words.size(); i++) {
-            if (i > 0) {
-                slug.append(glue);
-            }
-            slug.append(words.get(i));
-        }
-        return slug.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -524,38 +413,15 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a uuid as string.
      */
     public String uuidv3() {
-        return UUID.nameUUIDFromBytes(faker.random().nextRandomBytes(16)).toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String uuidv4() {
-        return uuid();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String uuidv7() {
-        // Get the current timestamp in milliseconds since Unix epoch
-        long timestamp = faker.random().nextLong();
-
-        // Generate random bits
-        long randomBits1 = faker.random().nextLong();
-        long randomBits2 = faker.random().nextLong();
-
-        // Combine timestamp and random bits
-        ByteBuffer bb = ByteBuffer.wrap(new byte[16]);
-        bb.putLong(timestamp);
-        bb.putLong(randomBits1 ^ randomBits2);
-
-        long mostSigBits = bb.getLong(0);
-        long leastSigBits = bb.getLong(8);
-
-        // Set the version to 7 (bits 4-7 of the time_hi_and_version field)
-        mostSigBits &= ~(0xF000L);  // clear version
-        mostSigBits |= 0x7000L;     // set to version 7
-
-        // Set the variant to IETF variant (bits 6-7 of the clock_seq_hi_and_reserved field)
-        leastSigBits &= ~(0xC000000000000000L); // clear variant
-        leastSigBits |= 0x8000000000000000L;    // set to IETF variant
-
-        return new UUID(mostSigBits, leastSigBits).toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -567,8 +433,7 @@ public class Internet extends AbstractProvider<BaseProviders> {
      * @return a v4 uuid as string.
      */
     public String uuid() {
-        String uuidv3 = uuidv3();
-        return uuidv3.substring(0, 14) + '4' + uuidv3.substring(15);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private <T> T random(T[] src) {
@@ -576,21 +441,15 @@ public class Internet extends AbstractProvider<BaseProviders> {
     }
 
     public String userAgent(UserAgent userAgent) {
-        UserAgent agent = userAgent;
-
-        if (agent == null) {
-            agent = UserAgent.any(faker);
-        }
-
-        String userAgentKey = "internet.user_agent." + agent.toString();
-        return resolve(userAgentKey);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String userAgent() {
-        return userAgent(null);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public enum UserAgent {
+
         AOL("aol"),
         CHROME("chrome"),
         FIREFOX("firefox"),
@@ -614,31 +473,21 @@ public class Internet extends AbstractProvider<BaseProviders> {
 
         @Override
         public String toString() {
-            return browserName;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
     public String botUserAgent(BotUserAgent vendor) {
-        BotUserAgent agent = vendor;
-
-        if (agent == null) {
-            agent = BotUserAgent.any(faker);
-        }
-
-        String userAgentKey = "internet.bot_user_agent." + agent.toString();
-        return resolve(userAgentKey);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String botUserAgentAny() {
-        return botUserAgent(null);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public enum BotUserAgent {
-        GOOGLEBOT("googlebot"),
-        BINGBOT("bingbot"),
-        DUCKDUCKBOT("duckduckbot"),
-        BAIDUSPIDER("baiduspider"),
-        YANDEXBOT("yandexbot");
+
+        GOOGLEBOT("googlebot"), BINGBOT("bingbot"), DUCKDUCKBOT("duckduckbot"), BAIDUSPIDER("baiduspider"), YANDEXBOT("yandexbot");
 
         //Browser's name in corresponding yaml (internet.yml) file.
         private final String browserName;
@@ -655,13 +504,13 @@ public class Internet extends AbstractProvider<BaseProviders> {
 
         @Override
         public String toString() {
-            return browserName;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
     private static InetAddress inet4Address(byte first, byte second, byte third, byte fourth) {
         try {
-            return Inet4Address.getByAddress(new byte[]{first, second, third, fourth});
+            return Inet4Address.getByAddress(new byte[] { first, second, third, fourth });
         } catch (UnknownHostException e) {
             throw new RuntimeException("Failed to create Inet4Address from %s %s %s %s".formatted(first, second, third, fourth), e);
         }
@@ -676,11 +525,11 @@ public class Internet extends AbstractProvider<BaseProviders> {
     }
 
     public enum PortRange {
-        WellKnownPorts(0, 1023),
-        RegisteredPorts(1024, 49151),
-        DynamicPrivatePorts(49152, 65535);
+
+        WellKnownPorts(0, 1023), RegisteredPorts(1024, 49151), DynamicPrivatePorts(49152, 65535);
 
         private final int from;
+
         private final int to;
 
         PortRange(int from, int to) {

@@ -12,38 +12,38 @@ public class Witcher extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("games.witcher.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String witcher() {
-        return resolve("games.witcher.witchers");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String school() {
-        return resolve("games.witcher.schools");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("games.witcher.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("games.witcher.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String monster() {
-        return resolve("games.witcher.monsters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sign() {
-        return resolve("games.witcher.signs");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String potion() {
-        return resolve("games.witcher.potions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String book() {
-        return resolve("games.witcher.books");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

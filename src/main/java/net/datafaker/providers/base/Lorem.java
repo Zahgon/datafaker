@@ -1,10 +1,8 @@
 package net.datafaker.providers.base;
 
 import net.datafaker.internal.helper.WordUtils;
-
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * @since 0.8.0
@@ -16,73 +14,67 @@ public class Lorem extends AbstractProvider<BaseProviders> {
     }
 
     public char character() {
-        return character(false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public char character(boolean includeUppercase) {
-        return characters(includeUppercase ? 2 : 1, includeUppercase).charAt(0);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters() {
-        return characters(255, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters(boolean includeUppercase) {
-        return characters(255, includeUppercase);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters(int minimumLength, int maximumLength) {
-        return characters(faker.random().nextInt(minimumLength, maximumLength), false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters(int minimumLength, int maximumLength, boolean includeUppercase) {
-        return characters(minimumLength, maximumLength, includeUppercase, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters(int minimumLength, int maximumLength, boolean includeUppercase, boolean includeDigit) {
-        return characters(minimumLength, maximumLength, includeUppercase, false, includeDigit);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters(int fixedNumberOfCharacters) {
-        return characters(fixedNumberOfCharacters, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters(int fixedNumberOfCharacters, boolean includeUppercase) {
-        return faker.text().text(fixedNumberOfCharacters, fixedNumberOfCharacters, includeUppercase);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public String characters(int minimumLength, int maximumLength,
-                             boolean includeUppercase, boolean includeSpecial, boolean includeDigit) {
-        return faker.text().text(minimumLength, maximumLength, includeUppercase, includeSpecial, includeDigit);
+    public String characters(int minimumLength, int maximumLength, boolean includeUppercase, boolean includeSpecial, boolean includeDigit) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters(int fixedNumberOfCharacters, boolean includeUppercase, boolean includeDigit) {
-        return characters(fixedNumberOfCharacters, includeUppercase, false, includeDigit);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public String characters(int fixedNumberOfCharacters,
-                             boolean includeUppercase, boolean includeSpecial, boolean includeDigit) {
-        return faker.text().text(fixedNumberOfCharacters, fixedNumberOfCharacters, includeUppercase, includeSpecial, includeDigit);
+    public String characters(int fixedNumberOfCharacters, boolean includeUppercase, boolean includeSpecial, boolean includeDigit) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<String> words(int num) {
-        List<String> returnList = new ArrayList<>();
-        for (int i = 0; i < num; i++) {
-            returnList.add(word());
-        }
-        return returnList;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<String> words() {
-        return words(3);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String word() {
-        return resolve("lorem.words");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String supplemental() {
-        return resolve("lorem.supplemental");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -91,7 +83,7 @@ public class Lorem extends AbstractProvider<BaseProviders> {
      * @return a random sentence
      */
     public String sentence() {
-        return sentence(3);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -100,7 +92,7 @@ public class Lorem extends AbstractProvider<BaseProviders> {
      * @return a random sentence
      */
     public String sentence(int wordCount) {
-        return sentence(wordCount, 6);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -111,43 +103,26 @@ public class Lorem extends AbstractProvider<BaseProviders> {
      * @return a random sentence
      */
     public String sentence(int wordCount, int randomWordsToAdd) {
-        int numberOfWordsToAdd = randomWordsToAdd == 0 ? 0 : faker.random().nextInt(randomWordsToAdd);
-        final int totalWordCount = wordCount + numberOfWordsToAdd;
-        StringBuilder sb = new StringBuilder();
-        if (totalWordCount > 0) {
-            sb.append(WordUtils.capitalize(word()));
-        }
-        for (int i = 1; i < totalWordCount; i++) {
-            sb.append(" ").append(word());
-        }
-        return sb.append(".").toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<String> sentences(int sentenceCount) {
-        List<String> sentences = new ArrayList<>(sentenceCount);
-        for (int i = 0; i < sentenceCount; i++) {
-            sentences.add(sentence());
-        }
-        return sentences;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Creates a paragraph with a range (sentenceCount)...(&lt;sentenceCount+3)
      */
     public String paragraph(int sentenceCount) {
-        return String.join(" ", sentences(sentenceCount + faker.random().nextInt(3)));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String paragraph() {
-        return paragraph(3);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<String> paragraphs(int paragraphCount) {
-        List<String> paragraphs = new ArrayList<>(paragraphCount);
-        for (int i = 0; i < paragraphCount; i++) {
-            paragraphs.add(paragraph());
-        }
-        return paragraphs;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -158,15 +133,7 @@ public class Lorem extends AbstractProvider<BaseProviders> {
      * @return a string with a fixed size
      */
     public String fixedString(int numberOfLetters) {
-        if (numberOfLetters <= 0) {
-            return "";
-        }
-
-        StringBuilder builder = new StringBuilder();
-        while (builder.length() < numberOfLetters) {
-            builder.append(sentence());
-        }
-        return builder.substring(0, numberOfLetters);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -177,16 +144,6 @@ public class Lorem extends AbstractProvider<BaseProviders> {
      * Return empty string if input size is 0 or negative.
      */
     public String maxLengthSentence(final int fixedLength) {
-        if (fixedLength <= 0) {
-            return "";
-        }
-
-        String sentence = sentence(fixedLength);
-        final char space = ' ';
-        while (space == sentence.charAt(fixedLength - 1)) {
-            sentence = sentence(fixedLength);
-        }
-
-        return sentence.substring(0, fixedLength);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

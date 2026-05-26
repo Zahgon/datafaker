@@ -12,18 +12,18 @@ public class Pokemon extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String name() {
-        return resolve("games.pokemon.names");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("games.pokemon.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String move() {
-        return resolve("games.pokemon.moves");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String type() {
-        return resolve("games.pokemon.types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

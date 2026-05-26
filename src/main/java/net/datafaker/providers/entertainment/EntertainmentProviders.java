@@ -3,312 +3,312 @@ package net.datafaker.providers.entertainment;
 import net.datafaker.providers.base.ProviderRegistration;
 
 public interface EntertainmentProviders extends ProviderRegistration {
+
     default AquaTeenHungerForce aquaTeenHungerForce() {
-        return getProvider(AquaTeenHungerForce.class, AquaTeenHungerForce::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Avatar avatar() {
-        return getProvider(Avatar.class, Avatar::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default BackToTheFuture backToTheFuture() {
-        return getProvider(BackToTheFuture.class, BackToTheFuture::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Babylon5 babylon5() {
-        return getProvider(Babylon5.class, Babylon5::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default BigBangTheory bigBangTheory() {
-        return getProvider(BigBangTheory.class, BigBangTheory::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Bluey bluey() {
-        return getProvider(Bluey.class, Bluey::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Boardgame boardgame() {
-        return getProvider(Boardgame.class, Boardgame::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default BojackHorseman bojackHorseman() {
-        return getProvider(BojackHorseman.class, BojackHorseman::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default BossaNova bossaNova() {
-        return getProvider(BossaNova.class, BossaNova::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default BreakingBad breakingBad() {
-        return getProvider(BreakingBad.class, BreakingBad::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default BrooklynNineNine brooklynNineNine() {
-        return getProvider(BrooklynNineNine.class, BrooklynNineNine::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Buffy buffy() {
-        return getProvider(Buffy.class, Buffy::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default ChuckNorris chuckNorris() {
-        return getProvider(ChuckNorris.class, ChuckNorris::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default CowboyBebop cowboyBebop() {
-        return getProvider(CowboyBebop.class, CowboyBebop::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Departed departed() {
-        return getProvider(Departed.class, Departed::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default DetectiveConan detectiveConan() {
-        return getProvider(DetectiveConan.class, DetectiveConan::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default DoctorWho doctorWho() {
-        return getProvider(DoctorWho.class, DoctorWho::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Doraemon doraemon() {
-        return getProvider(Doraemon.class, Doraemon::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default DragonBall dragonBall() {
-        return getProvider(DragonBall.class, DragonBall::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default DumbAndDumber dumbAndDumber() {
-        return getProvider(DumbAndDumber.class, DumbAndDumber::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Dune dune() {
-        return getProvider(Dune.class, Dune::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default FamilyGuy familyGuy() {
-        return getProvider(FamilyGuy.class, FamilyGuy::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default FinalSpace finalSpace() {
-        return getProvider(FinalSpace.class, FinalSpace::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default FreshPrinceOfBelAir freshPrinceOfBelAir() {
-        return getProvider(FreshPrinceOfBelAir.class, FreshPrinceOfBelAir::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Friends friends() {
-        return getProvider(Friends.class, Friends::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default FullmetalAlchemist fullMetalAlchemist() {
-        return getProvider(FullmetalAlchemist.class, FullmetalAlchemist::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Futurama futurama() {
-        return getProvider(Futurama.class, Futurama::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default GameOfThrones gameOfThrones() {
-        return getProvider(GameOfThrones.class, GameOfThrones::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Ghostbusters ghostbusters() {
-        return getProvider(Ghostbusters.class, Ghostbusters::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default GratefulDead gratefulDead() {
-        return getProvider(GratefulDead.class, GratefulDead::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default GravityFalls gravityFalls() {
-        return getProvider(GravityFalls.class, GravityFalls::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default HarryPotter harryPotter() {
-        return getProvider(HarryPotter.class, HarryPotter::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default HeyArnold heyArnold() {
-        return getProvider(HeyArnold.class, HeyArnold::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default HitchhikersGuideToTheGalaxy hitchhikersGuideToTheGalaxy() {
-        return getProvider(
-            HitchhikersGuideToTheGalaxy.class, HitchhikersGuideToTheGalaxy::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Hobbit hobbit() {
-        return getProvider(Hobbit.class, Hobbit::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default HowIMetYourMother howIMetYourMother() {
-        return getProvider(HowIMetYourMother.class, HowIMetYourMother::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default HowToTrainYourDragon howToTrainYourDragon() {
-        return getProvider(HowToTrainYourDragon.class, HowToTrainYourDragon::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Joke joke() {
-        return getProvider(Joke.class, Joke::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Kaamelott kaamelott() {
-        return getProvider(Kaamelott.class, Kaamelott::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Lebowski lebowski() {
-        return getProvider(Lebowski.class, Lebowski::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default LordOfTheRings lordOfTheRings() {
-        return getProvider(LordOfTheRings.class, LordOfTheRings::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default MoneyHeist moneyHeist() {
-        return getProvider(MoneyHeist.class, MoneyHeist::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Movie movie() {
-        return getProvider(Movie.class, Movie::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Naruto naruto() {
-        return getProvider(Naruto.class, Naruto::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default NewGirl newGirl() {
-        return getProvider(NewGirl.class, NewGirl::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default OnePiece onePiece() {
-        return getProvider(OnePiece.class, OnePiece::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default OscarMovie oscarMovie() {
-        return getProvider(OscarMovie.class, OscarMovie::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Pokemon pokemon() {
-        return getProvider(Pokemon.class, Pokemon::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default PrincessBride princessBride() {
-        return getProvider(PrincessBride.class, PrincessBride::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default ResidentEvil residentEvil() {
-        return getProvider(ResidentEvil.class, ResidentEvil::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default RickAndMorty rickAndMorty() {
-        return getProvider(RickAndMorty.class, RickAndMorty::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default RuPaulDragRace ruPaulDragRace() {
-        return getProvider(RuPaulDragRace.class, RuPaulDragRace::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Seinfeld seinfeld() {
-        return getProvider(Seinfeld.class, Seinfeld::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Severance severance() {
-        return getProvider(Severance.class, Severance::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Show show() {
-        return getProvider(Show.class, Show::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default SiliconValley siliconValley() {
-        return getProvider(SiliconValley.class, SiliconValley::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Simpsons simpsons() {
-        return getProvider(Simpsons.class, Simpsons::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default SouthPark southPark() {
-        return getProvider(SouthPark.class, SouthPark::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Spongebob spongebob() {
-        return getProvider(Spongebob.class, Spongebob::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Stargate stargate() {
-        return getProvider(Stargate.class, Stargate::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default StarTrek starTrek() {
-        return getProvider(StarTrek.class, StarTrek::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default StarWars starWars() {
-        return getProvider(StarWars.class, StarWars::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default StrangerThings strangerThings() {
-        return getProvider(StrangerThings.class, StrangerThings::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default StudioGhibli studioGhibli() {
-        return getProvider(StudioGhibli.class, StudioGhibli::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Suits suits() {
-        return getProvider(Suits.class, Suits::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Supernatural supernatural() {
-        return getProvider(Supernatural.class, Supernatural::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default SwordArtOnline swordArtOnline() {
-        return getProvider(SwordArtOnline.class, SwordArtOnline::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default TheExpanse theExpanse() {
-        return getProvider(TheExpanse.class, TheExpanse::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default TheItCrowd theItCrowd() {
-        return getProvider(TheItCrowd.class, TheItCrowd::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default TheKingkillerChronicle theKingkillerChronicle() {
-        return getProvider(TheKingkillerChronicle.class, TheKingkillerChronicle::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default TheRoom theRoom() {
-        return getProvider(TheRoom.class, TheRoom::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default TheThickOfIt theThickOfIt() {
-        return getProvider(TheThickOfIt.class, TheThickOfIt::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default TheVentureBros theVentureBros() {
-        return getProvider(TheVentureBros.class, TheVentureBros::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Tron tron() {
-        return getProvider(Tron.class, Tron::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default TwinPeaks twinPeaks() {
-        return getProvider(TwinPeaks.class, TwinPeaks::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default VForVendetta vForVendetta() {
-        return getProvider(VForVendetta.class, VForVendetta::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Witcher witcher() {
-        return getProvider(Witcher.class, Witcher::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -12,15 +12,14 @@ public class Emoji extends AbstractProvider<BaseProviders> {
     }
 
     public String smiley() {
-        return resolve("emoji.smileys");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cat() {
-        return resolve("emoji.cats");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String vehicle() {
-        return resolve("emoji.vehicles");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

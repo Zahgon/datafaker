@@ -17,7 +17,7 @@ public class BigBangTheory extends AbstractProvider<EntertainmentProviders> {
      * @return a string of Big Bang Theory's character's name.
      */
     public String character() {
-        return resolve("big_bang_theory.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -26,6 +26,6 @@ public class BigBangTheory extends AbstractProvider<EntertainmentProviders> {
      * @return a string of Big Bang Theory's character's quote.
      */
     public String quote() {
-        return resolve("big_bang_theory.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

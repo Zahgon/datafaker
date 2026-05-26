@@ -10,23 +10,22 @@ public class Subscription extends AbstractProvider<BaseProviders> {
     }
 
     public String plans() {
-        return resolve("subscription.plans");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String statuses() {
-        return resolve("subscription.statuses");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String paymentMethods() {
-        return resolve("subscription.payment_methods");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String subscriptionTerms() {
-        return resolve("subscription.subscription_terms");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String paymentTerms() {
-        return resolve("subscription.payment_terms");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

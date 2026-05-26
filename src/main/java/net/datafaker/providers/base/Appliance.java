@@ -10,10 +10,10 @@ public class Appliance extends AbstractProvider<BaseProviders> {
     }
 
     public String brand() {
-        return resolve("appliance.brand");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String equipment() {
-        return resolve("appliance.equipment");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

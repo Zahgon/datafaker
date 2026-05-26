@@ -14,19 +14,18 @@ public class TheRoom extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String actors() {
-        return resolve("the_room.actors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters() {
-        return resolve("the_room.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String locations() {
-        return resolve("the_room.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("the_room.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

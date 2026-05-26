@@ -12,10 +12,10 @@ public class Babylon5 extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("babylon5.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("babylon5.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

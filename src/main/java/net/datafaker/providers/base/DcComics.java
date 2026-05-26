@@ -10,22 +10,22 @@ public class DcComics extends AbstractProvider<BaseProviders> {
     }
 
     public String hero() {
-        return resolve("dc_comics.hero");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String heroine() {
-        return resolve("dc_comics.heroine");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String villain() {
-        return resolve("dc_comics.villain");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String name() {
-        return resolve("dc_comics.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String title() {
-        return resolve("dc_comics.title");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -10,19 +10,18 @@ public class IndustrySegments extends AbstractProvider<BaseProviders> {
     }
 
     public String industry() {
-        return resolve("industry_segments.industry");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String superSector() {
-        return resolve("industry_segments.super_sector");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sector() {
-        return resolve("industry_segments.sector");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String subSector() {
-        return resolve("industry_segments.sub_sector");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

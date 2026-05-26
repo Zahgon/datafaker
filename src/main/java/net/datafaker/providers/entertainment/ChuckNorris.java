@@ -12,6 +12,6 @@ public class ChuckNorris extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String fact() {
-        return resolve("chuck_norris.fact");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -10,19 +10,18 @@ public class Device extends AbstractProvider<BaseProviders> {
     }
 
     public String modelName() {
-        return resolve("device.model_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String platform() {
-        return resolve("device.platform");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String manufacturer() {
-        return resolve("device.manufacturer");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String serial() {
-        return resolve("device.serial");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

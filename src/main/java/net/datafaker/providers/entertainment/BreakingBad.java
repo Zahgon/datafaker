@@ -17,10 +17,10 @@ public class BreakingBad extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("breaking_bad.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String episode() {
-        return resolve("breaking_bad.episodes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

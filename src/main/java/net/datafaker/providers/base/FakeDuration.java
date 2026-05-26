@@ -18,7 +18,8 @@ public class FakeDuration extends AbstractProvider<BaseProviders> {
      * @return a random long between 0 and max inclusive
      */
     private long getNumberBetween(long max) {
-        return this.faker.random().nextLong(max + 1);  // nextLong max is exclusive
+        // nextLong max is exclusive
+        return this.faker.random().nextLong(max + 1);
     }
 
     /**
@@ -28,7 +29,7 @@ public class FakeDuration extends AbstractProvider<BaseProviders> {
      * @return a Duration object representing a number of minutes in the given range
      */
     public Duration atMostMinutes(long minutesMax) {
-        return Duration.ofMinutes(getNumberBetween(minutesMax));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -38,7 +39,7 @@ public class FakeDuration extends AbstractProvider<BaseProviders> {
      * @return a Duration object representing a number of hours in the given range
      */
     public Duration atMostHours(long hoursMax) {
-        return Duration.ofHours(getNumberBetween(hoursMax));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -48,7 +49,7 @@ public class FakeDuration extends AbstractProvider<BaseProviders> {
      * @return a Duration object representing a number of days in the given range
      */
     public Duration atMostDays(long daysMax) {
-        return Duration.ofDays(getNumberBetween(daysMax));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -58,6 +59,6 @@ public class FakeDuration extends AbstractProvider<BaseProviders> {
      * @return a Duration object representing a number of seconds in the given range
      */
     public Duration atMostSeconds(long secondsMax) {
-        return Duration.ofSeconds(getNumberBetween(secondsMax));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

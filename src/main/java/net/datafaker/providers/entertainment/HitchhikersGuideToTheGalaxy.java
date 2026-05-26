@@ -12,30 +12,30 @@ public class HitchhikersGuideToTheGalaxy extends AbstractProvider<EntertainmentP
     }
 
     public String character() {
-        return resolve("hitchhikers_guide_to_the_galaxy.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("hitchhikers_guide_to_the_galaxy.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String marvinQuote() {
-        return resolve("hitchhikers_guide_to_the_galaxy.marvin_quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String planet() {
-        return resolve("hitchhikers_guide_to_the_galaxy.planets");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("hitchhikers_guide_to_the_galaxy.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String species() {
-        return resolve("hitchhikers_guide_to_the_galaxy.species");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String starship() {
-        return resolve("hitchhikers_guide_to_the_galaxy.starships");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

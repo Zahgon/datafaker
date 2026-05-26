@@ -14,19 +14,18 @@ public class TheExpanse extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("the_expanse.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String locations() {
-        return resolve("the_expanse.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String ships() {
-        return resolve("the_expanse.ships");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("the_expanse.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

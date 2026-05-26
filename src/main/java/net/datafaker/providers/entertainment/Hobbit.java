@@ -12,18 +12,18 @@ public class Hobbit extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("hobbit.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String thorinsCompany() {
-        return resolve("hobbit.thorins_company");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("hobbit.quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("hobbit.location");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

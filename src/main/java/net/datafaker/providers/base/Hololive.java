@@ -10,6 +10,6 @@ public class Hololive extends AbstractProvider<BaseProviders> {
     }
 
     public String talent() {
-        return resolve("hololive.talent");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

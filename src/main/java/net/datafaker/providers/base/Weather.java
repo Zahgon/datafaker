@@ -8,8 +8,11 @@ package net.datafaker.providers.base;
 public class Weather extends AbstractProvider<BaseProviders> {
 
     private static final int DEFAULT_MIN_TEMP_C = -30;
+
     private static final int DEFAULT_MAX_TEMP_C = 38;
+
     private static final int DEFAULT_MIN_TEMP_F = -22;
+
     private static final int DEFAULT_MAX_TEMP_F = 100;
 
     protected Weather(BaseProviders faker) {
@@ -20,7 +23,7 @@ public class Weather extends AbstractProvider<BaseProviders> {
      * Generates a short weather description.
      */
     public String description() {
-        return resolve("weather.description");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -29,7 +32,7 @@ public class Weather extends AbstractProvider<BaseProviders> {
      * @return String that represents temperature in format 5°C
      */
     public String temperatureCelsius() {
-        return temperature(DEFAULT_MIN_TEMP_C, DEFAULT_MAX_TEMP_C, "weather.temperature.celsius");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -38,7 +41,7 @@ public class Weather extends AbstractProvider<BaseProviders> {
      * @return String that represents temperature in format 5°F
      */
     public String temperatureFahrenheit() {
-        return temperature(DEFAULT_MIN_TEMP_F, DEFAULT_MAX_TEMP_F, "weather.temperature.fahrenheit");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -49,7 +52,7 @@ public class Weather extends AbstractProvider<BaseProviders> {
      * @return String that represents temperature in format 5°C
      */
     public String temperatureCelsius(int minTemperature, int maxTemperature) {
-        return temperature(minTemperature, maxTemperature, "weather.temperature.celsius");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -60,7 +63,7 @@ public class Weather extends AbstractProvider<BaseProviders> {
      * @return String that represents temperature in format 5°F
      */
     public String temperatureFahrenheit(int minTemperature, int maxTemperature) {
-        return temperature(minTemperature, maxTemperature, "weather.temperature.fahrenheit");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String temperature(int minTemperature, int maxTemperature, String degreeKey) {

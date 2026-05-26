@@ -12,15 +12,14 @@ public class Doraemon extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("doraemon.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gadget() {
-        return resolve("doraemon.gadgets");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("doraemon.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

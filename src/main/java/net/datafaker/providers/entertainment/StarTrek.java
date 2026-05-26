@@ -11,33 +11,45 @@ public class StarTrek extends AbstractProvider<EntertainmentProviders> {
         super(faker);
     }
 
-    /** @return a random Star Trek character */
+    /**
+     * @return a random Star Trek character
+     */
     public String character() {
-        return resolve("star_trek.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    /** @return a random Star Trek location (planet, starbase, area of space) */
+    /**
+     * @return a random Star Trek location (planet, starbase, area of space)
+     */
     public String location() {
-        return resolve("star_trek.location");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    /** @return a random alien species */
+    /**
+     * @return a random alien species
+     */
     public String species() {
-        return resolve("star_trek.species");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    /** @return a random Star Trek villain */
+    /**
+     * @return a random Star Trek villain
+     */
     public String villain() {
-        return resolve("star_trek.villain");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    /** @return a random Klingon phrase */
+    /**
+     * @return a random Klingon phrase
+     */
     public String klingon() {
-        return resolve("star_trek.klingon");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    /** @return a random Federation starship */
+    /**
+     * @return a random Federation starship
+     */
     public String starship() {
-        return resolve("star_trek.starship");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

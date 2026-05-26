@@ -8,7 +8,6 @@ import net.datafaker.service.FakeValuesService;
 import net.datafaker.service.FakerContext;
 import net.datafaker.service.RandomService;
 import net.datafaker.transformations.Schema;
-
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.nio.file.Path;
@@ -21,7 +20,6 @@ import java.util.concurrent.Callable;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-
 import static java.util.Collections.synchronizedMap;
 
 /**
@@ -31,10 +29,15 @@ import static java.util.Collections.synchronizedMap;
  * @author ren
  */
 public class BaseFaker implements BaseProviders {
+
     private static final Predicate<Class<?>> EVERY_PROVIDER_ALLOWED = t -> true;
+
     private final FakerContext context;
+
     private final FakeValuesService fakeValuesService;
+
     private final Map<Class<?>, AbstractProvider<?>> providersCache = synchronizedMap(new IdentityHashMap<>());
+
     private final Predicate<Class<?>> whiteListPredicate;
 
     public BaseFaker() {
@@ -70,62 +73,20 @@ public class BaseFaker implements BaseProviders {
 
     @Override
     public FakerContext getContext() {
-        return context;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public <T> T doWith(Callable<T> callable, Locale locale) {
-        final Locale current = context.getLocale();
-        T result;
-        try {
-            context.setCurrentLocale(locale);
-            fakeValuesService.updateFakeValuesInterfaceMap(context.getLocaleChain());
-            result = callable.call();
-            return result;
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            context.setCurrentLocale(current);
-            fakeValuesService.updateFakeValuesInterfaceMap(context.getLocaleChain());
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public <T> T doWith(Callable<T> callable, long seed) {
-        final RandomService current = context.getRandomService();
-        T result;
-        try {
-            context.setRandomService(new RandomService(new Random(seed)));
-            result = callable.call();
-            return result;
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            context.setRandomService(current);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public <T> T doWith(Callable<T> callable, Locale locale, long seed) {
-        final Locale currentLocale = context.getLocale();
-        final RandomService currentRandomService = context.getRandomService();
-        T result;
-        try {
-            context.setRandomService(new RandomService(new Random(seed)));
-            context.setCurrentLocale(locale);
-            result = callable.call();
-            return result;
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            context.setRandomService(currentRandomService);
-            context.setCurrentLocale(currentLocale);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 
     /**
      * Returns a string with the '#' characters in the parameter replaced with random digits between 0-9 inclusive or
@@ -139,7 +100,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String numerify(String numberString) {
-        return fakeValuesService.numerify(numberString, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -153,7 +114,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String letterify(String letterString) {
-        return fakeValuesService.letterify(letterString, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -164,7 +125,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String letterify(String letterString, boolean isUpper) {
-        return fakeValuesService.letterify(letterString, context, isUpper);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -173,7 +134,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String bothify(String string) {
-        return fakeValuesService.bothify(string, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -182,7 +143,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String bothify(String string, boolean isUpper) {
-        return fakeValuesService.bothify(string, context, isUpper);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -190,7 +151,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String regexify(String regex) {
-        return fakeValuesService.regexify(regex, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -207,7 +168,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String examplify(String example) {
-        return fakeValuesService.examplify(example, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -223,7 +184,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String templatify(String string, char char2replace, String... options) {
-        return fakeValuesService().templatify(string, char2replace, context, options);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -239,7 +200,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String templatify(String string, Map<Character, String[]> optionsMap) {
-        return fakeValuesService().templatify(string, optionsMap, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -260,7 +221,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String csv(int limit, String... columnExpressions) {
-        return fakeValuesService().csv(limit, columnExpressions);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -284,27 +245,27 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String csv(String separator, char quote, boolean withHeader, int limit, String... columnExpressions) {
-        return fakeValuesService().csv(separator, quote, withHeader, limit, columnExpressions);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String json(String... fieldExpressions) {
-        return fakeValuesService().json(fieldExpressions);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String jsona(String... fieldExpressions) {
-        return fakeValuesService().jsona(fieldExpressions);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public RandomService random() {
-        return this.context.getRandomService();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public FakeValuesService fakeValuesService() {
-        return this.fakeValuesService;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -316,7 +277,7 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public void addPath(Locale locale, Path path) {
-        fakeValuesService().addPath(locale, path);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -328,30 +289,22 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public void addUrl(Locale locale, URL url) {
-        fakeValuesService().addUrl(locale, url);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static <T> T populate(Class<T> clazz) {
-        var fakeFactory = FakeResolver.of(clazz);
-        return fakeFactory.generate(null);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static <T> T populate(Class<T> clazz, Schema<Object, ?> schema) {
-        var fakeFactory = FakeResolver.of(clazz);
-        return fakeFactory.generate(schema);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     @SuppressWarnings("unchecked")
-    public <PR extends ProviderRegistration, AP extends AbstractProvider<PR>> AP getProvider(
-        Class<AP> clazz, Function<PR, AP> valueSupplier) {
-            return (AP) providersCache.computeIfAbsent(clazz, (klass) -> {
-                if (whiteListPredicate.test(klass)) {
-                    return valueSupplier.apply(getFaker());
-                }
-                throw new RuntimeException("Provider '" + klass.getName() + "' is not in white list");
-            });
-        }
+    public <PR extends ProviderRegistration, AP extends AbstractProvider<PR>> AP getProvider(Class<AP> clazz, Function<PR, AP> valueSupplier) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 
     /**
      * This method is not needed anymore, don't use it.
@@ -366,42 +319,42 @@ public class BaseFaker implements BaseProviders {
      * @return builder to build {@code FakeCollection}
      */
     public <T> FakeSequence.Builder<T> collection() {
-        return new FakeCollection.Builder<T>().faker(this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @SafeVarargs
     public final <T> FakeSequence.Builder<T> collection(Supplier<T>... suppliers) {
-        return new FakeCollection.Builder<>(suppliers).faker(this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final <T> FakeSequence.Builder<T> collection(List<Supplier<T>> suppliers) {
-        return new FakeCollection.Builder<>(suppliers).faker(this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return builder to build {@code FakeStream}
      */
     public <T> FakeSequence.Builder<T> stream() {
-        return new FakeStream.Builder<T>().faker(this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @SafeVarargs
     public final <T> FakeSequence.Builder<T> stream(Supplier<T>... suppliers) {
-        return new FakeStream.Builder<>(suppliers).faker(this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public final <T> FakeSequence.Builder<T> stream(List<Supplier<T>> suppliers) {
-        return new FakeStream.Builder<>(suppliers).faker(this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String resolve(String key) {
-        return this.fakeValuesService.resolve(key, this, this, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String resolve(String key, Supplier<String> message) {
-        return this.fakeValuesService.resolve(key, this, this, message, context);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -423,21 +376,21 @@ public class BaseFaker implements BaseProviders {
      */
     @Override
     public String expression(String expression) {
-        return this.fakeValuesService.expression(expression, this, getContext());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public final <B extends ProviderRegistration> B getFaker() {
-        return (B) this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static Method getMethod(AbstractProvider<?> ap, String methodName) {
-        return ap == null ? null : ObjectMethods.getMethodByName(ap, methodName);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "." + getContext().getLocale();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

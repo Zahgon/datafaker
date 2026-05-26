@@ -15,22 +15,22 @@ public class Text extends AbstractProvider<BaseProviders> {
     private final Map<TextConfigPojo, TextRuleConfig> configMap = new WeakHashMap<>();
 
     public Character character() {
-        return text(1, 1, true).charAt(0);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Character uppercaseCharacter() {
-        return text(1, 1).toUpperCase(faker.getContext().getLocale()).charAt(0);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Character lowercaseCharacter() {
-        return text(1, 1, false).charAt(0);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return A lowercase string of 20 to 80 characters long.
      */
     public String text() {
-        return text(false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -38,7 +38,7 @@ public class Text extends AbstractProvider<BaseProviders> {
      * @return A lowercase string of 20 to 80 characters long.
      */
     public String text(boolean includeDigit) {
-        return text(20, 80, false, false, includeDigit);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -46,7 +46,7 @@ public class Text extends AbstractProvider<BaseProviders> {
      * @return A lowercase string of exact length
      */
     public String text(int length) {
-        return text(length, length, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -55,15 +55,15 @@ public class Text extends AbstractProvider<BaseProviders> {
      * @return A lowercase string between minimum and maximum length (inclusive)
      */
     public String text(int minimumLength, int maximumLength) {
-        return text(minimumLength, maximumLength, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String text(int minimumLength, int maximumLength, boolean includeUppercase) {
-        return text(minimumLength, maximumLength, includeUppercase, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String text(int minimumLength, int maximumLength, boolean includeUppercase, boolean includeSpecial) {
-        return text(minimumLength, maximumLength, includeUppercase, includeSpecial, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -81,31 +81,7 @@ public class Text extends AbstractProvider<BaseProviders> {
      * @throws IllegalArgumentException if {@code maximumLength} is not enough to include the required symbols (upper case letter, special char, digit)
      */
     public String text(int minimumLength, int maximumLength, boolean includeUppercase, boolean includeSpecial, boolean includeDigit) {
-        if (minimumLength > maximumLength) {
-            throw new IllegalArgumentException("Min length (%s) should not be greater than max length (%s)".formatted(
-                minimumLength, maximumLength));
-        }
-
-        final int minLength = Math.max(minimumLength, min(includeUppercase) + min(includeSpecial) + min(includeDigit));
-        if (minLength > maximumLength) {
-            throw new IllegalArgumentException("Minimum number of required characters (%s) should not be greater than max length (%s)".formatted(
-                minLength, maximumLength));
-        }
-
-        final int len = faker.number().numberBetween(minLength, maximumLength + 1);
-        TextConfigPojo pojo = new TextConfigPojo(len, includeUppercase, includeSpecial, includeDigit);
-        Text.TextRuleConfig config = configMap.computeIfAbsent(pojo, (x) -> {
-            TextSymbolsBuilder builder =
-                TextSymbolsBuilder.builder()
-                    .with(Text.EN_LOWERCASE);
-            if (includeUppercase) builder = builder.with(Text.EN_UPPERCASE, 1);
-            if (includeSpecial) builder = builder.with(Text.DEFAULT_SPECIAL, 1);
-            if (includeDigit) builder = builder.with(Text.DIGITS, 1);
-
-            return builder.len(len).throwIfLengthSmall(true).build();
-        });
-
-        return text(config);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static int min(boolean requireSomeKindOfSymbols) {
@@ -113,8 +89,11 @@ public class Text extends AbstractProvider<BaseProviders> {
     }
 
     public static final String EN_LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
+
     public static final String EN_UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
     public static final String DIGITS = "0123456789";
+
     public static final String DEFAULT_SPECIAL = "!@#$%^&*";
 
     public Text(BaseProviders faker) {
@@ -122,8 +101,11 @@ public class Text extends AbstractProvider<BaseProviders> {
     }
 
     public static class TextRuleConfig {
+
         private final char[][] textKeys;
+
         private final int[] required;
+
         private final int fixedNumberOfCharacters;
 
         private final int numberOfRequiredSymbols;
@@ -131,13 +113,12 @@ public class Text extends AbstractProvider<BaseProviders> {
         private TextRuleConfig(int fixedNumberOfCharacters, Map<String, Integer> map, int numberOfRequiredSymbols) {
             assert numberOfRequiredSymbols >= 0;
             assert fixedNumberOfCharacters >= numberOfRequiredSymbols;
-
             this.fixedNumberOfCharacters = fixedNumberOfCharacters;
             this.numberOfRequiredSymbols = numberOfRequiredSymbols;
             this.textKeys = new char[map.size()][];
             this.required = new int[map.size()];
             int i = 0;
-            for (Map.Entry<String, Integer> entry: map.entrySet()) {
+            for (Map.Entry<String, Integer> entry : map.entrySet()) {
                 textKeys[i] = entry.getKey().toCharArray();
                 required[i] = entry.getValue();
                 i++;
@@ -145,55 +126,47 @@ public class Text extends AbstractProvider<BaseProviders> {
         }
 
         public int getFixedNumberOfCharacters() {
-            return fixedNumberOfCharacters;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public int getNumberOfRequiredSymbols() {
-            return numberOfRequiredSymbols;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
-
     }
 
     public static class TextSymbolsBuilder {
+
         private int length;
+
         private final Map<String, Integer> map = new HashMap<>();
+
         private boolean throwIfLengthSmall = false;
 
         private TextSymbolsBuilder() {
         }
 
         public static TextSymbolsBuilder builder() {
-            return new TextSymbolsBuilder();
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public TextSymbolsBuilder with(String listOfSymbols, int times) {
-            if (times < 0) {
-                throw new IllegalArgumentException("times should be non-negative: " + times);
-            }
-            map.put(listOfSymbols, times);
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public TextSymbolsBuilder with(String listOfSymbols) {
-            return with(listOfSymbols, 0);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public TextSymbolsBuilder len(int len) {
-            this.length = len;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public TextSymbolsBuilder throwIfLengthSmall(boolean throwIfLengthSmall) {
-            this.throwIfLengthSmall = throwIfLengthSmall;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public TextRuleConfig build() {
-            int minSize = map.values().stream().filter(t -> t > 0).reduce(0, Integer::sum);
-            if (minSize > length && throwIfLengthSmall) {
-                throw new IllegalArgumentException("Min length (%s) should be not smaller than number of required characters (%s)".formatted(length, minSize));
-            }
-            return new TextRuleConfig(length, map, minSize);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
@@ -230,65 +203,25 @@ public class Text extends AbstractProvider<BaseProviders> {
      * {@code final String customSpecialSymbols = "!@#$%^*;'][{}";}.
      */
     public String text(TextRuleConfig textRuleConfig) {
-        int fixedNumberOfCharacters = textRuleConfig.getFixedNumberOfCharacters();
-        final int numberOfRequiredSymbols = textRuleConfig.getNumberOfRequiredSymbols();
-        if (fixedNumberOfCharacters < numberOfRequiredSymbols) {
-            fixedNumberOfCharacters = numberOfRequiredSymbols;
-        }
-        char[] buffer = new char[fixedNumberOfCharacters];
-        int idx = 0;
-        int maxDiffSymbols = 0;
-        for (int i = 0; i < textRuleConfig.textKeys.length; i++) {
-            maxDiffSymbols += textRuleConfig.textKeys[i].length;
-        }
-        // 256 is a length of byte value range
-        if (maxDiffSymbols <= 256) {
-            return textWithNotMoreThan256DiffSymbols(
-                textRuleConfig, faker.random().nextRandomBytes(2 * fixedNumberOfCharacters),
-                fixedNumberOfCharacters, numberOfRequiredSymbols);
-        }
-        int numberOfRequired = 0;
-        int[] required = Arrays.copyOf(textRuleConfig.required, textRuleConfig.required.length);
-        while (idx < buffer.length) {
-            if (numberOfRequiredSymbols > numberOfRequired
-                && numberOfRequiredSymbols - numberOfRequired == buffer.length - idx) {
-                for (int j = 0; j < textRuleConfig.textKeys.length; j++) {
-                    while (required[j] > 0) {
-                        buffer[idx++] = textRuleConfig.textKeys[j][faker.random().nextInt(textRuleConfig.textKeys[j].length)];
-                        numberOfRequired++;
-                        required[j]--;
-                    }
-                    if (idx == buffer.length) break;
-                }
-            } else {
-                int index = faker.random().nextInt(required.length);
-                if (required[index] > 0) {
-                    numberOfRequired++;
-                    required[index]--;
-                }
-                buffer[idx++] = textRuleConfig.textKeys[index][faker.random().nextInt(textRuleConfig.textKeys[index].length)];
-            }
-        }
-        return String.valueOf(buffer);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    private String textWithNotMoreThan256DiffSymbols(
-        TextRuleConfig textRuleConfig, byte[] bytes, int fixedNumberOfCharacters, int numberOfRequiredSymbols) {
+    private String textWithNotMoreThan256DiffSymbols(TextRuleConfig textRuleConfig, byte[] bytes, int fixedNumberOfCharacters, int numberOfRequiredSymbols) {
         char[] buffer = new char[fixedNumberOfCharacters];
         int idx = 0;
         int bytesCounter = 0;
         int numberOfRequired = 0;
         int[] required = Arrays.copyOf(textRuleConfig.required, textRuleConfig.required.length);
         while (idx < buffer.length) {
-            if (numberOfRequiredSymbols > numberOfRequired
-                && numberOfRequiredSymbols - numberOfRequired == buffer.length - idx) {
+            if (numberOfRequiredSymbols > numberOfRequired && numberOfRequiredSymbols - numberOfRequired == buffer.length - idx) {
                 for (int j = 0; j < textRuleConfig.textKeys.length; j++) {
                     while (required[j] > 0) {
                         buffer[idx++] = textRuleConfig.textKeys[j][((char) (bytes[bytesCounter++])) % textRuleConfig.textKeys[j].length];
                         numberOfRequired++;
                         required[j]--;
                     }
-                    if (idx == buffer.length) break;
+                    if (idx == buffer.length)
+                        break;
                 }
             } else {
                 int index = ((char) (bytes[bytesCounter++])) % textRuleConfig.textKeys.length;
@@ -302,5 +235,6 @@ public class Text extends AbstractProvider<BaseProviders> {
         return String.valueOf(buffer);
     }
 
-    private record TextConfigPojo(int length, boolean includeUppercase, boolean includeSpecial, boolean includeDigit) { }
+    private record TextConfigPojo(int length, boolean includeUppercase, boolean includeSpecial, boolean includeDigit) {
+    }
 }

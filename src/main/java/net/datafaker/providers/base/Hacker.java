@@ -10,22 +10,22 @@ public class Hacker extends AbstractProvider<BaseProviders> {
     }
 
     public String abbreviation() {
-        return resolve("hacker.abbreviation");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String adjective() {
-        return resolve("hacker.adjective");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String noun() {
-        return resolve("hacker.noun");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String verb() {
-        return resolve("hacker.verb");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String ingverb() {
-        return resolve("hacker.ingverb");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

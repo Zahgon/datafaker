@@ -8,147 +8,147 @@ import net.datafaker.providers.healthcare.HealthcareFaker;
 public interface BaseProviders extends ProviderRegistration {
 
     default Address address() {
-        return getProvider(Address.class, Address::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Ancient ancient() {
-        return getProvider(Ancient.class, Ancient::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Animal animal() {
-        return getProvider(Animal.class, Animal::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default App app() {
-        return getProvider(App.class, App::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Appliance appliance() {
-        return getProvider(Appliance.class, Appliance::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Artist artist() {
-        return getProvider(Artist.class, Artist::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Australia australia() {
-        return getProvider(Australia.class, Australia::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Aviation aviation() {
-        return getProvider(Aviation.class, Aviation::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Aws aws() {
-        return getProvider(Aws.class, Aws::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Azure azure() {
-        return getProvider(Azure.class, Azure::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Barcode barcode() {
-        return getProvider(Barcode.class, Barcode::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default BloodType bloodtype() {
-        return getProvider(BloodType.class, BloodType::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Book book() {
-        return getProvider(Book.class, Book::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Bool bool() {
-        return getProvider(Bool.class, Bool::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Brand brand() {
-        return getProvider(Brand.class, Brand::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Business business() {
-        return getProvider(Business.class, Business::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Camera camera() {
-        return getProvider(Camera.class, Camera::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Cannabis cannabis() {
-        return getProvider(Cannabis.class, Cannabis::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Cat cat() {
-        return getProvider(Cat.class, Cat::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Chiquito chiquito() {
-        return getProvider(Chiquito.class, Chiquito::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default CNPJ cnpj() {
-        return getProvider(CNPJ.class, CNPJ::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Code code() {
-        return getProvider(Code.class, Code::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Coin coin() {
-        return getProvider(Coin.class, Coin::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Color color() {
-        return getProvider(Color.class, Color::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Commerce commerce() {
-        return getProvider(Commerce.class, Commerce::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Community community() {
-        return getProvider(Community.class, Community::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Company company() {
-        return getProvider(Company.class, Company::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Compass compass() {
-        return getProvider(Compass.class, Compass::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Computer computer() {
-        return getProvider(Computer.class, Computer::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Construction construction() {
-        return getProvider(Construction.class, Construction::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Cosmere cosmere() {
-        return getProvider(Cosmere.class, Cosmere::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Country country() {
-        return getProvider(Country.class, Country::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default CPF cpf() {
-        return getProvider(CPF.class, CPF::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Credentials credentials() {
-        return getProvider(Credentials.class, Credentials::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default CryptoCoin cryptoCoin() {
-        return getProvider(CryptoCoin.class, CryptoCoin::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default CultureSeries cultureSeries() {
-        return getProvider(CultureSeries.class, CultureSeries::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -170,179 +170,179 @@ public interface BaseProviders extends ProviderRegistration {
     }
 
     default DcComics dcComics() {
-        return getProvider(DcComics.class, DcComics::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Demographic demographic() {
-        return getProvider(Demographic.class, Demographic::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Device device() {
-        return getProvider(Device.class, Device::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Dog dog() {
-        return getProvider(Dog.class, Dog::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Domain domain() {
-        return getProvider(Domain.class, Domain::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default DrivingLicense drivingLicense() {
-        return getProvider(DrivingLicense.class, DrivingLicense::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Drone drone() {
-        return getProvider(Drone.class, Drone::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default DungeonsAndDragons dungeonsAndDragons() {
-        return getProvider(DungeonsAndDragons.class, DungeonsAndDragons::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Educator educator() {
-        return getProvider(Educator.class, Educator::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default ElectricalComponents electricalComponents() {
-        return getProvider(ElectricalComponents.class, ElectricalComponents::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Emergency emergency() {
-        return getProvider(Emergency.class, Emergency::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Emoji emoji() {
-        return getProvider(Emoji.class, Emoji::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default FakeDuration duration() {
-        return getProvider(FakeDuration.class, FakeDuration::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default FamousLastWords famousLastWords() {
-        return getProvider(FamousLastWords.class, FamousLastWords::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default File file() {
-        return getProvider(File.class, File::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Finance finance() {
-        return getProvider(Finance.class, Finance::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default FinancialTerms financialTerms() {
-        return getProvider(FinancialTerms.class, FinancialTerms::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Fingerprint fingerprint() {
-        return getProvider(Fingerprint.class, Fingerprint::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default FunnyName funnyName() {
-        return getProvider(FunnyName.class, FunnyName::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default GarmentSize garmentSize() {
-        return getProvider(GarmentSize.class, GarmentSize::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Gender gender() {
-        return getProvider(Gender.class, Gender::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default GreekPhilosopher greekPhilosopher() {
-        return getProvider(GreekPhilosopher.class, GreekPhilosopher::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Hacker hacker() {
-        return getProvider(Hacker.class, Hacker::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Hashing hashing() {
-        return getProvider(Hashing.class, Hashing::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Hipster hipster() {
-        return getProvider(Hipster.class, Hipster::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Hobby hobby() {
-        return getProvider(Hobby.class, Hobby::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Hololive hololive() {
-        return getProvider(Hololive.class, Hololive::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Horse horse() {
-        return getProvider(Horse.class, Horse::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default House house() {
-        return getProvider(House.class, House::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default IdNumber idNumber() {
-        return getProvider(IdNumber.class, IdNumber::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Image image() {
-        return getProvider(Image.class, Image::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default IndustrySegments industrySegments() {
-        return getProvider(IndustrySegments.class, IndustrySegments::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Internet internet() {
-        return getProvider(Internet.class, Internet::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Job job() {
-        return getProvider(Job.class, Job::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Kpop kpop() {
-        return getProvider(Kpop.class, Kpop::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default LanguageCode languageCode() {
-        return getProvider(LanguageCode.class, LanguageCode::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default LargeLanguageModel largeLanguageModel() {
-        return getProvider(LargeLanguageModel.class, LargeLanguageModel::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Locality locality() {
-        return getProvider(Locality.class, Locality::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Location location() {
-        return getProvider(Location.class, Location::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Lorem lorem() {
-        return getProvider(Lorem.class, Lorem::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Marketing marketing() {
-        return getProvider(Marketing.class, Marketing::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Matz matz() {
-        return getProvider(Matz.class, Matz::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Mbti mbti() {
-        return getProvider(Mbti.class, Mbti::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Measurement measurement() {
-        return getProvider(Measurement.class, Measurement::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -355,187 +355,186 @@ public interface BaseProviders extends ProviderRegistration {
     }
 
     default Military military() {
-        return getProvider(Military.class, Military::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Money money() {
-        return getProvider(Money.class, Money::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Mood mood() {
-        return getProvider(Mood.class, Mood::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Mountain mountain() {
-        return getProvider(Mountain.class, Mountain::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Mountaineering mountaineering() {
-        return getProvider(Mountaineering.class, Mountaineering::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Music music() {
-        return getProvider(Music.class, Music::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Name name() {
-        return getProvider(Name.class, Name::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Nation nation() {
-        return getProvider(Nation.class, Nation::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default NatoPhoneticAlphabet natoPhoneticAlphabet() {
-        return getProvider(NatoPhoneticAlphabet.class, NatoPhoneticAlphabet::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Nigeria nigeria() {
-        return getProvider(Nigeria.class, Nigeria::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Number number() {
-        return getProvider(Number.class, Number::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default OlympicSport olympicSport() {
-        return getProvider(OlympicSport.class, OlympicSport::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Passport passport() {
-        return getProvider(Passport.class, Passport::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default PhoneNumber phoneNumber() {
-        return getProvider(PhoneNumber.class, PhoneNumber::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Photography photography() {
-        return getProvider(Photography.class, Photography::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Planet planet() {
-        return getProvider(Planet.class, Planet::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default ProgrammingLanguage programmingLanguage() {
-        return getProvider(ProgrammingLanguage.class, ProgrammingLanguage::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Relationship relationships() {
-        return getProvider(Relationship.class, Relationship::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Restaurant restaurant() {
-        return getProvider(Restaurant.class, Restaurant::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Robin robin() {
-        return getProvider(Robin.class, Robin::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default RockBand rockBand() {
-        return getProvider(RockBand.class, RockBand::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Science science() {
-        return getProvider(Science.class, Science::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default SlackEmoji slackEmoji() {
-        return getProvider(SlackEmoji.class, SlackEmoji::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Shakespeare shakespeare() {
-        return getProvider(Shakespeare.class, Shakespeare::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Sip sip() {
-        return getProvider(Sip.class, Sip::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Size size() {
-        return getProvider(Size.class, Size::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Space space() {
-        return getProvider(Space.class, Space::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Stock stock() {
-        return getProvider(Stock.class, Stock::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Subscription subscription() {
-        return getProvider(Subscription.class, Subscription::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Superhero superhero() {
-        return getProvider(Superhero.class, Superhero::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Team team() {
-        return getProvider(Team.class, Team::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Text text() {
-        return getProvider(Text.class, Text::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Time time() {
-        return getProvider(Time.class, Time::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default TimeAndDate timeAndDate() {
-        return getProvider(TimeAndDate.class, TimeAndDate::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Tire tire() {
-        return getProvider(Tire.class, Tire::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Transport transport() {
-        return getProvider(Transport.class, Transport::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Twitter twitter() {
-        return getProvider(Twitter.class, Twitter::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Unique unique() {
-        return getProvider(Unique.class, Unique::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default University university() {
-        return getProvider(University.class, University::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Vehicle vehicle() {
-        return getProvider(Vehicle.class, Vehicle::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Verb verb() {
-        return getProvider(Verb.class, Verb::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Weather weather() {
-        return getProvider(Weather.class, Weather::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Word word() {
-        return getProvider(Word.class, Word::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Yoda yoda() {
-        return getProvider(Yoda.class, Yoda::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Zodiac zodiac() {
-        return getProvider(Zodiac.class, Zodiac::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     default Pronouns pronouns() {
-        return getProvider(Pronouns.class, Pronouns::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -12,14 +12,14 @@ public class DumbAndDumber extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String actor() {
-        return resolve("dumb_and_dumber.actors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String character() {
-        return resolve("dumb_and_dumber.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("dumb_and_dumber.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

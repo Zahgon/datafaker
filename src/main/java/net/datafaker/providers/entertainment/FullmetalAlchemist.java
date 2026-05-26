@@ -12,15 +12,14 @@ public class FullmetalAlchemist extends AbstractProvider<EntertainmentProviders>
     }
 
     public String character() {
-        return resolve("fma_brotherhood.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String city() {
-        return resolve("fma_brotherhood.cities");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String country() {
-        return resolve("fma_brotherhood.countries");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

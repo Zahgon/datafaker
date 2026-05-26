@@ -18,34 +18,34 @@ public class Battlefield1 extends AbstractProvider<VideoGameProviders> {
      * @return a random unit class name as a string value
      */
     public String classes() {
-        return resolve("battlefield1.classes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a random weapon name as a string value
      */
     public String weapon() {
-        return resolve("battlefield1.weapon");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a random vehicle name as a string value
      */
     public String vehicle() {
-        return resolve("battlefield1.vehicle");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a random map title as a string value
      */
     public String map() {
-        return resolve("battlefield1.map");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a random faction name as a string value
      */
     public String faction() {
-        return resolve("battlefield1.faction");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

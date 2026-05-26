@@ -1,6 +1,5 @@
 package net.datafaker.providers.base;
 
-
 /**
  * Generates data for Azure services. This is based on the Azure best practices of naming conventions:
  * <a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming">Naming conventions</a>
@@ -15,134 +14,131 @@ public class Azure extends AbstractProvider<BaseProviders> {
     }
 
     public String region() {
-        return resolve("azure.regions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String subscriptionId() {
-        return faker.random().hex(8, false) + '-' +
-            faker.random().hex(4, false) + '-' +
-            faker.random().hex(4, false) + '-' +
-            faker.random().hex(4, false) + '-' +
-            faker.random().hex(12, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tenantId() {
-        return subscriptionId();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
+
     public String resourceGroup() {
-        return "rg-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String managementGroup() {
-        return "mg-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String applicationGateway() {
-        return "agw-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String bastionHost() {
-        return "bas-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String firewall() {
-        return "afw-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String loadBalancer() {
-        return "lbi-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String networkSecurityGroup() {
-        return "nsg-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String virtualNetwork() {
-        return "vnet-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String virtualWan() {
-        return "vwan-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String appServiceEnvironment() {
-        return "ase-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String appServicePlan() {
-        return "asp-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String loadTesting() {
-        return "lt-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String staticWebApp() {
-        return "stapp-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String virtualMachine() {
-        return "vm-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String storageAccount() {
-        return "st-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String containerRegistry() {
-        return "cr-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String containerApps() {
-        return "ca-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String containerAppsEnvironment() {
-        return "cae-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String containerInstance() {
-        return "ci-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cosmosDBDatabase() {
-        return "cosmos-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sqlDatabase() {
-        return "sql-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mysqlDatabase() {
-        return "mysql-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String postgreSQLDatabase() {
-        return "psql-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String serviceBus() {
-        return "sb-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String serviceBusQueue() {
-        return "sbq-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String serviceBusTopic() {
-        return "sbt-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String keyVault() {
-        return "kv-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String logAnalytics() {
-        return "log-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     public String springApps() {
-        return "sa-" + randHex();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String randHex() {

@@ -4,9 +4,7 @@ import net.datafaker.providers.base.BaseProviders;
 import net.datafaker.providers.base.IdNumber.GenderRequest;
 import net.datafaker.providers.base.IdNumber.IdNumberRequest;
 import net.datafaker.providers.base.PersonIdNumber;
-
 import java.time.LocalDate;
-
 import static net.datafaker.idnumbers.Utils.birthday;
 import static net.datafaker.idnumbers.Utils.gender;
 import static net.datafaker.idnumbers.Utils.randomGender;
@@ -24,7 +22,7 @@ public class PolishIdNumber implements IdNumberGenerator {
 
     @Override
     public String countryCode() {
-        return "PL";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -32,14 +30,13 @@ public class PolishIdNumber implements IdNumberGenerator {
      */
     @Deprecated
     public enum Gender {
+
         MALE, FEMALE, ANY
     }
 
     @Override
     public PersonIdNumber generateValid(BaseProviders faker, IdNumberRequest request) {
-        LocalDate birthday = birthday(faker, request);
-        PersonIdNumber.Gender gender = gender(faker, request);
-        return new PersonIdNumber(get(faker, birthday, gender), birthday, gender);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -53,12 +50,14 @@ public class PolishIdNumber implements IdNumberGenerator {
     }
 
     private static PersonIdNumber.Gender pickGender(BaseProviders faker, Gender requestedGender) {
-        return requestedGender == null ? randomGender(faker) :
-            switch (requestedGender) {
-                case ANY -> randomGender(faker);
-                case MALE -> MALE;
-                case FEMALE -> FEMALE;
-            };
+        return requestedGender == null ? randomGender(faker) : switch(requestedGender) {
+            case ANY ->
+                randomGender(faker);
+            case MALE ->
+                MALE;
+            case FEMALE ->
+                FEMALE;
+        };
     }
 
     private String get(BaseProviders faker, LocalDate birthDate, PersonIdNumber.Gender gender) {
@@ -69,31 +68,12 @@ public class PolishIdNumber implements IdNumberGenerator {
 
     @Override
     public String generateInvalid(BaseProviders faker) {
-        PersonIdNumber.Gender gender = randomGender(faker);
-        int[] digits = generateDigits(faker, faker.timeAndDate().birthday(), gender);
-        int controlDigit = getControlDigit(digits);
-        int invalidControlDigit = (controlDigit + 1) % 10;
-        return toString(digits, invalidControlDigit);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private int[] generateDigits(BaseProviders faker, LocalDate birthDate, PersonIdNumber.Gender gender) {
         int monthEncoded = getMonthEncoded(birthDate.getYear(), birthDate.getMonthValue());
-        return new int[]{
-            birthDate.getYear() / 10 % 10,
-            birthDate.getYear() % 10,
-
-            monthEncoded / 10,
-            monthEncoded % 10,
-
-            birthDate.getDayOfMonth() / 10,
-            birthDate.getDayOfMonth() % 10,
-
-            randomDigit(faker),
-            randomDigit(faker),
-            randomDigit(faker),
-
-            getGenderDigit(faker, gender)
-        };
+        return new int[] { birthDate.getYear() / 10 % 10, birthDate.getYear() % 10, monthEncoded / 10, monthEncoded % 10, birthDate.getDayOfMonth() / 10, birthDate.getDayOfMonth() % 10, randomDigit(faker), randomDigit(faker), randomDigit(faker), getGenderDigit(faker, gender) };
     }
 
     private static String toString(int[] digits, int controlDigit) {
@@ -110,15 +90,16 @@ public class PolishIdNumber implements IdNumberGenerator {
     }
 
     private int getControlDigit(int[] digits) {
-        final int sum = digits[0] + digits[4] + digits[8] + (digits[1] + digits[5] + digits[9]) * 3
-            + (digits[2] + digits[6]) * 7 + (digits[3] + digits[7]) * 9;
+        final int sum = digits[0] + digits[4] + digits[8] + (digits[1] + digits[5] + digits[9]) * 3 + (digits[2] + digits[6]) * 7 + (digits[3] + digits[7]) * 9;
         return (10 - sum % 10) % 10;
     }
 
     private int getGenderDigit(BaseProviders faker, PersonIdNumber.Gender gender) {
-        return switch (gender) {
-            case FEMALE -> faker.random().nextInt(5) * 2;
-            case MALE -> faker.random().nextInt(5) * 2 + 1;
+        return switch(gender) {
+            case FEMALE ->
+                faker.random().nextInt(5) * 2;
+            case MALE ->
+                faker.random().nextInt(5) * 2 + 1;
         };
     }
 

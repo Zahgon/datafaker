@@ -10,6 +10,6 @@ public class Hipster extends AbstractProvider<BaseProviders> {
     }
 
     public String word() {
-        return resolve("hipster.words");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

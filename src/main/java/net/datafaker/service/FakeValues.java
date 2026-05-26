@@ -3,7 +3,6 @@ package net.datafaker.service;
 import net.datafaker.internal.helper.LazyEvaluated;
 import net.datafaker.internal.helper.WordUtils;
 import org.yaml.snakeyaml.Yaml;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -14,13 +13,15 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-
 import static java.util.Collections.emptyMap;
 import static net.datafaker.internal.helper.JavaNames.toJavaNames;
 
 public class FakeValues implements FakeValuesInterface {
+
     private static final Map<FakeValuesContext, FakeValues> FAKE_VALUES_MAP = new ConcurrentHashMap<>();
+
     private final FakeValuesContext fakeValuesContext;
+
     private final LazyEvaluated<Map<String, Object>> values = new LazyEvaluated<>(() -> loadValues());
 
     private FakeValues(FakeValuesContext fakeValuesContext) {
@@ -28,12 +29,12 @@ public class FakeValues implements FakeValuesInterface {
     }
 
     static FakeValues of(FakeValuesContext fakeValuesContext) {
-        return FAKE_VALUES_MAP.computeIfAbsent(fakeValuesContext, FakeValues::new);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Map<String, Object> get(String key) {
-        return getMap(values.get(), key);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private Map<String, Object> loadFromUrl() {
@@ -52,17 +53,11 @@ public class FakeValues implements FakeValuesInterface {
 
     private Map<String, Object> loadValues() {
         Map<String, Object> result = loadFromUrl();
-        if (result != null) return result;
-
+        if (result != null)
+            return result;
         final Locale locale = fakeValuesContext.getLocale();
         final String fileName = fakeValuesContext.getFilename();
-        final String[] paths = fileName.isEmpty()
-            ? new String[] {"/" + locale.getLanguage() + ".yml"}
-            : new String[] {
-                "/" + locale.getLanguage() + "/" + fileName,
-                "/" + fileName + ".yml",
-                "/" + locale.getLanguage() + ".yml"};
-
+        final String[] paths = fileName.isEmpty() ? new String[] { "/" + locale.getLanguage() + ".yml" } : new String[] { "/" + locale.getLanguage() + "/" + fileName, "/" + fileName + ".yml", "/" + locale.getLanguage() + ".yml" };
         for (String path : paths) {
             try (InputStream stream = getClass().getResourceAsStream(path)) {
                 if (stream != null) {
@@ -74,7 +69,6 @@ public class FakeValues implements FakeValuesInterface {
                         enrichMapWithJavaNames(result);
                     }
                 }
-
             } catch (IOException e) {
                 throw new RuntimeException("Failed to read fake values from %s".formatted(path), e);
             }
@@ -96,7 +90,7 @@ public class FakeValues implements FakeValuesInterface {
                     Map<String, Object> entryMap = (Map<String, Object>) entry.getValue();
                     prefixUnqualifiedExpressions(entryMap, key);
                     Map<String, Object> nestedMap = new HashMap<>(entryMap.size());
-                    for (Map.Entry<String, Object> e: entryMap.entrySet()) {
+                    for (Map.Entry<String, Object> e : entryMap.entrySet()) {
                         nestedMap.put(toJavaNames(e.getKey(), true), e.getValue());
                     }
                     entryMap.putAll(nestedMap);
@@ -122,15 +116,7 @@ public class FakeValues implements FakeValuesInterface {
      * time avoids racy in-place mutation of cached lists during concurrent fetches.
      */
     static void prefixUnqualifiedExpressions(Object node, String providerKey) {
-        if (node instanceof Map<?, ?> nested) {
-            for (Object v : nested.values()) {
-                prefixUnqualifiedExpressions(v, providerKey);
-            }
-        } else if (node instanceof List<?> rawList) {
-            @SuppressWarnings("unchecked")
-            List<Object> list = (List<Object>) rawList;
-            rewriteList(list, providerKey);
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static void rewriteList(List<Object> list, String providerKey) {
@@ -178,7 +164,8 @@ public class FakeValues implements FakeValuesInterface {
     }
 
     private Map<String, Object> readFromStream(InputStream stream) {
-        if (stream == null) return null;
+        if (stream == null)
+            return null;
         final Map<String, Object> valuesMap = new Yaml().loadAs(stream, Map.class);
         Map<String, Object> localeBased = getMap(valuesMap, fakeValuesContext.getLocale().getLanguage());
         if (localeBased == null) {
@@ -193,9 +180,7 @@ public class FakeValues implements FakeValuesInterface {
     }
 
     Set<String> getPaths() {
-        return fakeValuesContext.getPath() != null ?
-            Set.of(fakeValuesContext.getPath()) :
-            keysOf(values.get());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static Set<String> keysOf(Map<String, ?> map) {
@@ -203,23 +188,21 @@ public class FakeValues implements FakeValuesInterface {
     }
 
     Locale getLocale() {
-        return fakeValuesContext.getLocale();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof FakeValues that)) return false;
-        return Objects.equals(fakeValuesContext, that.fakeValuesContext);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(fakeValuesContext);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return "FakeValues{%s}".formatted(fakeValuesContext);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -10,23 +10,22 @@ public class Stock extends AbstractProvider<BaseProviders> {
     }
 
     public String nsdqSymbol() {
-        return resolve("stock.symbol_nsdq");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String nyseSymbol() {
-        return resolve("stock.symbol_nyse");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String nseSymbol() {
-        return resolve("stock.symbol_nse");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String lseSymbol() {
-        return resolve("stock.symbol_lse");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String exchanges() {
-        return resolve("stock.exchanges");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

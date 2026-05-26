@@ -14,7 +14,6 @@ public class Severance extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("severance.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

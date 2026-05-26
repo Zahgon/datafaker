@@ -12,14 +12,14 @@ public class BackToTheFuture extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("back_to_the_future.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String date() {
-        return resolve("back_to_the_future.dates");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("back_to_the_future.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

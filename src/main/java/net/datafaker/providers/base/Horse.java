@@ -10,11 +10,10 @@ public class Horse extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("creature.horse.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String breed() {
-        return resolve("creature.horse.breed");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

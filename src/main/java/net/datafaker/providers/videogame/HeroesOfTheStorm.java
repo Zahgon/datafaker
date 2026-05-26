@@ -14,19 +14,18 @@ public class HeroesOfTheStorm extends AbstractProvider<VideoGameProviders> {
     }
 
     public String battleground() {
-        return resolve("heroes_of_the_storm.battlegrounds");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String heroClass() {
-        return resolve("heroes_of_the_storm.classes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hero() {
-        return resolve("heroes_of_the_storm.heroes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("heroes_of_the_storm.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

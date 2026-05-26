@@ -12,19 +12,18 @@ public class Cricket extends AbstractProvider<SportProviders> {
     }
 
     public String teams() {
-        return resolve("cricket.teams");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String players() {
-        return resolve("cricket.players");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String formats() {
-        return resolve("cricket.formats");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tournaments() {
-        return resolve("cricket.tournaments");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

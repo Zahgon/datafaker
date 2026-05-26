@@ -24,7 +24,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @return a random name with given and family names and an optional suffix.
      */
     public String name() {
-        return resolve("name.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -40,7 +40,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @return a random name with a middle name component with optional prefix and suffix
      */
     public String nameWithMiddle() {
-        return resolve("name.name_with_middle");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -49,7 +49,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @see Name#name()
      */
     public String fullName() {
-        return name();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -58,7 +58,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @return a 'given' name such as Aaliyah, Aaron, Abagail or Abbey
      */
     public String firstName() {
-        return resolve("name.first_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -67,7 +67,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @return a female 'given' name
      */
     public String femaleFirstName() {
-        return resolve("name.female_first_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -88,7 +88,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @return a male 'given' name
      */
     public String maleFirstName() {
-        return resolve("name.male_first_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -97,7 +97,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @return a random last name such as Smith, Jones or Baldwin
      */
     public String lastName() {
-        return resolve("name.last_name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -106,7 +106,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @return a name prefix such as Mr., Mrs., Ms., Miss, or Dr.
      */
     public String prefix() {
-        return resolve("name.prefix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -115,7 +115,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @return a name suffix such as Jr., Sr., I, II, III, IV, V, MD, DDS, PhD or DVM
      */
     public String suffix() {
-        return resolve("name.suffix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -130,11 +130,7 @@ public class Name extends AbstractProvider<BaseProviders> {
      * @return a random three part job title
      */
     public String title() {
-        return String.join(" ",
-            resolve("name.title.descriptor"),
-            resolve("name.title.level"),
-            resolve("name.title.job")
-        );
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**

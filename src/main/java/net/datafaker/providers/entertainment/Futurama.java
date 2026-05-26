@@ -4,7 +4,7 @@ import net.datafaker.providers.base.AbstractProvider;
 
 /**
  * Futurama is an American animated science fiction sitcom created by Matt Groening for the Fox Broadcasting Company.
- * 
+ *
  * @since 1.8.0
  */
 public class Futurama extends AbstractProvider<EntertainmentProviders> {
@@ -14,19 +14,18 @@ public class Futurama extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("futurama.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("futurama.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("futurama.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hermesCatchPhrase() {
-        return resolve("futurama.hermes_catchphrases");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

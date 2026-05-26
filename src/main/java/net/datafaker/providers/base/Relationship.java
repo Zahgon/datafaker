@@ -1,12 +1,12 @@
 package net.datafaker.providers.base;
 
-
 /**
  * @since 0.8.0
  */
 public class Relationship extends AbstractProvider<BaseProviders> {
 
     private enum Kind {
+
         direct("relationship.familial.direct"),
         extended("relationship.familial.extended"),
         inLaw("relationship.in_law"),
@@ -15,6 +15,7 @@ public class Relationship extends AbstractProvider<BaseProviders> {
         sibling("relationship.sibling");
 
         private final String expression;
+
         Kind(String expression) {
             this.expression = expression;
         }
@@ -25,32 +26,30 @@ public class Relationship extends AbstractProvider<BaseProviders> {
     }
 
     public String direct() {
-        return resolve(Kind.direct.expression);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String extended() {
-        return resolve(Kind.extended.expression);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String inLaw() {
-        return resolve(Kind.inLaw.expression);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String spouse() {
-        return resolve(Kind.spouse.expression);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String parent() {
-        return resolve(Kind.parent.expression);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sibling() {
-        return resolve(Kind.sibling.expression);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String any() {
-        Kind kind = faker.options().option(Kind.class);
-        return resolve(kind.expression);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

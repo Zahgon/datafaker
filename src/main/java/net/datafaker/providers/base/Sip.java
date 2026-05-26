@@ -25,7 +25,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a SIP method String, e.g. {@code INVITE}.
      */
     public String method() {
-        return resolve("sip.methods");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -35,7 +35,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a SIP content-type declaration String, e.g. {@code application/sdp}
      */
     public String contentType() {
-        return resolve("sip.content.types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -44,7 +44,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a SIP messaging port int, e.g. 5060.
      */
     public int messagingPort() {
-        return faker.random().nextInt(1000, 9999);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -53,7 +53,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return an RTP UDP 5 digit port int, e.g. 40002.
      */
     public int rtpPort() {
-        return faker.options().option(portPool);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -63,7 +63,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a 3 digit SIP provision response code between 100 and 199 int, e.g. {@code 180}.
      */
     public int provisionalResponseCode() {
-        return Integer.parseInt(faker.resolve("sip.response.codes.provisional"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -73,7 +73,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a 3 digit SIP success response code between 200 and 299 int, e.g. {@code 200}.
      */
     public int successResponseCode() {
-        return Integer.parseInt(faker.resolve("sip.response.codes.success"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -83,7 +83,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a 3 digit SIP redirection response code between 300 and 399 int, e.g. {@code 301}.
      */
     public int redirectResponseCode() {
-        return Integer.parseInt(faker.resolve("sip.response.codes.redirection"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -93,7 +93,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a 3 digit SIP client error response code between 400 and 499 int, e.g. {@code 486}.
      */
     public int clientErrorResponseCode() {
-        return Integer.parseInt(faker.resolve("sip.response.codes.clientError"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -103,7 +103,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a 3 digit SIP server error response code between 500 and 599 int, e.g. {@code 503}.
      */
     public int serverErrorResponseCode() {
-        return Integer.parseInt(faker.resolve("sip.response.codes.serverError"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -113,7 +113,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a 3 digit SIP global error response code between 600 and 699 int, e.g. {@code 608}.
      */
     public int globalErrorResponseCode() {
-        return Integer.parseInt(faker.resolve("sip.response.codes.globalError"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -123,7 +123,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a SIP provisional response phrase String, e.g. {@code Ringing}.
      */
     public String provisionalResponsePhrase() {
-        return resolve("sip.response.phrases.provisional");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -133,7 +133,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a SIP success response phrase String, e.g. {@code OK}.
      */
     public String successResponsePhrase() {
-        return resolve("sip.response.phrases.success");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -143,7 +143,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a SIP redirection response phrase String, e.g. {@code Moved Permanently}.
      */
     public String redirectResponsePhrase() {
-        return resolve("sip.response.phrases.redirection");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -153,7 +153,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a SIP client error response phrase String, e.g. {@code Busy Here}.
      */
     public String clientErrorResponsePhrase() {
-        return resolve("sip.response.phrases.clientError");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -163,7 +163,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a SIP server error response phrase String, e.g. {@code Service Unavailable}.
      */
     public String serverErrorResponsePhrase() {
-        return resolve("sip.response.phrases.serverError");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -173,7 +173,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a SIP global error response phrase String, e.g. {@code Rejected}.
      */
     public String globalErrorResponsePhrase() {
-        return resolve("sip.response.phrases.globalError");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -182,13 +182,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a fake SDP type SIP body String.
      */
     public String bodyString() {
-        return "v=0\n" +
-            "o=" + faker.name().firstName() + " " + faker.internet().uuid() + " IN IP4 " + faker.internet().domainName() + "\n" +
-            "s=-\n" +
-            "c=IN IP4 " + faker.internet().ipV4Address() + "\n" +
-            "t=0 0\n" +
-            "m=audio " + rtpPort() + " RTP/AVP 0\n" +
-            "a=rtpmap:0 PCMU/8000";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -197,7 +191,7 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a fake SDP type SIP body byte array.
      */
     public byte[] bodyBytes() {
-        return bodyString().getBytes(UTF_8);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -206,6 +200,6 @@ public class Sip extends AbstractProvider<BaseProviders> {
      * @return a valid name address String, e.g. {@code <sip:fakeName@10.1.2.3:5060>}.
      */
     public String nameAddress() {
-        return "<sip:" + faker.name().firstName() + "@" + faker.internet().ipV4Address() + ":" + messagingPort() + ">";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

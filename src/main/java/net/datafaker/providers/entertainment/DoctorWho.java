@@ -12,31 +12,30 @@ public class DoctorWho extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("dr_who.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String doctor() {
-        return resolve("dr_who.the_doctors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String actor() {
-        return resolve("dr_who.actors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String catchPhrase() {
-        return resolve("dr_who.catch_phrases");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("dr_who.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String villain() {
-        return resolve("dr_who.villains");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String species() {
-        return resolve("dr_who.species");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

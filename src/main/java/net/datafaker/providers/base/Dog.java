@@ -10,34 +10,34 @@ public class Dog extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("creature.dog.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String breed() {
-        return resolve("creature.dog.breed");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String sound() {
-        return resolve("creature.dog.sound");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String memePhrase() {
-        return resolve("creature.dog.meme_phrase");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String age() {
-        return resolve("creature.dog.age");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String coatLength() {
-        return resolve("creature.dog.coat_length");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gender() {
-        return resolve("creature.dog.gender");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String size() {
-        return resolve("creature.dog.size");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

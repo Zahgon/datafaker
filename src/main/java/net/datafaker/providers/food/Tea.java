@@ -17,7 +17,7 @@ public class Tea extends AbstractProvider<FoodProviders> {
      * @return a string of tea variety.
      */
     public String variety() {
-        return resolve("tea.variety." + type().toLowerCase());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -26,6 +26,6 @@ public class Tea extends AbstractProvider<FoodProviders> {
      * @return a string of tea type.
      */
     public String type() {
-        return resolve("tea.type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

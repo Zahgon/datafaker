@@ -12,35 +12,34 @@ public class SiliconValley extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return faker.resolve("silicon_valley.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String company() {
-        return faker.resolve("silicon_valley.companies");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return faker.resolve("silicon_valley.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String app() {
-        return faker.resolve("silicon_valley.apps");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String invention() {
-        return faker.resolve("silicon_valley.inventions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String motto() {
-        return faker.resolve("silicon_valley.mottos");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String url() {
-        return faker.resolve("silicon_valley.urls");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String email() {
-        return faker.resolve("silicon_valley.email");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

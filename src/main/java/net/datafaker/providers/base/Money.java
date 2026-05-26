@@ -24,7 +24,7 @@ public class Money extends AbstractProvider<BaseProviders> {
      * @return detailed currency value.
      */
     public String currency() {
-        return getRandomCurrency().getDisplayName();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -34,7 +34,7 @@ public class Money extends AbstractProvider<BaseProviders> {
      * @return an ISO 4217 currency code
      */
     public String currencyCode() {
-        return getRandomCurrency().getCurrencyCode();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -45,7 +45,7 @@ public class Money extends AbstractProvider<BaseProviders> {
      * @since 2.2.0
      */
     public String currencyNumericCode() {
-        return getRandomCurrency().getNumericCodeAsString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -54,12 +54,11 @@ public class Money extends AbstractProvider<BaseProviders> {
      * @since 2.2.0
      */
     public String currencySymbol() {
-        return getRandomCurrency().getSymbol();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private Currency getRandomCurrency() {
         int randomIndex = faker.random().nextInt(availableCurrencies.size());
         return availableCurrencies.get(randomIndex);
     }
-
 }

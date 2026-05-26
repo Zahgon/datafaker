@@ -14,15 +14,14 @@ public class VForVendetta extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("v_for_vendetta.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String speeches() {
-        return resolve("v_for_vendetta.speeches");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("v_for_vendetta.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

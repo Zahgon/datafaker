@@ -14,29 +14,26 @@ public class Hearthstone extends AbstractProvider<VideoGameProviders> {
     }
 
     public String mainProfession() {
-        return resolve("games.hearthstone.professions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mainCharacter() {
-        return resolve("games.hearthstone.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String mainPattern() {
-        return resolve("games.hearthstone.patterns");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public int battlegroundsScore() {
-        return faker.random().nextInt(0, 16000);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String standardRank() {
-        String rank = resolve("games.hearthstone.rank");
-        return "Legend".equals(rank) ?
-            rank + " " + faker.random().nextInt(1, 65000) :
-            rank + " " + faker.random().nextInt(1, 10);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String wildRank() {
-        return standardRank();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -15,11 +15,10 @@ public class GratefulDead extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String players() {
-        return resolve("grateful_dead.players");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String songs() {
-        return resolve("grateful_dead.songs");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

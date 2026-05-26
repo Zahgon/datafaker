@@ -15,20 +15,20 @@ public class Dessert extends AbstractProvider<FoodProviders> {
      * @return dessert variety e.g. "Cake".
      */
     public String variety() {
-        return resolve("dessert.variety");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return dessert topping e.g. "Rainbow Sprinkles".
      */
     public String topping() {
-        return resolve("dessert.topping");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return dessert flavor e.g. "Vanilla".
      */
     public String flavor() {
-        return resolve("dessert.flavor");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

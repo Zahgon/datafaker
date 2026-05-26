@@ -12,6 +12,6 @@ public class DragonBall extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("dragon_ball.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

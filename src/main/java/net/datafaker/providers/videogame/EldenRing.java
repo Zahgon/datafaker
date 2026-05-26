@@ -14,22 +14,22 @@ public class EldenRing extends AbstractProvider<VideoGameProviders> {
     }
 
     public String location() {
-        return resolve("elden_ring.location");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String weapon() {
-        return resolve("elden_ring.weapon");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String skill() {
-        return resolve("elden_ring.skill");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String spell() {
-        return resolve("elden_ring.spell");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String npc() {
-        return resolve("elden_ring.npc");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

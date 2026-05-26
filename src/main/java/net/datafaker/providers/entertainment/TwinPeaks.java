@@ -14,14 +14,14 @@ public class TwinPeaks extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("twin_peaks.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("twin_peaks.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("twin_peaks.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -1,7 +1,6 @@
 package net.datafaker.providers.entertainment;
 
 import net.datafaker.providers.base.AbstractProvider;
-
 import java.util.function.Supplier;
 
 /**
@@ -13,6 +12,7 @@ import java.util.function.Supplier;
 public class OscarMovie extends AbstractProvider<EntertainmentProviders> {
 
     private final Supplier<String> year;
+
     private final Supplier<String> choice;
 
     private final Supplier<String> str;
@@ -34,14 +34,14 @@ public class OscarMovie extends AbstractProvider<EntertainmentProviders> {
      * @return year
      */
     public String getYear() {
-        return year.get();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return choice
      */
     public String getChoice() {
-        return choice.get();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -50,7 +50,7 @@ public class OscarMovie extends AbstractProvider<EntertainmentProviders> {
      * @return random actor
      */
     public String actor() {
-        return resolve(str.get() + ".actor");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -59,7 +59,7 @@ public class OscarMovie extends AbstractProvider<EntertainmentProviders> {
      * @return random movieName
      */
     public String movieName() {
-        return resolve(str.get() + ".movieName");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -68,7 +68,7 @@ public class OscarMovie extends AbstractProvider<EntertainmentProviders> {
      * @return random quote
      */
     public String quote() {
-        return resolve(str.get() + ".quote");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -77,7 +77,7 @@ public class OscarMovie extends AbstractProvider<EntertainmentProviders> {
      * @return random character
      */
     public String character() {
-        return resolve(str.get() + ".character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -86,6 +86,6 @@ public class OscarMovie extends AbstractProvider<EntertainmentProviders> {
      * @return random releaseDate
      */
     public String releaseDate() {
-        return resolve(str.get() + ".releaseDate");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

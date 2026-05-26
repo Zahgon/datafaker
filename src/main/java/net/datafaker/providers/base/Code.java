@@ -12,10 +12,11 @@ import java.util.stream.Collectors;
  */
 public class Code extends AbstractProvider<BaseProviders> {
 
-    private static final int[] GTIN_8_CHECK_DIGITS = {3, 1, 3, 1, 3, 1, 3};
-    private static final int[] GTIN_13_CHECK_DIGITS = {1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3};
-    private static final String[] REPORTING_BODY_IDENTIFIERS
-        = {"01", "10", "30", "33", "35", "44", "45", "49", "50", "51", "52", "53", "54", "86", "91", "98", "99"};
+    private static final int[] GTIN_8_CHECK_DIGITS = { 3, 1, 3, 1, 3, 1, 3 };
+
+    private static final int[] GTIN_13_CHECK_DIGITS = { 1, 3, 1, 3, 1, 3, 1, 3, 1, 3, 1, 3 };
+
+    private static final String[] REPORTING_BODY_IDENTIFIERS = { "01", "10", "30", "33", "35", "44", "45", "49", "50", "51", "52", "53", "54", "86", "91", "98", "99" };
 
     protected Code(BaseProviders faker) {
         super(faker);
@@ -32,7 +33,7 @@ public class Code extends AbstractProvider<BaseProviders> {
      * @return a GS1 code for an ISBN13, currently is only 978 and 979
      */
     public String isbnGs1() {
-        return faker.options().option("978", "979");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -46,7 +47,7 @@ public class Code extends AbstractProvider<BaseProviders> {
      * @return an ISBN group number
      */
     public String isbnGroup() {
-        return faker.options().option("0", "1");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -60,23 +61,14 @@ public class Code extends AbstractProvider<BaseProviders> {
      * @return an ISBN registrant 'element' with separator
      */
     public String isbnRegistrant() {
-        int ct = faker.random().nextInt(6) + 1;
-        return switch (ct) {
-            case 6 -> faker.number().numberBetween(0, 1) + faker.number().digit() + "-" + faker.number().digits(6);
-            case 5 -> faker.number().numberBetween(200, 699) + "-" + faker.number().digits(5);
-            case 4 -> faker.number().numberBetween(7000, 8499) + "-" + faker.number().digits(4);
-            case 3 -> faker.number().numberBetween(85000, 89999) + "-" + faker.number().digits(3);
-            case 2 -> faker.number().numberBetween(900000, 949999) + "-" + faker.number().digits(2);
-            case 1 -> faker.number().numberBetween(9500000, 9999999) + "-" + faker.number().digits(1);
-            default -> throw new IllegalStateException("Invalid random " + ct);
-        };
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a valid ISBN10 number with no separators (ex. 9604250590)
      */
     public String isbn10() {
-        return isbn10(false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -84,23 +76,14 @@ public class Code extends AbstractProvider<BaseProviders> {
      * @return a valid ISBN10 number with or without separators (ex. 9604250590, 960-425-059-0)
      */
     public String isbn10(boolean separator) {
-        // The registration group identifier is a 1- to 5-digit number
-        final StringBuilder isbn10 = new StringBuilder()
-            .append(faker.expression("#{code.isbn_group}"))
-            .append('-')
-            .append(faker.expression("#{code.isbn_registrant}"))
-            .append('-');
-
-        final int checkDigit = isbn10CheckDigit(isbn10);
-        isbn10.append(checkDigit != 10 ? checkDigit : "X");
-        return separator ? isbn10.toString() : stripIsbnSeparator(isbn10);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a valid ISBN13 number with no separators (ex. 9789604250590)
      */
     public String isbn13() {
-        return isbn13(false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -108,18 +91,7 @@ public class Code extends AbstractProvider<BaseProviders> {
      * @return a valid ISBN13 number with or without separators (ex. 9789604250590, 978-960-425-059-0)
      */
     public String isbn13(boolean separator) {
-        // The registration group identifier is a 1- to 5-digit number
-        final StringBuilder isbn13 = new StringBuilder()
-            .append(faker.expression("#{code.isbn_gs1}"))
-            .append('-')
-            .append(faker.expression("#{code.isbn_group}"))
-            .append('-')
-            .append(faker.expression("#{code.isbn_registrant}"))
-            .append('-');
-
-        final int checkDigit = isbn13CheckDigit(isbn13);
-        isbn13.append(checkDigit);
-        return separator ? isbn13.toString() : stripIsbnSeparator(isbn13);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private int isbn10CheckDigit(CharSequence t) {
@@ -139,7 +111,6 @@ public class Code extends AbstractProvider<BaseProviders> {
             multiplier = i % 2 == 0 ? 1 : 3;
             sum += multiplier * Integer.parseInt(value.subSequence(i, i + 1).toString());
         }
-
         return (10 - sum % 10) % 10;
     }
 
@@ -148,68 +119,31 @@ public class Code extends AbstractProvider<BaseProviders> {
     }
 
     public String asin() {
-        return resolve("code.asin");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String imei() {
-        char[] str = new char[15];
-        int len = str.length;
-
-        // Fill in the first two values of the string based with the specified prefix.
-        String arr = faker.options().option(REPORTING_BODY_IDENTIFIERS);
-        str[0] = arr.charAt(0);
-        str[1] = arr.charAt(1);
-
-        // Fill all the remaining numbers except for the last one with random values.
-        for (int i = 2; i < len - 1; i++) {
-            str[i] = Character.forDigit(faker.number().numberBetween(0, 9), 10);
-        }
-
-        // Calculate the Luhn checksum of the values thus far
-        int lenOffset = (len + 1) % 2;
-        int sum = 0;
-        for (int i = 0; i < len - 1; i++) {
-            if ((i + lenOffset) % 2 != 0) {
-                int t = Character.getNumericValue(str[i]) << 1;
-
-                if (t > 9) {
-                    t -= 9;
-                }
-
-                sum += t;
-            } else {
-                sum += Character.getNumericValue(str[i]);
-            }
-        }
-
-        // Choose the last digit so that it causes the entire string to pass the checksum.
-        str[len - 1] = Character.forDigit(((10 - (sum % 10)) % 10), 10);
-
-        return new String(str);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String ean8() {
-        return gtin8();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gtin8() {
-        return gtin("\\d{7}", GTIN_8_CHECK_DIGITS);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gtin13() {
-        return gtin("\\d{12}", GTIN_13_CHECK_DIGITS);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String ean13() {
-        return gtin13();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String gtin(String regex, int[] checkDigits) {
-        List<Character> values = faker.regexify(regex)
-            .chars()
-            .mapToObj(c -> (char) c)
-            .collect(Collectors.toList());
-
+        List<Character> values = faker.regexify(regex).chars().mapToObj(c -> (char) c).collect(Collectors.toList());
         int sum = 0;
         for (int i = 0; i < values.size(); i++) {
             sum += Character.getNumericValue(values.get(i)) * checkDigits[i];
@@ -220,9 +154,6 @@ public class Code extends AbstractProvider<BaseProviders> {
         } else {
             values.add(Character.forDigit(checkDigit, 10));
         }
-
-        return values.stream()
-            .map(String::valueOf)
-            .collect(Collectors.joining());
+        return values.stream().map(String::valueOf).collect(Collectors.joining());
     }
 }

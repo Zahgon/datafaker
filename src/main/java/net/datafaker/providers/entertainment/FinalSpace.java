@@ -14,15 +14,14 @@ public class FinalSpace extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("final_space.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String vehicle() {
-        return resolve("final_space.vehicles");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("final_space.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

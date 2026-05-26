@@ -12,23 +12,22 @@ public class Buffy extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("buffy.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("buffy.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String celebrities() {
-        return resolve("buffy.celebrities");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String bigBads() {
-        return resolve("buffy.big_bads");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String episodes() {
-        return resolve("buffy.episodes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

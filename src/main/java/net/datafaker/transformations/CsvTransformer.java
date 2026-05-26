@@ -1,15 +1,18 @@
 package net.datafaker.transformations;
 
 import net.datafaker.sequence.FakeSequence;
-
 import java.util.Iterator;
 
 public class CsvTransformer<IN> implements Transformer<IN, CharSequence> {
+
     public static final String DEFAULT_SEPARATOR = ";";
+
     public static final char DEFAULT_QUOTE = '"';
 
     private final String separator;
+
     private final char quote;
+
     private final boolean withHeader;
 
     private CsvTransformer(String separator, char quote, boolean withHeader) {
@@ -19,45 +22,17 @@ public class CsvTransformer<IN> implements Transformer<IN, CharSequence> {
     }
 
     public static <IN> CsvTransformerBuilder<IN> builder() {
-        return new CsvTransformerBuilder<>();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public CharSequence apply(IN input, Schema<IN, ?> schema) {
-        Field<IN, ?>[] fields = schema.getFields();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < fields.length; i++) {
-            //noinspection unchecked
-            SimpleField<Object, ?> f = (SimpleField<Object, ?>) fields[i];
-            addLine(sb, f.transform(input));
-            if (i < fields.length - 1) {
-                sb.append(separator);
-            }
-        }
-        return sb.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String generate(Iterable<IN> input, Schema<IN, ?> schema) {
-        if (input instanceof FakeSequence<?> fakeSequence && fakeSequence.isInfinite()) {
-            throw new IllegalArgumentException("The sequence should be finite of size: " + fakeSequence);
-        }
-
-        StringBuilder sb = new StringBuilder();
-        generateHeader(schema, sb, true);
-
-        Iterator<IN> iterator = input.iterator();
-        boolean hasNext = iterator.hasNext();
-        while (hasNext) {
-            IN in = iterator.next();
-            sb.append(apply(in, schema));
-            hasNext = iterator.hasNext();
-            if (hasNext) {
-                sb.append(LINE_SEPARATOR);
-            }
-        }
-
-        return sb.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private void addLine(StringBuilder sb, Object transform) {
@@ -99,51 +74,41 @@ public class CsvTransformer<IN> implements Transformer<IN, CharSequence> {
 
     @Override
     public String generate(Schema<IN, ?> schema, int limit) {
-        StringBuilder sb = new StringBuilder();
-        generateHeader(schema, sb, true);
-        for (int i = 0; i < limit; i++) {
-            sb.append(apply(null, schema, i));
-            if (i < limit - 1) {
-                sb.append(LINE_SEPARATOR);
-            }
-        }
-        return sb.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String getStartStream(Schema<IN, ?> schema) {
-        StringBuilder sb = new StringBuilder();
-        generateHeader(schema, sb, false);
-        return sb.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String getEndStream() {
-        return "";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static class CsvTransformerBuilder<IN> {
+
         private String separator = DEFAULT_SEPARATOR;
+
         private char quote = DEFAULT_QUOTE;
+
         private boolean withHeader = true;
 
         public CsvTransformerBuilder<IN> quote(char quote) {
-            this.quote = quote;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public CsvTransformerBuilder<IN> separator(String separator) {
-            this.separator = separator;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public CsvTransformerBuilder<IN> header(boolean header) {
-            this.withHeader = header;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public CsvTransformer<IN> build() {
-            return new CsvTransformer<>(separator, quote, withHeader);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 }

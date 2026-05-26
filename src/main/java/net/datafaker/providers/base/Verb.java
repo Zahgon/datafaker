@@ -15,7 +15,7 @@ public class Verb extends AbstractProvider<BaseProviders> {
      * @return a string of base form of a verb.
      */
     public String base() {
-        return resolve("verbs.base");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -24,7 +24,7 @@ public class Verb extends AbstractProvider<BaseProviders> {
      * @return a string of verb in past tense.
      */
     public String past() {
-        return resolve("verbs.past");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -33,7 +33,7 @@ public class Verb extends AbstractProvider<BaseProviders> {
      * @return a string of verb in past participle tense.
      */
     public String pastParticiple() {
-        return resolve("verbs.past_participle");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -42,7 +42,7 @@ public class Verb extends AbstractProvider<BaseProviders> {
      * @return a string of verb in simple present tense.
      */
     public String simplePresent() {
-        return resolve("verbs.simple_present");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -51,6 +51,6 @@ public class Verb extends AbstractProvider<BaseProviders> {
      * @return a string of verb in -ing form.
      */
     public String ingForm() {
-        return resolve("verbs.ing_form");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

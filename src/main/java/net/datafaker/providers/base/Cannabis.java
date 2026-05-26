@@ -10,42 +10,42 @@ public class Cannabis extends AbstractProvider<BaseProviders> {
     }
 
     public String strains() {
-        return resolve("cannabis.strains");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cannabinoidAbbreviations() {
-        return resolve("cannabis.cannabinoid_abbreviations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cannabinoids() {
-        return resolve("cannabis.cannabinoids");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String terpenes() {
-        return resolve("cannabis.terpenes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String medicalUses() {
-        return resolve("cannabis.medical_uses");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String healthBenefits() {
-        return resolve("cannabis.health_benefits");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String categories() {
-        return resolve("cannabis.categories");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String types() {
-        return resolve("cannabis.types");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String buzzwords() {
-        return resolve("cannabis.buzzwords");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String brands() {
-        return resolve("cannabis.brands");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

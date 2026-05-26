@@ -14,11 +14,10 @@ public class WorldOfWarcraft extends AbstractProvider<VideoGameProviders> {
     }
 
     public String hero() {
-        return resolve("games.world_of_warcraft.hero");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("games.world_of_warcraft.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

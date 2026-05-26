@@ -14,15 +14,14 @@ public class HalfLife extends AbstractProvider<VideoGameProviders> {
     }
 
     public String character() {
-        return resolve("games.half_life.character");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String enemy() {
-        return resolve("games.half_life.enemy");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("games.half_life.location");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

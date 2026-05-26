@@ -21,7 +21,7 @@ public class CNPJ extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cnpj(BaseProviders, boolean, boolean, boolean)
      */
     public String valid() {
-        return IdNumberGeneratorPtBrUtil.cnpj(faker, true, true, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -32,7 +32,7 @@ public class CNPJ extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cnpj(BaseProviders, boolean, boolean, boolean)
      */
     public String valid(boolean formatted) {
-        return IdNumberGeneratorPtBrUtil.cnpj(faker, formatted, true, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -50,7 +50,7 @@ public class CNPJ extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cnpj(BaseProviders, boolean, boolean, boolean)
      */
     public String valid(boolean formatted, boolean multiBranch) {
-        return IdNumberGeneratorPtBrUtil.cnpj(faker, formatted, true, multiBranch);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -60,7 +60,7 @@ public class CNPJ extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cnpj(BaseProviders, boolean, boolean, boolean)
      */
     public String invalid() {
-        return IdNumberGeneratorPtBrUtil.cnpj(faker, true, false, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -70,7 +70,7 @@ public class CNPJ extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cnpj(BaseProviders, boolean, boolean, boolean)
      */
     public String invalid(boolean formatted) {
-        return IdNumberGeneratorPtBrUtil.cnpj(faker, formatted, false, false);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -86,6 +86,6 @@ public class CNPJ extends AbstractProvider<BaseProviders> {
      * @see IdNumberGeneratorPtBrUtil#cnpj(BaseProviders, boolean, boolean, boolean)
      */
     public String invalid(boolean formatted, boolean multiBranch) {
-        return IdNumberGeneratorPtBrUtil.cnpj(faker, formatted, false, multiBranch);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

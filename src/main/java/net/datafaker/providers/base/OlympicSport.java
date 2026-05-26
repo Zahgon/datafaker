@@ -10,27 +10,26 @@ public class OlympicSport extends AbstractProvider<BaseProviders> {
     }
 
     public String summerOlympics() {
-        return resolve("olympic_sport.summer_olympics");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String winterOlympics() {
-        return resolve("olympic_sport.winter_olympics");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String summerParalympics() {
-        return resolve("olympic_sport.summer_paralympics");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String winterParalympics() {
-        return resolve("olympic_sport.winter_paralympics");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String ancientOlympics() {
-        return resolve("olympic_sport.ancient_olympics");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String unusual() {
-        return resolve("olympic_sport.unusual");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

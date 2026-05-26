@@ -1,6 +1,5 @@
 package net.datafaker.providers.videogame;
 
-
 import net.datafaker.providers.base.AbstractProvider;
 
 /**
@@ -19,42 +18,41 @@ public class SoulKnight extends AbstractProvider<VideoGameProviders> {
      * @return a random value of characters
      */
     public String characters() {
-        return resolve("soul_knight.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a random value of buffs
      */
     public String buffs() {
-        return resolve("soul_knight.buffs");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a random value of statues
      */
     public String statues() {
-        return resolve("soul_knight.statues");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a random value of weapons
      */
     public String weapons() {
-        return resolve("soul_knight.weapons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a random value of bosses
      */
     public String bosses() {
-        return resolve("soul_knight.bosses");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * @return a random value of enemies
      */
     public String enemies() {
-        return resolve("soul_knight.enemies");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -12,15 +12,14 @@ public class StudioGhibli extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("studio_ghibli.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("studio_ghibli.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String movie() {
-        return resolve("studio_ghibli.movies");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

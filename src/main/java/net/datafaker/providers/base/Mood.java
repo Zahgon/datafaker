@@ -10,15 +10,14 @@ public class Mood extends AbstractProvider<BaseProviders> {
     }
 
     public String feeling() {
-        return resolve("mood.feeling");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String emotion() {
-        return resolve("mood.emotion");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tone() {
-        return resolve("mood.tone");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

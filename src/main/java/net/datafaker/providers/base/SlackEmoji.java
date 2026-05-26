@@ -10,38 +10,38 @@ public class SlackEmoji extends AbstractProvider<BaseProviders> {
     }
 
     public String people() {
-        return resolve("slack_emoji.people");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String nature() {
-        return resolve("slack_emoji.nature");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String foodAndDrink() {
-        return resolve("slack_emoji.food_and_drink");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String celebration() {
-        return resolve("slack_emoji.celebration");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String activity() {
-        return resolve("slack_emoji.activity");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String travelAndPlaces() {
-        return resolve("slack_emoji.travel_and_places");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String objectsAndSymbols() {
-        return resolve("slack_emoji.objects_and_symbols");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String custom() {
-        return resolve("slack_emoji.custom");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String emoji() {
-        return resolve("slack_emoji.emoji");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -12,19 +12,18 @@ public class TheItCrowd extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String actors() {
-        return resolve("the_it_crowd.actors");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String characters() {
-        return resolve("the_it_crowd.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String emails() {
-        return resolve("the_it_crowd.emails");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("the_it_crowd.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -10,14 +10,14 @@ public class App extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("app.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String version() {
-        return faker.numerify(faker.resolve("app.version"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String author() {
-        return resolve("app.author");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

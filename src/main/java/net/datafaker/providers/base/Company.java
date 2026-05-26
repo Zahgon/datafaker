@@ -2,10 +2,8 @@ package net.datafaker.providers.base;
 
 import net.datafaker.internal.helper.FakerIDN;
 import net.datafaker.internal.helper.LazyEvaluated;
-
 import java.util.Collection;
 import java.util.List;
-
 import static java.util.stream.Collectors.joining;
 
 /**
@@ -20,23 +18,23 @@ public class Company extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("company.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String suffix() {
-        return resolve("company.suffix");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String industry() {
-        return resolve("company.industry");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String profession() {
-        return resolve("company.profession");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String buzzword() {
-        return faker.options().nextElement(allBuzzwords.get());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private List<String> loadBuzzwords() {
@@ -48,30 +46,25 @@ public class Company extends AbstractProvider<BaseProviders> {
      * Generate a buzzword-laden catch phrase.
      */
     public String catchPhrase() {
-        List<List<String>> catchPhraseLists = faker.fakeValuesService().fetchObject("company.buzzwords", faker.getContext());
-        return joinSampleOfEachList(catchPhraseLists);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * When a straight answer won't do, BS to the rescue!
      */
     public String bs() {
-        List<List<String>> buzzwordLists = faker.fakeValuesService().fetchObject("company.bs", faker.getContext());
-        return joinSampleOfEachList(buzzwordLists);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * Generate a random company logo url in PNG format.
      */
     public String logo() {
-        int number = faker.random().nextInt(13) + 1;
-        return "https://pigment.github.io/fake-logos/logos/medium/color/" + number + ".png";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String url() {
-        return "www."
-            + FakerIDN.toASCII(domainName()) + "."
-            + domainSuffix();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private String domainName() {
@@ -79,9 +72,11 @@ public class Company extends AbstractProvider<BaseProviders> {
         int offset = 0;
         for (int i = 0; i < res.length; i++) {
             final char c = res[i];
-            switch (c) {
-                case '.', ',', '\'', ' ', ']', '&' -> offset++;
-                default -> res[i - offset] = res[i];
+            switch(c) {
+                case '.', ',', '\'', ' ', ']', '&' ->
+                    offset++;
+                default ->
+                    res[i - offset] = res[i];
             }
         }
         return String.valueOf(res, 0, res.length - offset);
@@ -92,8 +87,6 @@ public class Company extends AbstractProvider<BaseProviders> {
     }
 
     private String joinSampleOfEachList(List<List<String>> listOfLists) {
-        return listOfLists.stream()
-            .map(list -> faker.options().nextElement(list))
-            .collect(joining(" "));
+        return listOfLists.stream().map(list -> faker.options().nextElement(list)).collect(joining(" "));
     }
 }

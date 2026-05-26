@@ -5,9 +5,13 @@ import java.util.Random;
 import java.util.random.RandomGenerator;
 
 public class RandomService {
+
     private static final char[] HEX_UP = "0123456789ABCDEF".toCharArray();
+
     private static final char[] HEX_LOWER = "0123456789abcdef".toCharArray();
+
     private static final Random SHARED_RANDOM = new Random();
+
     private final RandomGenerator random;
 
     /**
@@ -26,53 +30,36 @@ public class RandomService {
 
     @SuppressWarnings("unused")
     public int nextInt() {
-        return random.nextInt();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public int nextInt(int maxExclusive) {
-        return random.nextInt(maxExclusive);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Integer nextInt(int minInclusive, int maxInclusive) {
-        if (minInclusive > maxInclusive)
-            throw new IllegalArgumentException("Min (%s) > Max (%s)".formatted(minInclusive, maxInclusive));
-        if (maxInclusive + 1 < 0)
-            return (int) nextLong(minInclusive, maxInclusive);
-
-        return random.nextInt(minInclusive, maxInclusive + 1);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public int nextInt(Range<Integer> range) {
-        return (int) nextLong(range.cast(Integer::longValue));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @SuppressWarnings("unused")
     public float nextFloat() {
-        return random.nextFloat();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public long nextLong() {
-        return random.nextLong();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public long nextLong(long maxExclusive) {
-        if (maxExclusive <= 0) {
-            throw new IllegalArgumentException("bound must be positive: " + maxExclusive);
-        }
-        return nextLong(0, maxExclusive);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public long nextLong(Range<Long> range) {
-        return switch (range.from().end()) {
-            case EXCLUSIVE -> switch (range.to().end()) {
-                case EXCLUSIVE -> random.nextLong(plusOne(range.from().value()), range.to().value());
-                case INCLUSIVE -> random.nextLong(plusOne(range.from().value()), plusOne(range.to().value()));
-            };
-            case INCLUSIVE -> switch (range.to().end()) {
-                case EXCLUSIVE -> random.nextLong(range.from().value(), range.to().value());
-                case INCLUSIVE -> random.nextLong(range.from().value(), plusOne(range.to().value()));
-            };
-        };
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static long plusOne(long value) {
@@ -89,13 +76,11 @@ public class RandomService {
      * @return a random long value between {@code min} and {@code max}
      */
     public long nextLong(long min, long max) {
-        return min == max ?
-            min :
-            random.nextLong(min, max);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public double nextDouble() {
-        return random.nextDouble();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -104,65 +89,49 @@ public class RandomService {
      * @return a random double value between {@code min} and {@code max} (both inclusive)
      */
     public double nextDouble(double min, double max) {
-        return min + (nextDouble() * (max - min));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public boolean nextBoolean() {
-        return random.nextBoolean();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public byte[] nextRandomBytes(int numberOfBytes) {
-        final byte[] randomBytes = new byte[numberOfBytes];
-        random.nextBytes(randomBytes);
-        return randomBytes;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public <T extends Enum<T>> T nextEnum(Class<T> klass) {
-        T[] enumConstants = klass.getEnumConstants();
-        return enumConstants[nextInt(enumConstants.length)];
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hex() {
-        return hex(8);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hex(int length) {
-        return hex(length, true);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String hex(int length, boolean upper) {
-        if (length <= 0) {
-            return ""; // Keep the existing behavior instead of throwing an error.
-        }
-        char[] hexArray = upper ? HEX_UP : HEX_LOWER;
-        final char[] hexChars = new char[length];
-        final byte[] randomBytes = nextRandomBytes(length);
-        for (int i = 0; i < length; i++) {
-            hexChars[i] = hexArray[((char) randomBytes[i]) % hexArray.length];
-        }
-        return new String(hexChars);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public RandomGenerator getRandomInternal() {
-        return random;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof RandomService that)) return false;
-
-        return Objects.equals(random, that.random);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int hashCode() {
-        if (random == SHARED_RANDOM) return 1;
-        return random != null ? random.hashCode() : 0;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "@" + random;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

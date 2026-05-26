@@ -14,38 +14,38 @@ public class RedDeadRedemption2 extends AbstractProvider<VideoGameProviders> {
     }
 
     public String protagonist() {
-        return resolve("red_dead_redemption2.protagonists");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String gangMember() {
-        return resolve("red_dead_redemption2.gang_members");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String majorCharacter() {
-        return resolve("red_dead_redemption2.major_characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String animal() {
-        return resolve("red_dead_redemption2.animals");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String state() {
-        return resolve("red_dead_redemption2.states");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String region() {
-        return resolve("red_dead_redemption2.regions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String settlement() {
-        return resolve("red_dead_redemption2.settlements");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("red_dead_redemption2.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String weapon() {
-        return resolve("red_dead_redemption2.weapons");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

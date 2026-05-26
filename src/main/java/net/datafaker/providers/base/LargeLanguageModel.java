@@ -12,15 +12,14 @@ public class LargeLanguageModel extends AbstractProvider<BaseProviders> {
     }
 
     public String textModel() {
-        return resolve("largelanguagemodel.text_models");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String embeddingModel() {
-        return resolve("largelanguagemodel.embeddings");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tokenizer() {
-        return resolve("largelanguagemodel.tokenizers");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

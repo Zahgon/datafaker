@@ -10,6 +10,6 @@ public class Bool extends AbstractProvider<BaseProviders> {
     }
 
     public boolean bool() {
-        return faker.random().nextBoolean();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

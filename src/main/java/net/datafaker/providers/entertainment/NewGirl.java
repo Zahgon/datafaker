@@ -14,11 +14,10 @@ public class NewGirl extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("new_girl.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("new_girl.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

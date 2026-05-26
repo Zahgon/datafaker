@@ -12,23 +12,22 @@ public class Volleyball extends AbstractProvider<SportProviders> {
     }
 
     public String team() {
-        return resolve("volleyball.team");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String player() {
-        return resolve("volleyball.player");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String coach() {
-        return resolve("volleyball.coach");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String position() {
-        return resolve("volleyball.position");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String formation() {
-        return resolve("volleyball.formation");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

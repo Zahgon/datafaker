@@ -12,19 +12,18 @@ public class Chess extends AbstractProvider<SportProviders> {
     }
 
     public String player() {
-        return resolve("chess.players");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String tournament() {
-        return resolve("chess.tournaments");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String opening() {
-        return resolve("chess.openings");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String title() {
-        return resolve("chess.titles");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

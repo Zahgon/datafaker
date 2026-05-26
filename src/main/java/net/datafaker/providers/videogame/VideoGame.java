@@ -14,15 +14,14 @@ public class VideoGame extends AbstractProvider<VideoGameProviders> {
     }
 
     public String title() {
-        return resolve("video_game.title");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String genre() {
-        return resolve("video_game.genre");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String platform() {
-        return resolve("video_game.platform");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -14,14 +14,14 @@ public class Overwatch extends AbstractProvider<VideoGameProviders> {
     }
 
     public String hero() {
-        return resolve("games.overwatch.heroes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("games.overwatch.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("games.overwatch.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

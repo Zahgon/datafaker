@@ -14,15 +14,14 @@ public class Stargate extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("stargate.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String planets() {
-        return resolve("stargate.planets");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quotes() {
-        return resolve("stargate.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

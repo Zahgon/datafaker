@@ -12,15 +12,14 @@ public class TheThickOfIt extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String characters() {
-        return resolve("the_thick_of_it.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String positions() {
-        return resolve("the_thick_of_it.positions");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String departments() {
-        return resolve("the_thick_of_it.departments");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

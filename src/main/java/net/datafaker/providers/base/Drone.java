@@ -14,104 +14,103 @@ public class Drone extends AbstractProvider<BaseProviders> {
     }
 
     public String name() {
-        return resolve("drone.name");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String weight() {
-        return faker.numerify(resolve("drone.weight"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxAscentSpeed() {
-        return faker.numerify(resolve("drone.max_ascent_speed"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxDescentSpeed() {
-        return faker.numerify(resolve("drone.max_descent_speed"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String flightTime() {
-        return faker.numerify(resolve("drone.flight_time"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxAltitude() {
-        return faker.numerify(resolve("drone.max_altitude"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxFlightDistance() {
-        return faker.numerify(resolve("drone.max_flight_distance"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxSpeed() {
-        return faker.numerify(resolve("drone.max_speed"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxWindResistance() {
-        return faker.numerify(resolve("drone.max_wind_resistance"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxAngularVelocity() {
-        return faker.numerify(resolve("drone.max_angular_velocity"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxTiltAngle() {
-        return faker.numerify(resolve("drone.max_tilt_angle"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String operatingTemperature() {
-        return faker.numerify(resolve("drone.operating_temperature"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String batteryCapacity() {
-        return faker.numerify(resolve("drone.battery_capacity"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String batteryVoltage() {
-        return faker.numerify(resolve("drone.battery_voltage"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String batteryType() {
-        return resolve("drone.battery_type");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String batteryWeight() {
-        return faker.numerify(resolve("drone.battery_weight"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String chargingTemperature() {
-        return faker.numerify(resolve("drone.charging_temperature"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxChargingPower() {
-        return faker.numerify(resolve("drone.max_charging_power"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String iso() {
-        return resolve("drone.iso");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxResolution() {
-        return faker.numerify(resolve("drone.max_resolution"));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String photoFormat() {
-        return resolve("drone.photo_format");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String videoFormat() {
-        return resolve("drone.video_format");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String maxShutterSpeed() {
-        return resolve("drone.max_shutter_speed");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String minShutterSpeed() {
-        return resolve("drone.min_shutter_speed");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Deterministic
     public String shutterSpeedUnits() {
-        return resolve("drone.shutter_speed_units");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -1,7 +1,6 @@
 package net.datafaker.service;
 
 import net.datafaker.internal.helper.SingletonLocale;
-
 import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import java.util.List;
@@ -9,7 +8,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
-
 import static java.util.Locale.ROOT;
 import static net.datafaker.service.FakeValuesService.DEFAULT_LOCALE;
 
@@ -17,33 +15,20 @@ import static net.datafaker.service.FakeValuesService.DEFAULT_LOCALE;
  * Contains the changeable Faker's part which currently contains {@link Locale} and {@link RandomService}.
  */
 public class FakerContext {
+
     private static final Pattern LOCALE = Pattern.compile("[-_]");
+
     private static final Map<SingletonLocale, List<SingletonLocale>> LOCALE_2_LOCALES_CHAIN = new IdentityHashMap<>();
+
     private static final Map<SingletonLocale, SingletonLocale> STRING_LOCALE_HASH_MAP = new IdentityHashMap<>();
+
     private static final List<SingletonLocale> DEFAULT_SINGLETON_LOCALE_LIST = List.of(DEFAULT_LOCALE);
-    private static final Map<String, String> LANGUAGE_DEFAULT_COUNTRY = Map.ofEntries(
-        Map.entry("be", "BY"),
-        Map.entry("cs", "CZ"),
-        Map.entry("da", "DK"),
-        Map.entry("el", "GR"),
-        Map.entry("et", "EE"),
-        Map.entry("he", "IL"),
-        Map.entry("hy", "AM"),
-        Map.entry("ja", "JP"),
-        Map.entry("ka", "GE"),
-        Map.entry("ko", "KR"),
-        Map.entry("nb", "NO"),
-        Map.entry("sq", "AL"),
-        Map.entry("sv", "SE"),
-        Map.entry("ta", "IN"),
-        Map.entry("uk", "UA"),
-        Map.entry("vi", "VN"),
-        Map.entry("zh", "CN")
-    );
+
+    private static final Map<String, String> LANGUAGE_DEFAULT_COUNTRY = Map.ofEntries(Map.entry("be", "BY"), Map.entry("cs", "CZ"), Map.entry("da", "DK"), Map.entry("el", "GR"), Map.entry("et", "EE"), Map.entry("he", "IL"), Map.entry("hy", "AM"), Map.entry("ja", "JP"), Map.entry("ka", "GE"), Map.entry("ko", "KR"), Map.entry("nb", "NO"), Map.entry("sq", "AL"), Map.entry("sv", "SE"), Map.entry("ta", "IN"), Map.entry("uk", "UA"), Map.entry("vi", "VN"), Map.entry("zh", "CN"));
 
     private SingletonLocale sLocale;
-    private RandomService randomService;
 
+    private RandomService randomService;
 
     /**
      * Resolves YAML file using the most specific path first based on language and country code.
@@ -68,33 +53,27 @@ public class FakerContext {
     }
 
     public void setLocale(Locale locale) {
-        this.sLocale = SingletonLocale.get(locale);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setRandomService(RandomService randomService) {
-        this.randomService = randomService;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Locale getLocale() {
-        return sLocale.getLocale();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public SingletonLocale getSingletonLocale() {
-        return sLocale;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public RandomService getRandomService() {
-        return randomService;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<SingletonLocale> getLocaleChain() {
-        final List<SingletonLocale> res = LOCALE_2_LOCALES_CHAIN.get(sLocale);
-        if (res == null) {
-            synchronized (FakerContext.class) {
-                return LOCALE_2_LOCALES_CHAIN.get(sLocale);
-            }
-        }
-        return res;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -112,9 +91,8 @@ public class FakerContext {
         if (locale.getCountry().isEmpty()) {
             parts = LOCALE.split(locale.getLanguage());
         } else {
-            parts = new String[] {locale.getLanguage(), locale.getCountry()};
+            parts = new String[] { locale.getLanguage(), locale.getCountry() };
         }
-
         if (parts.length == 1) {
             if ((res = SingletonLocale.get(Locale.forLanguageTag(parts[0]))) == null) {
                 res = SingletonLocale.get(new Locale(parts[0]));
@@ -129,14 +107,7 @@ public class FakerContext {
     }
 
     public final void setCurrentLocale(Locale locale) {
-        Objects.requireNonNull(locale);
-        this.sLocale = normalizeLocale(SingletonLocale.get(locale));
-        if (LOCALE_2_LOCALES_CHAIN.containsKey(this.sLocale)) {
-            return;
-        }
-        synchronized (FakerContext.class) {
-            LOCALE_2_LOCALES_CHAIN.put(this.sLocale, localeChain());
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -147,19 +118,11 @@ public class FakerContext {
      * @return a list of {@link Locale} instances
      */
     protected List<SingletonLocale> localeChain(Locale from) {
-        if (DEFAULT_LOCALE.getLocale().equals(from)) {
-            return DEFAULT_SINGLETON_LOCALE_LIST;
-        }
-
-        return calculateLocaleChain(normalizeLocale(SingletonLocale.get(from)));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     protected List<SingletonLocale> localeChain() {
-        if (DEFAULT_LOCALE == sLocale) {
-            return DEFAULT_SINGLETON_LOCALE_LIST;
-        }
-
-        return calculateLocaleChain(sLocale);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private List<SingletonLocale> calculateLocaleChain(SingletonLocale locale) {
@@ -183,24 +146,16 @@ public class FakerContext {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        FakerContext that = (FakerContext) o;
-
-        if (!Objects.equals(sLocale, that.sLocale)) return false;
-        return Objects.equals(randomService, that.randomService);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int hashCode() {
-        int result = sLocale != null ? sLocale.hashCode() : 0;
-        result = 31 * result + (randomService != null ? randomService.hashCode() : 0);
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return "FakerContext{%s, %s}".formatted(sLocale, randomService);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

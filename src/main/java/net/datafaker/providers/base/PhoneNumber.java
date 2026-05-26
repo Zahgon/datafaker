@@ -1,9 +1,7 @@
 package net.datafaker.providers.base;
 
 import net.datafaker.annotations.Deterministic;
-
 import java.util.Locale;
-
 import static com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat.INTERNATIONAL;
 import static com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat.NATIONAL;
 import static com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberType.FIXED_LINE;
@@ -14,7 +12,9 @@ import static java.util.Locale.ROOT;
  * @since 0.8.0
  */
 public class PhoneNumber extends AbstractProvider<BaseProviders> {
+
     private final String countryCodeIso2;
+
     private final PhoneNumberGenerator generator;
 
     protected PhoneNumber(BaseProviders faker) {
@@ -25,15 +25,15 @@ public class PhoneNumber extends AbstractProvider<BaseProviders> {
 
     @Deterministic
     String countryCodeIso2() {
-        return countryCodeIso2;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cellPhone() {
-        return generator.randomPhoneNumber(countryCodeIso2, MOBILE, NATIONAL);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String cellPhoneInternational() {
-        return generator.randomPhoneNumber(countryCodeIso2, MOBILE, INTERNATIONAL);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -42,38 +42,45 @@ public class PhoneNumber extends AbstractProvider<BaseProviders> {
      * @return phone number
      */
     public String phoneNumber() {
-        return phoneNumberNational();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String phoneNumberInternational() {
-        return generator.randomPhoneNumber(countryCodeIso2, FIXED_LINE, INTERNATIONAL);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String phoneNumberNational() {
-        return generator.randomPhoneNumber(countryCodeIso2, FIXED_LINE, NATIONAL);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String extension() {
-        return subscriberNumber();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String subscriberNumber(int length) {
-        return faker.numerify("#".repeat(Math.max(0, length)));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String subscriberNumber() {
-        return subscriberNumber(4);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private static String countryCodeIso2(Locale locale) {
         String country = locale.getCountry();
-        return switch (country) {
-            case "" -> detectCountryByLanguage(locale.getLanguage());
-            case "CAT" -> "ES";
-            case "NEP" -> "NP";
-            case "PAK" -> "PK";
-            case "BORK" -> "US"; // what the hell is BORK?
-            default -> country;
+        return switch(country) {
+            case "" ->
+                detectCountryByLanguage(locale.getLanguage());
+            case "CAT" ->
+                "ES";
+            case "NEP" ->
+                "NP";
+            case "PAK" ->
+                "PK";
+            // what the hell is BORK?
+            case "BORK" ->
+                "US";
+            default ->
+                country;
         };
     }
 
@@ -89,40 +96,105 @@ public class PhoneNumber extends AbstractProvider<BaseProviders> {
      * </p>
      */
     private static String detectCountryByLanguage(String language) {
-        return switch (language) {
-            case "af" -> "ZA"; // Afrikaans language -> South Africa
-            case "ar" -> "SA"; // Arabic language -> Saudi Arabia (SA)
-            case "am" -> "ET"; // Amharic language -> Ethiopia (ET)
-            case "be" -> "BY"; // Belarus
-            case "bn" -> "BD"; // Bengali language -> Bangladesh (BD)
-            case "bs" -> "BA"; // Bosnian language -> Bosnia & Herzegovina (BA)
-            case "ca" -> "ES"; // Catalan language -> Spain (ES)
-            case "cy" -> "GB"; // Welsh language -> United Kingdom (GB)
-            case "cs" -> "CZ"; // Czech Republic
-            case "el" -> "GR"; // Greece
-            case "et" -> "EE"; // Estonian language -> Estonia (EE)
-            case "en" -> "US"; // it has been used by default for English
-            case "eu" -> "ES"; // Basque (Basque Country | Spain)
-            case "fa" -> "IR"; // Persian language (Farsi) -> Iran (IR)
-            case "ga" -> "IE"; // Irish/Gaelic language -> Ireland (IE)
-            case "gl" -> "ES"; // Galician (Spain)
-            case "he" -> "IL"; // Israel
-            case "hi" -> "IN"; // Hindi language -> India
-            case "hy" -> "AM"; // Armenia
-            case "ja" -> "JP"; // Japan
-            case "ka" -> "GE"; // Georgia
-            case "km" -> "KH"; // Khmer language -> Cambodia (KH)
-            case "ko" -> "KR"; // Korea
-            case "mo" -> "MD"; // Moldavian language -> Moldova
-            case "sq" -> "AL"; // Albania
-            case "sw" -> "TZ"; // Swahili language -> Tanzania (TZ)
-            case "ug" -> "CN"; // Uyghur language -> China (CN)
-            case "ur" -> "PK"; // Urdu language -> Pakistan (PK)
-            case "ta" -> "IN"; // Tamil language -> India (though, Tamil is used in multiple countries)
-            case "test" -> "US"; // What the hell is "test" language?
-            case "uk" -> "UA"; // Ukraine
-            case "zh" -> "CN"; // Chinese language -> China (CN)
-            default -> language.toUpperCase(ROOT);
+        return switch(language) {
+            // Afrikaans language -> South Africa
+            case "af" ->
+                "ZA";
+            // Arabic language -> Saudi Arabia (SA)
+            case "ar" ->
+                "SA";
+            // Amharic language -> Ethiopia (ET)
+            case "am" ->
+                "ET";
+            // Belarus
+            case "be" ->
+                "BY";
+            // Bengali language -> Bangladesh (BD)
+            case "bn" ->
+                "BD";
+            // Bosnian language -> Bosnia & Herzegovina (BA)
+            case "bs" ->
+                "BA";
+            // Catalan language -> Spain (ES)
+            case "ca" ->
+                "ES";
+            // Welsh language -> United Kingdom (GB)
+            case "cy" ->
+                "GB";
+            // Czech Republic
+            case "cs" ->
+                "CZ";
+            // Greece
+            case "el" ->
+                "GR";
+            // Estonian language -> Estonia (EE)
+            case "et" ->
+                "EE";
+            // it has been used by default for English
+            case "en" ->
+                "US";
+            // Basque (Basque Country | Spain)
+            case "eu" ->
+                "ES";
+            // Persian language (Farsi) -> Iran (IR)
+            case "fa" ->
+                "IR";
+            // Irish/Gaelic language -> Ireland (IE)
+            case "ga" ->
+                "IE";
+            // Galician (Spain)
+            case "gl" ->
+                "ES";
+            // Israel
+            case "he" ->
+                "IL";
+            // Hindi language -> India
+            case "hi" ->
+                "IN";
+            // Armenia
+            case "hy" ->
+                "AM";
+            // Japan
+            case "ja" ->
+                "JP";
+            // Georgia
+            case "ka" ->
+                "GE";
+            // Khmer language -> Cambodia (KH)
+            case "km" ->
+                "KH";
+            // Korea
+            case "ko" ->
+                "KR";
+            // Moldavian language -> Moldova
+            case "mo" ->
+                "MD";
+            // Albania
+            case "sq" ->
+                "AL";
+            // Swahili language -> Tanzania (TZ)
+            case "sw" ->
+                "TZ";
+            // Uyghur language -> China (CN)
+            case "ug" ->
+                "CN";
+            // Urdu language -> Pakistan (PK)
+            case "ur" ->
+                "PK";
+            // Tamil language -> India (though, Tamil is used in multiple countries)
+            case "ta" ->
+                "IN";
+            // What the hell is "test" language?
+            case "test" ->
+                "US";
+            // Ukraine
+            case "uk" ->
+                "UA";
+            // Chinese language -> China (CN)
+            case "zh" ->
+                "CN";
+            default ->
+                language.toUpperCase(ROOT);
         };
     }
 }

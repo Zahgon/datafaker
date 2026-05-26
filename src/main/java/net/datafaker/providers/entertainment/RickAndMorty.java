@@ -12,14 +12,14 @@ public class RickAndMorty extends AbstractProvider<EntertainmentProviders> {
     }
 
     public String character() {
-        return resolve("rick_and_morty.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("rick_and_morty.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("rick_and_morty.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

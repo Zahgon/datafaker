@@ -14,19 +14,18 @@ public class TheKingkillerChronicle extends AbstractProvider<EntertainmentProvid
     }
 
     public String book() {
-        return resolve("the_kingkiller_chronicle.books");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String character() {
-        return resolve("the_kingkiller_chronicle.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String creature() {
-        return resolve("the_kingkiller_chronicle.creatures");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String location() {
-        return resolve("the_kingkiller_chronicle.locations");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

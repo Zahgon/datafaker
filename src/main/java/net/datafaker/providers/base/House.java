@@ -15,7 +15,7 @@ public class House extends AbstractProvider<BaseProviders> {
      * @return a string of furniture.
      */
     public String furniture() {
-        return resolve("house.furniture");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -24,6 +24,6 @@ public class House extends AbstractProvider<BaseProviders> {
      * @return a string of room.
      */
     public String room() {
-        return resolve("house.rooms");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -12,10 +12,10 @@ public class Community extends AbstractProvider<BaseProviders> {
     }
 
     public String character() {
-        return resolve("community.characters");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String quote() {
-        return resolve("community.quotes");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }
